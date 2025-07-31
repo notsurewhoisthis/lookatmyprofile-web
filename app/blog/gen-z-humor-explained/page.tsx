@@ -10,11 +10,9 @@ export const metadata: Metadata = {
     description: 'Finally understand why Gen Z thinks everything is "giving" something.',
     url: 'https://www.lookatmyprofile.org/blog/gen-z-humor-explained',
     type: 'article',
-    article: {
-      publishedTime: '2025-01-18',
-      authors: ['Taylor Swift (not that one)'],
-      tags: ['Culture', 'Humor', 'Gen Z', 'Social Media']
-    }
+    publishedTime: '2025-01-18',
+    authors: ['Taylor Swift (not that one)'],
+    tags: ['Culture', 'Humor', 'Gen Z', 'Social Media']
   }
 };
 

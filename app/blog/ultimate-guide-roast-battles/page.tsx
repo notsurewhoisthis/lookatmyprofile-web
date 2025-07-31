@@ -10,11 +10,9 @@ export const metadata: Metadata = {
     description: 'Master the art of roast battles and become the undisputed champion.',
     url: 'https://www.lookatmyprofile.org/blog/ultimate-guide-roast-battles',
     type: 'article',
-    article: {
-      publishedTime: '2025-01-12',
-      authors: ['Mike Rodriguez'],
-      tags: ['Guides', 'Roasting', 'Social Media', 'Strategy']
-    }
+    publishedTime: '2025-01-12',
+    authors: ['Mike Rodriguez'],
+    tags: ['Guides', 'Roasting', 'Social Media', 'Strategy']
   }
 };
 

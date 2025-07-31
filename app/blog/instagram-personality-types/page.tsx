@@ -10,11 +10,9 @@ export const metadata: Metadata = {
     description: 'AI-powered analysis reveals the 8 most common Instagram personalities.',
     url: 'https://www.lookatmyprofile.org/blog/instagram-personality-types',
     type: 'article',
-    article: {
-      publishedTime: '2025-01-08',
-      authors: ['Data Science Team'],
-      tags: ['Research', 'Instagram', 'Data Analysis', 'Personality']
-    }
+    publishedTime: '2025-01-08',
+    authors: ['Data Science Team'],
+    tags: ['Research', 'Instagram', 'Data Analysis', 'Personality']
   }
 };
 

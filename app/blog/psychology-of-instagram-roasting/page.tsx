@@ -10,11 +10,9 @@ export const metadata: Metadata = {
     description: 'Why do we love getting roasted? The surprising psychology explained.',
     url: 'https://www.lookatmyprofile.org/blog/psychology-of-instagram-roasting',
     type: 'article',
-    article: {
-      publishedTime: '2025-01-15',
-      authors: ['Dr. Sarah Chen'],
-      tags: ['Psychology', 'Social Media', 'Humor', 'Instagram']
-    }
+    publishedTime: '2025-01-15',
+    authors: ['Dr. Sarah Chen'],
+    tags: ['Psychology', 'Social Media', 'Humor', 'Instagram']
   }
 };
 

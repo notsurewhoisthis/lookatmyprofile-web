@@ -10,11 +10,9 @@ export const metadata: Metadata = {
     description: 'The fascinating journey of AI from dad jokes to devastating roasts.',
     url: 'https://www.lookatmyprofile.org/blog/ai-humor-evolution',
     type: 'article',
-    article: {
-      publishedTime: '2025-01-10',
-      authors: ['Tech Team'],
-      tags: ['Technology', 'AI', 'Machine Learning', 'Humor']
-    }
+    publishedTime: '2025-01-10',
+    authors: ['Tech Team'],
+    tags: ['Technology', 'AI', 'Machine Learning', 'Humor']
   }
 };
 

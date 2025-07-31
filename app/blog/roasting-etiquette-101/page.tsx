@@ -10,11 +10,9 @@ export const metadata: Metadata = {
     description: 'Learn how to deliver devastating roasts while keeping your friendships intact.',
     url: 'https://www.lookatmyprofile.org/blog/roasting-etiquette-101',
     type: 'article',
-    article: {
-      publishedTime: '2025-01-20',
-      authors: ['Emily Chen'],
-      tags: ['Etiquette', 'Humor', 'Social Media', 'Guides']
-    }
+    publishedTime: '2025-01-20',
+    authors: ['Emily Chen'],
+    tags: ['Etiquette', 'Humor', 'Social Media', 'Guides']
   }
 };
 
