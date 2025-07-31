@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ArticleSchema } from "../../../components/StructuredData";
 
 export const metadata: Metadata = {
   title: 'The Psychology Behind Instagram Roasting: Why We Love to Be Teased',
@@ -17,8 +18,22 @@ export const metadata: Metadata = {
 };
 
 export default function PsychologyOfRoastingPost() {
+  const articleData = {
+    title: 'The Psychology Behind Instagram Roasting: Why We Love to Be Teased',
+    description: 'Discover why millions of people voluntarily submit their profiles for AI roasting and what it reveals about human nature and social media culture.',
+    featuredImage: 'https://www.lookatmyprofile.org/images/psychology-roasting.jpg',
+    author: 'Dr. Sarah Chen',
+    authorSlug: 'sarah-chen',
+    publishedDate: '2025-01-15',
+    modifiedDate: '2025-01-15',
+    slug: 'psychology-of-instagram-roasting',
+    wordCount: 1200,
+    keywords: ['instagram roasting psychology', 'why people like roasts', 'social media humor psychology', 'AI roasting behavior']
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <ArticleSchema article={articleData} />
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">

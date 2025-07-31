@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { FAQSchema } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
   title: 'FAQ - Frequently Asked Questions | Roast a Profile',
@@ -101,8 +102,14 @@ export default function FAQPage() {
     }
   ];
 
+  // Flatten all FAQ questions for schema
+  const allFaqs = faqs.flatMap(category => 
+    category.questions.map(q => ({ question: q.q, answer: q.a }))
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <FAQSchema faqs={allFaqs} />
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">

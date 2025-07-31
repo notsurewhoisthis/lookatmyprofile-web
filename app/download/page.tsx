@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Image from "next/image";
+import OptimizedImage from "../../components/OptimizedImage";
+import { SoftwareApplicationSchema } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
   title: 'Download Roast a Profile - AI Instagram Roaster App | iOS & Android',
@@ -67,6 +68,7 @@ export default function DownloadPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <SoftwareApplicationSchema />
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">
