@@ -162,15 +162,15 @@ export default function SupportPage() {
           <h2 className="text-3xl font-bold mb-8">Response Times</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2">< 2 hrs</div>
+              <div className="text-5xl font-bold text-purple-400 mb-2">&lt; 2 hrs</div>
               <p className="text-gray-300">Critical Issues</p>
             </div>
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2">< 24 hrs</div>
+              <div className="text-5xl font-bold text-purple-400 mb-2">&lt; 24 hrs</div>
               <p className="text-gray-300">General Support</p>
             </div>
             <div>
-              <div className="text-5xl font-bold text-purple-400 mb-2">< 48 hrs</div>
+              <div className="text-5xl font-bold text-purple-400 mb-2">&lt; 48 hrs</div>
               <p className="text-gray-300">Feature Requests</p>
             </div>
           </div>
