@@ -1,6 +1,4 @@
-import { MetadataRoute } from 'next';
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export async function GET() {
   const baseUrl = 'https://www.lookatmyprofile.org';
   
   // Static pages
@@ -18,12 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy',
     '/terms',
     '/support',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }));
+  ];
 
   // Blog posts
   const blogPosts = [
@@ -33,12 +26,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/instagram-personality-types',
     '/blog/gen-z-humor-explained',
     '/blog/roasting-etiquette-101',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
+  ];
 
-  return [...staticPages, ...blogPosts];
+  const allPages = [...staticPages, ...blogPosts];
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allPages.map(page => `  <url>
+    <loc>${baseUrl}${page}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>${page.includes('/blog/') ? 'monthly' : 'weekly'}</changefreq>
+    <priority>${page === '' ? '1.0' : page.includes('/blog/') ? '0.6' : '0.8'}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+
+  return new Response(sitemap, {
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  });
 }
