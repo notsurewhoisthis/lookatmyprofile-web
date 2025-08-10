@@ -1,2 +1,2 @@
-Deployment trigger: 2025-08-10 16:19 UTC
-This file triggers Heroku deployments when updated.
+Deploy trigger: 2025-01-10T14:45:00Z
+Force Heroku deployment after GitHub integration setup
