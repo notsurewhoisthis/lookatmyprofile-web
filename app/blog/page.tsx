@@ -127,6 +127,12 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-purple-400 hover:text-purple-300 mb-8 transition-colors"
+          >
+            ← Back to Home
+          </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             Blog
           </h1>
