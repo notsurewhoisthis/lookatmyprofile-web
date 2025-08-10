@@ -1,0 +1,2 @@
+Deployment trigger: 2025-08-10 16:19 UTC
+This file triggers Heroku deployments when updated.
