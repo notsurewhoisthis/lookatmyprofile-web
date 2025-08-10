@@ -1,195 +1,202 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import fs from 'fs'
-import path from 'path'
+import { Metadata } from 'next';
+import Link from 'next/link';
+import fs from 'fs';
+import path from 'path';
 
 export const metadata: Metadata = {
-  title: 'Blog | LookAtMyProfile',
+  title: 'Blog | LookAtMyProfile | Roast a Profile - AI Instagram Roaster',
   description: 'Insights on Instagram culture, social media trends, and digital humor',
-}
+};
 
 interface BlogPost {
-  slug: string
-  title: string
-  description: string
-  excerpt?: string
-  publishedAt: string
-  author?: {
-    name: string
-  }
-  tags?: string[]
-  metrics?: {
-    readingTime: number
-  }
+  slug: string;
+  title: string;
+  description: string;
+  excerpt: string;
+  publishedAt: string;
+  author: {
+    name: string;
+  };
+  tags: string[];
+  metrics: {
+    readingTime: number;
+  };
 }
 
-// Get JSON blog posts
-function getJSONBlogPosts(): BlogPost[] {
+async function getBlogPosts(): Promise<BlogPost[]> {
   try {
-    const blogDataDir = path.join(process.cwd(), 'public', 'blog-data')
-    if (!fs.existsSync(blogDataDir)) {
-      return []
-    }
+    const blogDataDir = path.join(process.cwd(), 'public', 'blog-data');
+    const files = fs.readdirSync(blogDataDir);
     
-    const files = fs.readdirSync(blogDataDir).filter(file => file.endsWith('.json'))
+    const posts = files
+      .filter(file => file.endsWith('.json'))
+      .map(file => {
+        try {
+          const filePath = path.join(blogDataDir, file);
+          const fileContent = fs.readFileSync(filePath, 'utf-8');
+          return JSON.parse(fileContent);
+        } catch (error) {
+          console.error(`Error reading ${file}:`, error);
+          return null;
+        }
+      })
+      .filter(post => post !== null)
+      .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
     
-    return files.map(file => {
-      const filePath = path.join(blogDataDir, file)
-      const content = fs.readFileSync(filePath, 'utf-8')
-      const data = JSON.parse(content)
-      const post = data.blogPost || data
-      
-      return {
-        slug: file.replace('.json', ''),
-        title: post.title,
-        description: post.description || post.excerpt,
-        excerpt: post.excerpt,
-        publishedAt: post.publishedAt,
-        author: post.author,
-        tags: post.tags,
-        metrics: post.metrics
-      }
-    }).sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    return posts;
   } catch (error) {
-    console.error('Error reading JSON posts:', error)
-    return []
+    console.error('Error loading blog posts:', error);
+    return [];
   }
 }
 
-// Legacy hardcoded posts (these will work with old TSX files)
-const legacyPosts = [
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Static blog posts (original ones that don't have JSON files)
+const staticPosts = [
   {
     slug: 'psychology-of-instagram-roasting',
     title: 'The Psychology Behind Instagram Roasting',
-    description: 'Why we love to roast and be roasted in the digital age',
-    date: '2024-03-15',
-    tags: ['Psychology', 'Social Media', 'Humor'],
-    readingTime: 5,
+    excerpt: 'Why we love to roast and be roasted in the digital age',
+    publishedAt: '2024-03-15',
+    author: { name: 'Roast Team' },
+    metrics: { readingTime: 5 },
+    tags: ['Psychology', 'Social Media', 'Humor']
   },
   {
     slug: 'gen-z-humor-explained',
     title: 'Gen Z Humor: A Scientific Analysis',
-    description: 'Breaking down why your jokes don\'t land with younger audiences',
-    date: '2024-03-10',
-    tags: ['Humor', 'Gen Z', 'Culture'],
-    readingTime: 7,
+    excerpt: "Breaking down why your jokes don't land with younger audiences",
+    publishedAt: '2024-03-10',
+    author: { name: 'Roast Team' },
+    metrics: { readingTime: 7 },
+    tags: ['Humor', 'Gen Z', 'Culture']
   },
   {
     slug: 'instagram-personality-types',
     title: '7 Types of Instagram Personalities',
-    description: 'Which one are you? A comprehensive breakdown',
-    date: '2024-03-05',
-    tags: ['Instagram', 'Personality', 'Social Media'],
-    readingTime: 6,
+    excerpt: 'Which one are you? A comprehensive breakdown',
+    publishedAt: '2024-03-05',
+    author: { name: 'Roast Team' },
+    metrics: { readingTime: 6 },
+    tags: ['Instagram', 'Personality', 'Social Media']
   },
   {
     slug: 'roasting-etiquette-101',
-    title: 'Roasting Etiquette 101',
-    description: 'The unwritten rules of digital mockery',
-    date: '2024-03-01',
-    tags: ['Etiquette', 'Humor', 'Guide'],
-    readingTime: 4,
+    title: 'Roasting Etiquette 101: How to Be Funny Without Being Mean',
+    excerpt: 'The fine line between humor and harassment',
+    publishedAt: '2024-02-28',
+    author: { name: 'Roast Team' },
+    metrics: { readingTime: 4 },
+    tags: ['Etiquette', 'Humor', 'Social Media']
   },
   {
     slug: 'ai-humor-evolution',
-    title: 'How AI is Changing Comedy',
-    description: 'From dad jokes to dank memes: AI\'s humor journey',
-    date: '2024-02-25',
-    tags: ['AI', 'Technology', 'Humor'],
-    readingTime: 8,
+    title: 'How AI is Changing Online Humor',
+    excerpt: 'From meme generators to roast bots: The future of digital comedy',
+    publishedAt: '2024-02-20',
+    author: { name: 'Roast Team' },
+    metrics: { readingTime: 8 },
+    tags: ['AI', 'Technology', 'Humor']
   },
   {
     slug: 'ultimate-guide-roast-battles',
-    title: 'The Ultimate Guide to Roast Battles',
-    description: 'Winning strategies from professional roasters',
-    date: '2024-02-20',
-    tags: ['Guide', 'Competition', 'Humor'],
-    readingTime: 10,
-  },
-]
+    title: 'The Ultimate Guide to Online Roast Battles',
+    excerpt: 'Win every verbal sparring match with these proven strategies',
+    publishedAt: '2024-02-15',
+    author: { name: 'Roast Team' },
+    metrics: { readingTime: 10 },
+    tags: ['Guide', 'Roasting', 'Strategy']
+  }
+];
 
-export default function BlogPage() {
-  // Get JSON posts
-  const jsonPosts = getJSONBlogPosts()
+export default async function BlogPage() {
+  const dynamicPosts = await getBlogPosts();
   
-  // Combine and sort all posts
-  const allPosts = [
-    ...jsonPosts,
-    ...legacyPosts.map(post => ({
-      slug: post.slug,
-      title: post.title,
-      description: post.description,
-      publishedAt: post.date,
-      tags: post.tags,
-      metrics: { readingTime: post.readingTime }
-    }))
-  ].sort((a, b) => {
-    const dateA = new Date(a.publishedAt).getTime()
-    const dateB = new Date(b.publishedAt).getTime()
-    return dateB - dateA
-  })
-
+  // Separate recent (from JSON) and classic posts
+  const recentPosts = dynamicPosts.slice(0, 10); // Show up to 10 recent posts
+  
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             Blog
           </h1>
-          <p className="text-xl text-gray-400 mb-12">
-            Insights on marketing, technology, and digital trends
+          <p className="text-xl text-gray-300 mb-12">
+            Insights on Instagram culture, social media trends, and digital humor
           </p>
 
-          <div className="space-y-8">
-            {allPosts.map((post) => (
-              <article 
-                key={post.slug}
-                className="group border border-gray-800 rounded-lg p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10"
-              >
-                <Link href={`/blog/${post.slug}`}>
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+          {/* Recent Posts from JSON files */}
+          {recentPosts.length > 0 && (
+            <div className="space-y-8 mb-16">
+              <h2 className="text-2xl font-bold text-gray-100 mb-6">Latest Posts</h2>
+              {recentPosts.map((post) => (
+                <article key={post.slug} className="border-b border-gray-800 pb-8">
+                  <Link href={`/blog/${post.slug}`} className="group">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-100 group-hover:text-purple-400 transition-colors">
                       {post.title}
-                    </h2>
-                    
-                    <p className="text-gray-400">
-                      {post.description}
+                    </h3>
+                    <p className="text-gray-400 mb-4">
+                      {post.excerpt || post.description}
                     </p>
-
                     <div className="flex items-center gap-4 text-sm text-gray-500">
                       <time dateTime={post.publishedAt}>
-                        {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
+                        {formatDate(post.publishedAt)}
                       </time>
-                      {post.metrics?.readingTime && (
-                        <>
-                          <span>•</span>
-                          <span>{post.metrics.readingTime} min read</span>
-                        </>
-                      )}
-                      {post.author?.name && (
-                        <>
-                          <span>•</span>
-                          <span>{post.author.name}</span>
-                        </>
-                      )}
+                      <span>By {post.author.name}</span>
+                      <span>{post.metrics.readingTime} min read</span>
                     </div>
-
                     {post.tags && post.tags.length > 0 && (
                       <div className="flex flex-wrap gap-2 mt-4">
-                        {post.tags.slice(0, 3).map((tag, index) => (
-                          <span
-                            key={index}
-                            className="px-2 py-1 bg-purple-500/10 text-purple-400 rounded text-xs"
+                        {post.tags.map((tag) => (
+                          <span 
+                            key={tag}
+                            className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
                     )}
+                  </Link>
+                </article>
+              ))}
+            </div>
+          )}
+
+          {/* Classic Posts */}
+          <div className="space-y-8">
+            <h2 className="text-2xl font-bold text-gray-100 mb-6">Classic Posts</h2>
+            {staticPosts.map((post) => (
+              <article key={post.slug} className="border-b border-gray-800 pb-8">
+                <Link href={`/blog/${post.slug}`} className="group">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-100 group-hover:text-purple-400 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-400 mb-4">{post.excerpt}</p>
+                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <time dateTime={post.publishedAt}>
+                      {formatDate(post.publishedAt)}
+                    </time>
+                    <span>{post.metrics.readingTime} min read</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {post.tags.map((tag) => (
+                      <span 
+                        key={tag}
+                        className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </Link>
               </article>
@@ -198,5 +205,5 @@ export default function BlogPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
