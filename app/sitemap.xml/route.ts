@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 export async function GET() {
   const baseUrl = 'https://www.lookatmyprofile.org';
   
@@ -18,15 +21,21 @@ export async function GET() {
     '/support',
   ];
 
-  // Blog posts
-  const blogPosts = [
-    '/blog/psychology-of-instagram-roasting',
-    '/blog/ultimate-guide-roast-battles',
-    '/blog/ai-humor-evolution',
-    '/blog/instagram-personality-types',
-    '/blog/gen-z-humor-explained',
-    '/blog/roasting-etiquette-101',
-  ];
+  // Dynamically get blog posts from JSON files
+  const blogPosts: string[] = [];
+  try {
+    const blogDataDir = path.join(process.cwd(), 'public', 'blog-data');
+    const files = fs.readdirSync(blogDataDir);
+    
+    files
+      .filter(file => file.endsWith('.json'))
+      .forEach(file => {
+        const slug = file.replace('.json', '');
+        blogPosts.push(`/blog/${slug}`);
+      });
+  } catch (error) {
+    console.error('Error reading blog posts for sitemap:', error);
+  }
 
   const allPages = [...staticPages, ...blogPosts];
 

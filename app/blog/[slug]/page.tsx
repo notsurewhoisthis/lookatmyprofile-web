@@ -47,11 +47,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  // Enhanced SEO metadata with all critical elements
   return {
     title: `${post.title} | LookAtMyProfile`,
     description: post.description,
     keywords: post.keywords?.join(', '),
     authors: [{ name: post.author.name }],
+    alternates: {
+      canonical: `https://www.lookatmyprofile.org/blog/${slug}`
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -59,12 +63,34 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author.name],
-      tags: post.tags
+      tags: post.tags,
+      url: `https://www.lookatmyprofile.org/blog/${slug}`,
+      siteName: 'LookAtMyProfile',
+      images: [{
+        url: `https://www.lookatmyprofile.org/api/og?title=${encodeURIComponent(post.title)}`,
+        width: 1200,
+        height: 630,
+        alt: post.title
+      }]
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.description
+      description: post.description,
+      site: '@lookatmyprofile',
+      creator: '@lookatmyprofile',
+      images: [`https://www.lookatmyprofile.org/api/og?title=${encodeURIComponent(post.title)}`]
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      }
     }
   };
 }
@@ -112,8 +138,41 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  // Generate structured data for SEO
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    author: {
+      '@type': 'Person',
+      name: post.author.name
+    },
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt,
+    publisher: {
+      '@type': 'Organization',
+      name: 'LookAtMyProfile',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.lookatmyprofile.org/logo.png'
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.lookatmyprofile.org/blog/${slug}`
+    },
+    keywords: post.keywords?.join(', '),
+    articleSection: 'Blog',
+    wordCount: post.metrics?.wordCount
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <Link 
