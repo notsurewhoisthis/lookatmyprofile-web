@@ -75,7 +75,7 @@ export default function SupportPage() {
             <p className="text-gray-300 mb-4">
               Having issues with the mobile app?
             </p>
-            <a href="https://apps.apple.com/app/roast-a-profile/id6747992467" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition inline-flex items-center">
+            <a href="https://apps.apple.com/us/app/roast-a-profile/id6749272485" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition inline-flex items-center">
               App Store Page →
             </a>
           </div>

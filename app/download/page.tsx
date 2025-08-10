@@ -98,7 +98,7 @@ export default function DownloadPage() {
             {/* App Store Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
-                href="https://apps.apple.com/app/roast-a-profile/id6747992467"
+                href="https://apps.apple.com/us/app/roast-a-profile/id6749272485"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"
@@ -247,7 +247,7 @@ export default function DownloadPage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://apps.apple.com/app/roast-a-profile/id6747992467"
+            href="https://apps.apple.com/us/app/roast-a-profile/id6749272485"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-purple-600 to-pink-600 px-12 py-5 rounded-full text-xl font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition inline-block"
