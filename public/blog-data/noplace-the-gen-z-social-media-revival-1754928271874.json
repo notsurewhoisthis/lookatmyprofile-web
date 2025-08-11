@@ -13,6 +13,8 @@
   ],
   "publishedAt": "2025-08-11T16:04:31.874Z",
   "author": "AI Content Team",
-  "readingTime": 12,
-  "wordCount": 2483
+  "metrics": {
+    "readingTime": 12,
+    "wordCount": 2483
+  }
 }
