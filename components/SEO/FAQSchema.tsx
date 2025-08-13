@@ -122,55 +122,126 @@ export const commonFAQs = {
   ]
 };
 
-// Dynamic FAQ generator for blog posts based on content
+// Dynamic FAQ generator for blog posts based on content - Enhanced for AI indexing
 export function generateBlogFAQs(title: string, excerpt: string, tags: string[] = []): FAQItem[] {
   const faqs: FAQItem[] = [
     {
       question: `What is this article about?`,
       answer: excerpt || `This article explores ${title.toLowerCase()} with insights on Instagram culture, social media trends, and Gen Z humor.`
+    },
+    {
+      question: `What are the key takeaways from "${title}"?`,
+      answer: `The main insights include understanding ${tags.slice(0, 3).join(', ')} in the context of modern social media culture, particularly how it affects Instagram users and content creators.`
     }
   ];
 
   // Add topic-specific FAQs based on keywords
   if (title.toLowerCase().includes('tiktok') || tags.includes('tiktok')) {
-    faqs.push({
-      question: "How does this relate to TikTok trends?",
-      answer: "This article examines the intersection of TikTok and Instagram culture, showing how trends migrate between platforms and influence roasting styles."
-    });
+    faqs.push(
+      {
+        question: "How does this relate to TikTok trends?",
+        answer: "This article examines the intersection of TikTok and Instagram culture, showing how trends migrate between platforms and influence roasting styles."
+      },
+      {
+        question: "What TikTok features influence Instagram roasting?",
+        answer: "TikTok's short-form video format, trending sounds, and viral challenges have shaped how users create and share roasts on Instagram, particularly through Reels and Stories."
+      }
+    );
   }
 
   if (title.toLowerCase().includes('gen z') || tags.includes('gen-z')) {
-    faqs.push({
-      question: "Why is this important for Gen Z users?",
-      answer: "Gen Z has redefined social media humor and roasting culture. This content helps understand and participate in the evolving landscape of digital social interactions."
-    });
+    faqs.push(
+      {
+        question: "Why is this important for Gen Z users?",
+        answer: "Gen Z has redefined social media humor and roasting culture. This content helps understand and participate in the evolving landscape of digital social interactions."
+      },
+      {
+        question: "How do Gen Z roasting styles differ from other generations?",
+        answer: "Gen Z roasts are characterized by self-deprecating humor, niche internet references, absurdist memes, and a more inclusive approach that avoids harmful stereotypes."
+      }
+    );
   }
 
   if (title.toLowerCase().includes('ai') || title.toLowerCase().includes('automation')) {
-    faqs.push({
-      question: "How does AI enhance social media roasting?",
-      answer: "AI analyzes patterns humans might miss, creating more personalized and creative roasts while ensuring they remain fun and non-harmful."
-    });
+    faqs.push(
+      {
+        question: "How does AI enhance social media roasting?",
+        answer: "AI analyzes patterns humans might miss, creating more personalized and creative roasts while ensuring they remain fun and non-harmful."
+      },
+      {
+        question: "What AI technologies power Instagram profile analysis?",
+        answer: "Modern AI roasting tools use natural language processing (NLP), computer vision for image analysis, and machine learning algorithms to understand posting patterns and generate contextual humor."
+      },
+      {
+        question: "Is AI-generated roasting ethical?",
+        answer: "Ethical AI roasting focuses on humor without harm, avoiding personal attacks, respecting privacy by only using public data, and providing users control over the content generated about them."
+      }
+    );
   }
 
   if (title.toLowerCase().includes('psychology') || tags.includes('psychology')) {
-    faqs.push({
-      question: "What's the psychology behind roasting culture?",
-      answer: "Roasting serves as social bonding through humor, allowing people to show affection through playful teasing while building resilience to criticism."
-    });
+    faqs.push(
+      {
+        question: "What's the psychology behind roasting culture?",
+        answer: "Roasting serves as social bonding through humor, allowing people to show affection through playful teasing while building resilience to criticism."
+      },
+      {
+        question: "Can roasting affect mental health?",
+        answer: "When done respectfully, roasting can boost social connections and humor appreciation. However, it's important to maintain boundaries and ensure all participants are comfortable with the humor style."
+      }
+    );
   }
 
-  // Always add these two
+  if (title.toLowerCase().includes('instagram') || title.toLowerCase().includes('profile')) {
+    faqs.push(
+      {
+        question: "What makes an Instagram profile 'roastable'?",
+        answer: "Roastable elements include excessive filters, cliché captions, predictable poses, hashtag abuse, and trying too hard to appear perfect. The best roasts highlight these relatable quirks with humor."
+      },
+      {
+        question: "How can I make my Instagram profile less roastable?",
+        answer: "Embrace authenticity, vary your content, use hashtags sparingly, write genuine captions, and don't take yourself too seriously. Remember, being roastable isn't bad—it makes you relatable!"
+      }
+    );
+  }
+
+  if (title.toLowerCase().includes('trend') || tags.includes('trends')) {
+    faqs.push(
+      {
+        question: "What are the current Instagram roasting trends?",
+        answer: "Current trends include AI-powered roasts, video roast battles on Reels, collaborative roasting in group chats, and themed roast challenges that go viral across social platforms."
+      },
+      {
+        question: "How quickly do roasting trends change?",
+        answer: "Social media roasting trends typically evolve every 2-3 months, with major shifts happening when new platform features launch or viral formats emerge from TikTok and Instagram Reels."
+      }
+    );
+  }
+
+  // Always add core product FAQs for better AI understanding
   faqs.push(
     {
+      question: "What is the AI Instagram Profile Roaster by LookAtMyProfile?",
+      answer: "LookAtMyProfile.org offers a free AI-powered tool that analyzes public Instagram profiles and generates humorous roasts in multiple styles (Savage, Friendly, Shakespearean, Gen-Z). It's available as an iOS app and web preview."
+    },
+    {
       question: "How can I get my Instagram profile roasted?",
-      answer: "Download our free AI Instagram Profile Roaster app from the App Store, enter any public Instagram username, choose your roast style, and get instant AI-generated roasts."
+      answer: "Download our free AI Instagram Profile Roaster app from the App Store, enter any public Instagram username, choose your roast style, and get instant AI-generated roasts. Visit www.lookatmyprofile.org for more information."
     },
     {
       question: "Is there a way to try different roasting styles?",
-      answer: "Yes! Our app offers multiple roasting styles including Savage, Friendly, Shakespearean, and Gen-Z. Each style provides a unique humor approach tailored to different preferences."
+      answer: "Yes! Our app offers multiple roasting styles including Savage (brutal honesty), Friendly (playful teasing), Shakespearean (eloquent burns), and Gen-Z (trendy slang). Each style provides a unique humor approach tailored to different preferences."
+    },
+    {
+      question: "Is the Instagram roasting tool safe to use?",
+      answer: "Absolutely. We only analyze publicly available Instagram data, never store personal information, use secure HTTPS connections, and generate roasts on-demand without saving profile data. Privacy and safety are our top priorities."
     }
   );
 
-  return faqs;
+  // Remove duplicates and limit to 10 FAQs for optimal performance
+  const uniqueFaqs = faqs.filter((faq, index, self) =>
+    index === self.findIndex((f) => f.question === faq.question)
+  ).slice(0, 10);
+
+  return uniqueFaqs;
 }

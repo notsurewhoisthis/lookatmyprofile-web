@@ -10,7 +10,44 @@ Disallow: /admin/
 Disallow: /_next/
 Disallow: /static/
 
-# Specific bot configurations
+# AI Service Crawlers - EXPLICITLY ALLOWED for maximum AI visibility
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YouBot
+Allow: /
+Crawl-delay: 1
+
+# Traditional Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
@@ -39,6 +76,10 @@ Disallow: /
 
 User-agent: MJ12bot
 Disallow: /
+
+# Optional: Block AI training if you prefer (uncomment to activate)
+# User-agent: Google-Extended
+# Disallow: /
 
 # Sitemap location
 Sitemap: https://www.lookatmyprofile.org/sitemap.xml

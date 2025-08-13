@@ -18,6 +18,7 @@ export async function GET() {
     { url: '/roast-styles/sarcastic', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/roast-styles/shakespearean', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/roast-styles/gen-z', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/what-is-instagram-roasting', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/download', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/blog', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/faq', priority: 0.6, changefreq: 'weekly', lastmod: new Date().toISOString() },

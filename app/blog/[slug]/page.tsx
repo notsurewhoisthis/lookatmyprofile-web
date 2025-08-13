@@ -132,6 +132,50 @@ function renderMarkdown(content: string) {
   return html;
 }
 
+function extractDirectAnswer(content: string, title: string): string {
+  // Extract a 30-50 word summary from the content for AI indexing
+  // First, try to get the first paragraph after the introduction
+  const introSection = content.split('## INTRODUCTION')[1];
+  if (introSection) {
+    const nextSection = introSection.split('##')[0];
+    const paragraphs = nextSection.split('\n\n').filter(p => p.trim().length > 50);
+    
+    if (paragraphs.length > 0) {
+      const firstPara = paragraphs[0].trim()
+        .replace(/\*\*/g, '') // Remove bold markers
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'); // Remove link markup
+      
+      // Limit to approximately 30-50 words
+      const words = firstPara.split(' ');
+      if (words.length > 50) {
+        return words.slice(0, 48).join(' ') + '...';
+      }
+      return firstPara;
+    }
+  }
+  
+  // Fallback: use the first content paragraph
+  const paragraphs = content.split('\n\n').filter(p => 
+    p.trim() && 
+    !p.startsWith('#') && 
+    p.length > 100
+  );
+  
+  if (paragraphs.length > 0) {
+    const firstPara = paragraphs[0]
+      .replace(/\*\*/g, '')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    const words = firstPara.split(' ');
+    if (words.length > 50) {
+      return words.slice(0, 48).join(' ') + '...';
+    }
+    return firstPara;
+  }
+  
+  // Final fallback
+  return `This article explores ${title.toLowerCase()} with comprehensive insights and practical guidance for Instagram users and social media enthusiasts.`;
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getBlogPost(slug);
@@ -217,6 +261,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
               )}
             </header>
+
+            {/* Direct Answer Box for AI Indexing */}
+            <div className="bg-gray-800 border-l-4 border-purple-500 p-6 mb-8 rounded-lg">
+              <p className="text-lg font-medium">
+                <strong>Quick Answer:</strong> {extractDirectAnswer(post.content, post.title)}
+              </p>
+            </div>
 
             <div 
               className="prose prose-invert prose-lg max-w-none"
