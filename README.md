@@ -841,7 +841,301 @@ gtag('event', 'generate_roast', {
 
 ---
 
-
+the n8n workflow is below (this is used for auto creating content, then pushing to github then to my website){
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2e8af591-eb66-4f67-9287-9ec1414184bc",
+              "name": "topic",
+              "value": "={{ $json.choices[0].message.content.match(/\"topic\":\\s*\"([^\"]+)\"/)?.[1] ||    $json.choices[0].message.content.match(/topic['\"]?:\\s*['\"]([^'\"]+)/)?.[1] || 'Technology Trends' }}",
+              "type": "string"
+            },
+            {
+              "id": "0f49374b-36f3-476d-a77d-8b4944e73e6f",
+              "name": "category",
+              "value": "={{ $json.choices[0].message.content.match(/\"category\":\\s*\"([^\"]+)\"/)?.[1] || 'Technology' }}",
+              "type": "string"
+            },
+            {
+              "id": "8d7490b1-c8f6-4c20-b399-94c717cf94c6",
+              "name": "keywords",
+              "value": "={{ JSON.parse($json.choices[0].message.content.match(/\"keywords\":\\s*(\\[[^\\]]+\\])/)?.[1] || '[\"technology\", \"innovation\",    \"trends\"]') }}",
+              "type": "array"
+            },
+            {
+              "id": "109e4f8a-58b7-46ba-8887-71d27e4a1626",
+              "name": "angle",
+              "value": "={{ $json.choices[0].message.content.match(/\"angle\":\\s*\"([^\"]+)\"/)?.[1] || 'comprehensive guide' }}",
+              "type": "string"
+            },
+            {
+              "id": "0f126326-932f-4b64-9353-a21610147697",
+              "name": "searchQuery",
+              "value": "={{ $json.topic + ' ' + new Date().getFullYear() + ' latest developments statistics data' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "d7e33ba6-b4a9-4687-9cd4-aa4adf8e6127",
+      "name": "Set Topic Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1248,
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "model": "sonar-reasoning-pro",
+        "messages": {
+          "message": [
+            {
+              "content": "=You are an expert researcher. Provide comprehensive, current insights with real data and sources.",
+              "role": "system"
+            },
+            {
+              "content": "=Research: {{ $json.topic }}\n  Category: {{ $json.category }}\n  Angle: {{ $json.angle }}\n\n  Provide comprehensive research including:\n  1. Latest statistics and data (with dates and sources)\n  2. Key players and companies involved\n  3. Recent developments (last 30 days)\n  4. Expert opinions and quotes\n  5. Practical applications\n  6. Challenges and opportunities\n  7. Future predictions\n  8. Related topics for context\n\n  Focus on {{ $json.searchQuery }}\n\n  Be specific with numbers, dates, and sources. Avoid generic statements."
+            }
+          ]
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "id": "8e71fb1d-6c20-41cd-9017-c07971035021",
+      "name": "Deep Research",
+      "type": "n8n-nodes-base.perplexity",
+      "typeVersion": 1,
+      "position": [
+        -1024,
+        -240
+      ],
+      "credentials": {
+        "perplexityApi": {
+          "id": "laUFrgZKgBvRxRPL",
+          "name": "Perplexity account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get content and metadata\n  const aiResponse = $('AI Content Generation using GPT5-mini').item.json;\n  const aiContent = aiResponse.message?.content || aiResponse.choices?.[0]?.message?.content || '';\n  const topic = $('Set Topic Data').item.json.topic;\n  const category = $('Set Topic Data').item.json.category;\n  const keywords = $('Set Topic Data').item.json.keywords || [];\n\n  // Validate content\n  const wordCount = aiContent.split(/\\s+/).filter(word => word.length > 0).length;\n  if (wordCount < 1800) {\n    throw new Error(`Content too short: ${wordCount} words. Minimum 1800 required.`);\n  }\n\n  // Generate slug from topic\n  const slug = topic\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, '-')\n    .replace(/^-+|-+$/g, '')\n    .substring(0, 60) + '-' + Date.now();\n\n  // Extract title\n  const titleMatch = aiContent.match(/^#\\s+(.+)$/m);\n  const title = titleMatch ? titleMatch[1].replace(/[*_`]/g, '') : topic;\n\n  // Get first paragraph for description\n  const firstParagraph = aiContent\n    .split('\\n\\n')\n    .find(p => p.trim() && !p.startsWith('#'));\n  const description = firstParagraph ?\n    firstParagraph.substring(0, 160).replace(/[*_`#]/g, '') :\n    `Comprehensive guide on ${topic}`;\n\n  // Create JSON file content with CORRECT STRUCTURE\n  const blogData = {\n    slug: slug,\n    title: title,\n    description: description,\n    content: aiContent,\n    category: category,\n    keywords: keywords,\n    tags: keywords.slice(0, 5), // Added for SEO\n    publishedAt: new Date().toISOString(),\n    updatedAt: new Date().toISOString(), // Added for structured data\n    author: {  // CHANGED: Now an object instead of string\n      name: \"AI Content Team\",\n      bio: \"Expert content creators powered by AI and data-driven insights\"\n    },\n    metrics: {\n      readingTime: Math.ceil(wordCount / 225),\n      wordCount: wordCount\n    }\n  };\n\n  const jsonContent = JSON.stringify(blogData, null, 2);\n\n  return {\n    jsonContent: jsonContent,\n    filePath: `public/blog-data/${slug}.json`,\n    commitMessage: `Add blog post: ${title}`,\n    slug: slug,\n    wordCount: wordCount\n  };\n"
+      },
+      "id": "a5026713-dc92-4b19-be19-d8e5692debf8",
+      "name": "Format Blog JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -576,
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "https://github.com/notsurewhoisthis",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "lookatmyprofile-web",
+          "mode": "list",
+          "cachedResultName": "lookatmyprofile-web",
+          "cachedResultUrl": "https://github.com/notsurewhoisthis/lookatmyprofile-web"
+        },
+        "filePath": "={{ $json.filePath }}",
+        "fileContent": "={{ $json.jsonContent }}",
+        "commitMessage": "={{$json.commitMessage}}"
+      },
+      "id": "ebbd9288-b456-49f9-b163-a818b41716fb",
+      "name": "Create File in GitHub",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        -240
+      ],
+      "webhookId": "855955ed-09cc-461f-8dfa-394ada1b1428",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "u9s52BOxtzB1s04t",
+          "name": "GitHub account 5"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "id": "b80c64d1-7801-4c5c-b3d4-f9d07b264a4e",
+      "name": "Every 24 hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        -1696,
+        -240
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "model": "sonar-reasoning-pro",
+        "messages": {
+          "message": [
+            {
+              "content": " You are a trend analyst finding diverse, fresh topics across different industries focusing on social media and Gen Z. Avoid repetitive topics by exploring new angles each time.",
+              "role": "system"
+            },
+            {
+              "content": "=Find 5 trending topics from DIFFERENT categories. Pick ONE random topic from these areas:\n  {{ [\"GenZ on Technology & AI\", \"Social Media and mental health\", \"New social media platforms\", \"Gen Z Entertainment & Gaming\", \"Gen Z Education & Career\", \"Gen Z language\", \"Social media Fashion & Beauty\"][Math.floor(Math.random() * 10)] }}\n\nFor the selected category, find:\n  1. The hottest trending topic (last 7 days)\n  2. Key statistics and data points\n  3. Why it matters now\n  4. Target audience insights\n  5. Content angle suggestions\n\n  Return as JSON:\n  {\n    \"topic\": \"specific topic title\",\n    \"category\": \"category name\",\n    \"keywords\": [\"keyword1\", \"keyword2\", \"keyword3\"],\n    \"stats\": [\"stat1\", \"stat2\"],\n    \"angle\": \"unique perspective\",\n    \"audience\": \"target demographic\"\n  }\n"
+            }
+          ]
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "id": "02a9c9bf-879a-4c2e-b94b-be9309e9d783",
+      "name": "Find trending topics using Perplexity Sonar ",
+      "type": "n8n-nodes-base.perplexity",
+      "position": [
+        -1472,
+        -240
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "perplexityApi": {
+          "id": "laUFrgZKgBvRxRPL",
+          "name": "Perplexity account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "chatModel": "gpt-5-mini",
+        "prompt": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are an expert SEO content writer. Your task is to write COMPLETE, COMPREHENSIVE blog posts of EXACTLY 2000-2500 words. DO NOT truncate content. DO NOT use placeholders. Write EVERY section in FULL DETAIL. You MUST complete the entire article."
+            },
+            {
+              "content": "= Topic: {{ $('Set Topic Data').item.json.topic }}\n  Category: {{ $('Set Topic Data').item.json.category }}\n  Angle: {{ $('Set Topic Data').item.json.angle }}\n  Keywords: {{ $('Set Topic Data').item.json.keywords.join(', ') }}\n\n  Research: {{ $('Deep Research').item.json.choices[0].message.content }}\n\n  Write a COMPLETE 2000-2500 word blog post about \"{{ $('Set Topic Data').item.json.topic }}\"\n\n  REQUIREMENTS:\n  1. Use the specific angle: {{ $('Set Topic Data').item.json.angle }}\n  2. Target the {{ $('Set Topic Data').item.json.category }} audience\n  3. Include ALL research data provided\n  4. Write in an engaging, conversational tone\n  5. Use markdown formatting\n  6. Include actionable takeaways\n\n  STRUCTURE:\n  # [Compelling Title]\n  ## Introduction (250+ words)\n  ## Understanding [Main Topic] (400+ words)\n  ## Key Components and Analysis (400+ words)\n  ## Practical Applications (400+ words)\n  ## Challenges and Solutions (400+ words)\n  ## Future Outlook (400+ words)\n  ## Conclusion (250+ words)\n\n  Write the FULL article now. Do not use placeholders."
+            }
+          ]
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "id": "c849f44c-12bd-47da-a9a0-b8197c9100f5",
+      "name": "AI Content Generation using GPT5-mini",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1.1,
+      "position": [
+        -800,
+        -240
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "69b7Hhxzgwc719cO",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Set Topic Data": {
+      "main": [
+        [
+          {
+            "node": "Deep Research",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deep Research": {
+      "main": [
+        [
+          {
+            "node": "AI Content Generation using GPT5-mini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Blog JSON": {
+      "main": [
+        [
+          {
+            "node": "Create File in GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create File in GitHub": {
+      "main": [
+        []
+      ]
+    },
+    "Every 24 hours": {
+      "main": [
+        [
+          {
+            "node": "Find trending topics using Perplexity Sonar ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find trending topics using Perplexity Sonar ": {
+      "main": [
+        [
+          {
+            "node": "Set Topic Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Content Generation using GPT5-mini": {
+      "main": [
+        [
+          {
+            "node": "Format Blog JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "316024c4bebe6926144c34ab9e32f2d819dcb63f95a5e2063a7c22b8ca3a4742"
+  }
+}
 ---
 
 *Document prepared by: Claude Assistant*  
