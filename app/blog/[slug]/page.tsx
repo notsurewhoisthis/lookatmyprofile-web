@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import { FAQSchema, generateBlogFAQs } from '@/components/SEO/FAQSchema';
+import { RelatedPosts } from '@/components/RelatedPosts';
 
 interface BlogPost {
   slug: string;
@@ -167,12 +169,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     wordCount: post.metrics?.wordCount
   };
 
+  // Generate FAQs for this blog post
+  const blogFAQs = generateBlogFAQs(post.title, post.excerpt || post.description, post.tags);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <FAQSchema faqs={blogFAQs} pageTitle={post.title} />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <Link 
@@ -227,6 +233,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
             </footer>
+            
+            {/* Related Posts Section */}
+            <RelatedPosts 
+              currentSlug={slug} 
+              tags={post.tags} 
+              category={post.tags?.[0]} 
+              maxPosts={4} 
+            />
           </article>
         </div>
       </div>

@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
 
 export default function Home() {
   return (
+    <>
+      <FAQSchema faqs={commonFAQs.homepage} pageTitle="Home" />
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
@@ -124,5 +127,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   );
 }

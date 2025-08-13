@@ -2,6 +2,7 @@ import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 import { Metadata } from 'next';
+import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
 
 export const metadata: Metadata = {
   title: 'Blog - Instagram Roasting Tips, Social Media Trends & Gen Z Humor',
@@ -118,6 +119,7 @@ export default async function BlogPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <FAQSchema faqs={commonFAQs.blog} pageTitle="Blog" />
       
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
