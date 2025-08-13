@@ -1,6 +1,6 @@
 import Script from 'next/script'
 
-const GA_MEASUREMENT_ID = 'G-HFT4QFG41D' // GA4 Measurement ID
+const GA_MEASUREMENT_ID = 'G-FMHXYGPTF1' // GA4 Measurement ID
 
 export function GoogleAnalytics() {
   return (
