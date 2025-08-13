@@ -7,23 +7,23 @@ export async function GET() {
   // Static pages with priorities
   const staticPages: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [
     { url: '', priority: 1.0, changefreq: 'daily', lastmod: new Date().toISOString() },
-    { url: '/roast-generator', priority: 0.9, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/instagram-roaster', priority: 0.9, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/ai-profile-analyzer', priority: 0.9, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/roast-examples', priority: 0.8, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/roast-styles', priority: 0.8, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/savage', priority: 0.7, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/friendly', priority: 0.7, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/witty', priority: 0.7, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/sarcastic', priority: 0.7, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/shakespearean', priority: 0.7, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/gen-z', priority: 0.7, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/download', priority: 0.9, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/blog', priority: 0.8, changefreq: '$1', lastmod: new Date().toISOString() },
-    { url: '/faq', priority: 0.6, changefreq: '$1', lastmod: new Date().toISOString() },
+    { url: '/roast-generator', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/instagram-roaster', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/ai-profile-analyzer', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-examples', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/savage', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/friendly', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/witty', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/sarcastic', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/shakespearean', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/gen-z', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/download', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/blog', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/faq', priority: 0.6, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/privacy', priority: 0.5, changefreq: 'yearly' },
     { url: '/terms', priority: 0.5, changefreq: 'yearly' },
-    { url: '/support', priority: 0.6, changefreq: '$1', lastmod: new Date().toISOString() },
+    { url: '/support', priority: 0.6, changefreq: 'weekly', lastmod: new Date().toISOString() },
   ];
 
   // Dynamically get blog posts from JSON files
@@ -45,7 +45,7 @@ export async function GET() {
             url: `/blog/${slug}`,
             priority: 0.7,
             changefreq: 'monthly',
-            lastmod: blogData.publishedDate || new Date().toISOString()
+            lastmod: blogData.updatedAt || blogData.publishedAt || new Date().toISOString()
           });
         } catch (error) {
           console.error(`Error parsing blog file ${file}:`, error);
