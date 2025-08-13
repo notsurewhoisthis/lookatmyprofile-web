@@ -1,8 +1,15 @@
 import Script from 'next/script'
 
-const GA_MEASUREMENT_ID = 'G-FMHXYGPTF1' // GA4 Measurement ID
+// GA4 Measurement ID from environment variable with fallback
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-FMHXYGPTF1'
 
 export function GoogleAnalytics() {
+  // Skip GA initialization if no ID is configured
+  if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+    console.warn('Google Analytics: No valid measurement ID configured')
+    return null
+  }
+
   return (
     <>
       <Script
