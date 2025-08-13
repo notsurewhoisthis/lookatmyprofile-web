@@ -61,21 +61,41 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Resource Hints for Performance */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://api.openai.com" />
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+        
+        {/* Prefetch likely navigations */}
+        <link rel="prefetch" href="/roast-generator" />
+        <link rel="prefetch" href="/download" />
+        <link rel="prefetch" href="/instagram-roaster" />
+        
+        {/* PWA and Mobile */}
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="apple-touch-icon" href="/icon-192x192.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        
+        {/* Additional SEO Meta */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Analytics - Lazy loaded for performance */}
         <GoogleAnalytics />
         <WebVitalsTracking />
+        
+        {/* Global Structured Data */}
         <OrganizationSchema />
+        
+        {/* Main Content */}
         {children}
       </body>
     </html>

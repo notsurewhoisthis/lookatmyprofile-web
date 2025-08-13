@@ -1,21 +1,56 @@
 export async function GET() {
-  return new Response(
-    `User-agent: *
+  const robotsTxt = `# Robots.txt for Roast a Profile
+# https://www.lookatmyprofile.org
+
+# Allow all crawlers
+User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /static/
 
-# Sitemap
-Sitemap: https://www.lookatmyprofile.org/sitemap.xml
+# Specific bot configurations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
 
-# Crawl-delay
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1
 
-# Disallow specific paths if needed
-# Disallow: /api/
-`,
-    {
-      headers: {
-        'Content-Type': 'text/plain',
-      },
-    }
-  );
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.lookatmyprofile.org/sitemap.xml
+
+# Cache control
+# Cache for 24 hours
+`;
+
+  return new Response(robotsTxt, {
+    headers: {
+      'Content-Type': 'text/plain',
+      'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+    },
+  });
 }

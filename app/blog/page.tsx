@@ -1,24 +1,41 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog | LookAtMyProfile | Roast a Profile - AI Instagram Roaster',
-  description: 'Insights on Instagram culture, social media trends, and digital humor',
+  title: 'Blog - Instagram Roasting Tips, Social Media Trends & Gen Z Humor',
+  description: 'Expert insights on Instagram roasting, AI profile analysis, social media psychology, and Gen Z humor. Learn the art of the perfect roast with data-driven guides.',
+  keywords: 'Instagram roasting blog, social media trends, Gen Z humor, AI profile analysis, Instagram psychology, roasting tips, social media marketing',
+  alternates: {
+    canonical: 'https://www.lookatmyprofile.org/blog'
+  },
+  openGraph: {
+    title: 'Blog - Instagram Roasting & Social Media Insights',
+    description: 'Expert guides on Instagram roasting, profile analysis, and social media trends',
+    type: 'website',
+    url: 'https://www.lookatmyprofile.org/blog',
+    siteName: 'LookAtMyProfile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - Instagram Roasting & Social Media Insights',
+    description: 'Expert guides on Instagram roasting, profile analysis, and social media trends',
+  }
 };
 
 interface BlogPost {
   slug: string;
   title: string;
   description: string;
-  excerpt: string;
+  excerpt?: string;
   publishedAt: string;
   author: {
     name: string;
   };
-  tags: string[];
-  metrics: {
+  tags?: string[];
+  keywords?: string[];
+  metrics?: {
     readingTime: number;
   };
 }
@@ -34,7 +51,14 @@ async function getBlogPosts(): Promise<BlogPost[]> {
         try {
           const filePath = path.join(blogDataDir, file);
           const fileContent = fs.readFileSync(filePath, 'utf-8');
-          return JSON.parse(fileContent);
+          const post = JSON.parse(fileContent);
+          
+          // Ensure slug exists (use filename if not in JSON)
+          if (!post.slug) {
+            post.slug = file.replace('.json', '');
+          }
+          
+          return post;
         } catch (error) {
           console.error(`Error reading ${file}:`, error);
           return null;
@@ -59,72 +83,42 @@ function formatDate(dateString: string) {
   });
 }
 
-// Static blog posts (original ones that don't have JSON files)
-const staticPosts = [
-  {
-    slug: 'psychology-of-instagram-roasting',
-    title: 'The Psychology Behind Instagram Roasting',
-    excerpt: 'Why we love to roast and be roasted in the digital age',
-    publishedAt: '2024-03-15',
-    author: { name: 'Roast Team' },
-    metrics: { readingTime: 5 },
-    tags: ['Psychology', 'Social Media', 'Humor']
-  },
-  {
-    slug: 'gen-z-humor-explained',
-    title: 'Gen Z Humor: A Scientific Analysis',
-    excerpt: "Breaking down why your jokes don't land with younger audiences",
-    publishedAt: '2024-03-10',
-    author: { name: 'Roast Team' },
-    metrics: { readingTime: 7 },
-    tags: ['Humor', 'Gen Z', 'Culture']
-  },
-  {
-    slug: 'instagram-personality-types',
-    title: '7 Types of Instagram Personalities',
-    excerpt: 'Which one are you? A comprehensive breakdown',
-    publishedAt: '2024-03-05',
-    author: { name: 'Roast Team' },
-    metrics: { readingTime: 6 },
-    tags: ['Instagram', 'Personality', 'Social Media']
-  },
-  {
-    slug: 'roasting-etiquette-101',
-    title: 'Roasting Etiquette 101: How to Be Funny Without Being Mean',
-    excerpt: 'The fine line between humor and harassment',
-    publishedAt: '2024-02-28',
-    author: { name: 'Roast Team' },
-    metrics: { readingTime: 4 },
-    tags: ['Etiquette', 'Humor', 'Social Media']
-  },
-  {
-    slug: 'ai-humor-evolution',
-    title: 'How AI is Changing Online Humor',
-    excerpt: 'From meme generators to roast bots: The future of digital comedy',
-    publishedAt: '2024-02-20',
-    author: { name: 'Roast Team' },
-    metrics: { readingTime: 8 },
-    tags: ['AI', 'Technology', 'Humor']
-  },
-  {
-    slug: 'ultimate-guide-roast-battles',
-    title: 'The Ultimate Guide to Online Roast Battles',
-    excerpt: 'Win every verbal sparring match with these proven strategies',
-    publishedAt: '2024-02-15',
-    author: { name: 'Roast Team' },
-    metrics: { readingTime: 10 },
-    tags: ['Guide', 'Roasting', 'Strategy']
-  }
-];
-
 export default async function BlogPage() {
-  const dynamicPosts = await getBlogPosts();
+  const allPosts = await getBlogPosts();
+  const totalPosts = allPosts.length;
   
-  // Separate recent (from JSON) and classic posts
-  const recentPosts = dynamicPosts.slice(0, 10); // Show up to 10 recent posts
+  // Generate structured data for blog listing
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'LookAtMyProfile Blog',
+    description: 'Expert insights on Instagram roasting, social media trends, and Gen Z humor',
+    url: 'https://www.lookatmyprofile.org/blog',
+    publisher: {
+      '@type': 'Organization',
+      name: 'LookAtMyProfile',
+      url: 'https://www.lookatmyprofile.org'
+    },
+    blogPost: allPosts.slice(0, 10).map(post => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.description || post.excerpt,
+      datePublished: post.publishedAt,
+      author: {
+        '@type': 'Person',
+        name: post.author.name
+      },
+      url: `https://www.lookatmyprofile.org/blog/${post.slug}`
+    }))
+  };
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <Link 
@@ -133,39 +127,68 @@ export default async function BlogPage() {
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-            Blog
-          </h1>
-          <p className="text-xl text-gray-300 mb-12">
-            Insights on Instagram culture, social media trends, and digital humor
-          </p>
+          
+          <header className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+              Blog
+            </h1>
+            <p className="text-xl text-gray-300 mb-6">
+              Insights on Instagram culture, social media trends, and digital humor
+            </p>
+            
+            {/* Post count and categories */}
+            <div className="flex flex-wrap gap-4 p-4 bg-gray-800/50 rounded-lg">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">📚</span>
+                <span className="text-gray-300">
+                  <span className="text-purple-400 font-bold">{totalPosts}</span> articles
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">🎯</span>
+                <span className="text-gray-300">Topics: Instagram, TikTok, Gen Z, AI, Social Media</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">🔥</span>
+                <span className="text-gray-300">Updated daily with trending insights</span>
+              </div>
+            </div>
+          </header>
 
-          {/* Recent Posts from JSON files */}
-          {recentPosts.length > 0 && (
-            <div className="space-y-8 mb-16">
-              <h2 className="text-2xl font-bold text-gray-100 mb-6">Latest Posts</h2>
-              {recentPosts.map((post) => (
-                <article key={post.slug} className="border-b border-gray-800 pb-8">
-                  <Link href={`/blog/${post.slug}`} className="group">
-                    <h3 className="text-2xl font-bold mb-3 text-gray-100 group-hover:text-purple-400 transition-colors">
+          {/* All Blog Posts */}
+          {allPosts.length > 0 ? (
+            <div className="space-y-8">
+              {allPosts.map((post) => (
+                <article 
+                  key={post.slug} 
+                  className="border-b border-gray-800 pb-8 hover:border-purple-800/50 transition-colors"
+                >
+                  <Link href={`/blog/${post.slug}`} className="group block">
+                    <h2 className="text-2xl font-bold mb-3 text-gray-100 group-hover:text-purple-400 transition-colors">
                       {post.title}
-                    </h3>
-                    <p className="text-gray-400 mb-4">
-                      {post.excerpt || post.description}
+                    </h2>
+                    <p className="text-gray-400 mb-4 line-clamp-2">
+                      {post.description || post.excerpt || 'Click to read more...'}
                     </p>
                     <div className="flex items-center gap-4 text-sm text-gray-500">
                       <time dateTime={post.publishedAt}>
                         {formatDate(post.publishedAt)}
                       </time>
+                      <span>•</span>
                       <span>By {post.author.name}</span>
-                      <span>{post.metrics.readingTime} min read</span>
+                      {post.metrics?.readingTime && (
+                        <>
+                          <span>•</span>
+                          <span>{post.metrics.readingTime} min read</span>
+                        </>
+                      )}
                     </div>
-                    {post.tags && post.tags.length > 0 && (
+                    {(post.tags || post.keywords) && (
                       <div className="flex flex-wrap gap-2 mt-4">
-                        {post.tags.map((tag) => (
+                        {(post.tags || post.keywords || []).slice(0, 5).map((tag) => (
                           <span 
                             key={tag}
-                            className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
+                            className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs hover:bg-purple-800/30 transition-colors"
                           >
                             {tag}
                           </span>
@@ -176,38 +199,30 @@ export default async function BlogPage() {
                 </article>
               ))}
             </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-400 text-lg">No blog posts available yet.</p>
+              <p className="text-gray-500 mt-2">Check back soon for fresh content!</p>
+            </div>
           )}
 
-          {/* Classic Posts */}
-          <div className="space-y-8">
-            <h2 className="text-2xl font-bold text-gray-100 mb-6">Classic Posts</h2>
-            {staticPosts.map((post) => (
-              <article key={post.slug} className="border-b border-gray-800 pb-8">
-                <Link href={`/blog/${post.slug}`} className="group">
-                  <h3 className="text-2xl font-bold mb-3 text-gray-100 group-hover:text-purple-400 transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4">{post.excerpt}</p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <time dateTime={post.publishedAt}>
-                      {formatDate(post.publishedAt)}
-                    </time>
-                    <span>{post.metrics.readingTime} min read</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {post.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                        className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </Link>
-              </article>
-            ))}
-          </div>
+          {/* SEO Footer */}
+          <footer className="mt-16 pt-8 border-t border-gray-800">
+            <div className="text-center">
+              <h3 className="text-xl font-bold mb-4 text-gray-100">
+                Stay Updated on Instagram Trends
+              </h3>
+              <p className="text-gray-400 mb-6">
+                New articles on social media psychology, roasting techniques, and Gen Z culture posted regularly.
+              </p>
+              <Link 
+                href="/download"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-colors"
+              >
+                Get the Roast App →
+              </Link>
+            </div>
+          </footer>
         </div>
       </div>
     </div>
