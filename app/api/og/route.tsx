@@ -8,6 +8,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const title = searchParams.get('title') || 'Roast a Profile';
     
+    // Return proper image response with headers
     return new ImageResponse(
       (
         <div
@@ -128,6 +129,10 @@ export async function GET(request: NextRequest) {
       {
         width: 1200,
         height: 630,
+        headers: {
+          'Content-Type': 'image/png',
+          'Cache-Control': 'public, immutable, no-transform, max-age=31536000',
+        },
       }
     );
   } catch (e: any) {
