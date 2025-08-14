@@ -4,27 +4,47 @@ import path from 'path';
 export async function GET() {
   const baseUrl = 'https://www.lookatmyprofile.org';
   
-  // Static pages with priorities
+  // Static pages with priorities - Complete list of all pages
   const staticPages: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [
+    // Core pages
     { url: '', priority: 1.0, changefreq: 'daily', lastmod: new Date().toISOString() },
-    { url: '/roast-generator', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-generator', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-generator-seo', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/instagram-roaster', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/ai-profile-analyzer', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-examples', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-styles', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/savage', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/friendly', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/witty', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/sarcastic', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/shakespearean', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-styles/gen-z', priority: 0.7, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-examples', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/what-is-instagram-roasting', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    
+    // Roast styles pages
+    { url: '/roast-styles', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/savage', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/friendly', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/shakespearean', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-styles/gen-z', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    
+    // High-volume keyword pages (SEO priority)
+    { url: '/ai-roast-generator', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/instagram-profile-analyzer', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/ultimate-guide-instagram-roasting', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    
+    // Long-tail keyword pages
+    { url: '/free-instagram-roast-generator-no-signup', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/gen-z-roast-generator-online', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/savage-instagram-roasts-examples', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/how-to-roast-someone-on-instagram', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/funny-things-to-comment-on-instagram', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    
+    // Competitor comparison pages
+    { url: '/vs-cleve-ai', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/vs-olly-social', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    
+    // Utility pages
     { url: '/download', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/blog', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/faq', priority: 0.6, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/blog', priority: 0.85, changefreq: 'daily', lastmod: new Date().toISOString() },
+    { url: '/faq', priority: 0.7, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    { url: '/support', priority: 0.7, changefreq: 'monthly', lastmod: new Date().toISOString() },
     { url: '/privacy', priority: 0.5, changefreq: 'yearly' },
     { url: '/terms', priority: 0.5, changefreq: 'yearly' },
-    { url: '/support', priority: 0.6, changefreq: 'weekly', lastmod: new Date().toISOString() },
   ];
 
   // Dynamically get blog posts from JSON files

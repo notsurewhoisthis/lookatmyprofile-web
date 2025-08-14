@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
+import { FooterLinks } from '@/components/SEO/InternalLinks';
 
 export default function Home() {
   return (
@@ -61,42 +62,89 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Quick Navigation Links */}
+      <section className="container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link href="/ai-roast-generator" className="px-4 py-2 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition text-sm text-purple-300">AI Roast Generator</Link>
+            <Link href="/instagram-profile-analyzer" className="px-4 py-2 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition text-sm text-purple-300">Profile Analyzer</Link>
+            <Link href="/free-instagram-roast-generator-no-signup" className="px-4 py-2 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition text-sm text-purple-300">Free Generator</Link>
+            <Link href="/what-is-instagram-roasting" className="px-4 py-2 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition text-sm text-purple-300">What is Roasting?</Link>
+            <Link href="/ultimate-guide-instagram-roasting" className="px-4 py-2 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition text-sm text-purple-300">Ultimate Guide</Link>
+            <Link href="/how-to-roast-someone-on-instagram" className="px-4 py-2 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition text-sm text-purple-300">How to Roast</Link>
+            <Link href="/roast-examples" className="px-4 py-2 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition text-sm text-purple-300">Examples</Link>
+            <Link href="/blog" className="px-4 py-2 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition text-sm text-purple-300">Blog</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Roast Styles Preview */}
       <section className="container mx-auto px-4 py-20">
         <h2 className="text-4xl font-bold text-center mb-12">Choose Your Roast Style</h2>
         <div className="grid md:grid-cols-4 gap-6">
-          <Link href="/roast-styles/savage" className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition">
-            <h3 className="text-xl font-bold mb-2 text-red-400">🔥 Savage Mode</h3>
+          <Link href="/roast-styles/savage" className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition group">
+            <h3 className="text-xl font-bold mb-2 text-red-400 group-hover:scale-105 transition">🔥 Savage Mode</h3>
             <p className="text-gray-400">Brutal burns that leave marks</p>
+            <p className="text-xs text-purple-400 mt-2">Try now →</p>
           </Link>
-          <Link href="/roast-styles/friendly" className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition">
-            <h3 className="text-xl font-bold mb-2 text-green-400">😊 Friendly Fire</h3>
+          <Link href="/roast-styles/friendly" className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition group">
+            <h3 className="text-xl font-bold mb-2 text-green-400 group-hover:scale-105 transition">😊 Friendly Fire</h3>
             <p className="text-gray-400">Playful jokes for friends</p>
+            <p className="text-xs text-purple-400 mt-2">Try now →</p>
           </Link>
-          <Link href="/roast-styles/shakespearean" className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition">
-            <h3 className="text-xl font-bold mb-2 text-purple-400">🎭 Shakespearean</h3>
+          <Link href="/roast-styles/shakespearean" className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition group">
+            <h3 className="text-xl font-bold mb-2 text-purple-400 group-hover:scale-105 transition">🎭 Shakespearean</h3>
             <p className="text-gray-400">Eloquent burns in old English</p>
+            <p className="text-xs text-purple-400 mt-2">Try now →</p>
           </Link>
-          <Link href="/roast-styles/gen-z" className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition">
-            <h3 className="text-xl font-bold mb-2 text-pink-400">💯 Gen Z</h3>
+          <Link href="/roast-styles/gen-z" className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition group">
+            <h3 className="text-xl font-bold mb-2 text-pink-400 group-hover:scale-105 transition">💯 Gen Z</h3>
             <p className="text-gray-400">No cap, straight bussin' roasts</p>
+            <p className="text-xs text-purple-400 mt-2">Try now →</p>
+          </Link>
+        </div>
+        <div className="text-center mt-8">
+          <Link href="/roast-styles" className="text-purple-400 hover:text-purple-300 transition">
+            View all roast styles →
+          </Link>
+        </div>
+      </section>
+
+      {/* Popular Tools Section */}
+      <section className="container mx-auto px-4 py-20 bg-gray-900/50">
+        <h2 className="text-4xl font-bold text-center mb-12">Popular Roasting Tools</h2>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <Link href="/gen-z-roast-generator-online" className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg hover:from-purple-900/70 hover:to-pink-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">💅 Gen Z Roast Generator</h3>
+            <p className="text-gray-300 text-sm mb-3">Roasts that hit different fr fr no cap</p>
+            <p className="text-purple-400 text-sm">Generate Gen Z roast →</p>
+          </Link>
+          <Link href="/savage-instagram-roasts-examples" className="bg-gradient-to-br from-red-900/50 to-orange-900/50 p-6 rounded-lg hover:from-red-900/70 hover:to-orange-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">🔥 Savage Roast Examples</h3>
+            <p className="text-gray-300 text-sm mb-3">100+ brutal roasts that destroyed people</p>
+            <p className="text-orange-400 text-sm">See examples →</p>
+          </Link>
+          <Link href="/funny-things-to-comment-on-instagram" className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 p-6 rounded-lg hover:from-blue-900/70 hover:to-purple-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">💬 Funny Comment Ideas</h3>
+            <p className="text-gray-300 text-sm mb-3">500+ hilarious things to comment</p>
+            <p className="text-blue-400 text-sm">Get ideas →</p>
           </Link>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="container mx-auto px-4 py-20 bg-gray-900/50">
+      <section className="container mx-auto px-4 py-20">
         <h2 className="text-4xl font-bold text-center mb-12">How It Works</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <div className="text-center">
             <div className="text-5xl mb-4">1️⃣</div>
             <h3 className="text-xl font-bold mb-2">Enter Username</h3>
-            <p className="text-gray-400">Just type in any Instagram username</p>
+            <p className="text-gray-400">Type any public Instagram username</p>
           </div>
           <div className="text-center">
             <div className="text-5xl mb-4">2️⃣</div>
-            <h3 className="text-xl font-bold mb-2">AI Analysis</h3>
-            <p className="text-gray-400">Our AI analyzes posts, captions, and vibes</p>
+            <h3 className="text-xl font-bold mb-2">Choose Style</h3>
+            <p className="text-gray-400">Pick from savage, friendly, or Gen Z</p>
           </div>
           <div className="text-center">
             <div className="text-5xl mb-4">3️⃣</div>
@@ -110,19 +158,85 @@ export default function Home() {
       <section className="container mx-auto px-4 py-20 text-center">
         <h2 className="text-4xl font-bold mb-6">Ready to Get Roasted?</h2>
         <p className="text-xl text-gray-300 mb-8">Join millions getting their daily dose of humor</p>
-        <Link href="/roast-generator" className="bg-gradient-to-r from-purple-600 to-pink-600 px-12 py-5 rounded-full text-xl font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition inline-block">
-          Start Roasting Now →
-        </Link>
+        <div className="flex gap-4 justify-center mb-8">
+          <Link href="/roast-generator" className="bg-gradient-to-r from-purple-600 to-pink-600 px-12 py-5 rounded-full text-xl font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition inline-block">
+            Start Roasting Now →
+          </Link>
+          <Link href="/free-instagram-roast-generator-no-signup" className="border border-purple-400 px-12 py-5 rounded-full text-xl font-semibold hover:bg-purple-400/10 transition inline-block">
+            Try Free Version
+          </Link>
+        </div>
+        <p className="text-sm text-gray-400">
+          Or explore: 
+          <Link href="/vs-cleve-ai" className="text-purple-400 hover:text-purple-300 mx-2">vs Cleve AI</Link> • 
+          <Link href="/vs-olly-social" className="text-purple-400 hover:text-purple-300 mx-2">vs Olly Social</Link> • 
+          <Link href="/what-is-instagram-roasting" className="text-purple-400 hover:text-purple-300 mx-2">Learn More</Link>
+        </p>
       </section>
 
-      {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 border-t border-gray-800">
-        <div className="flex justify-between items-center">
-          <p className="text-gray-400">© 2025 Roast a Profile. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition">Privacy</Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white transition">Terms</Link>
-            <Link href="/faq" className="text-gray-400 hover:text-white transition">FAQ</Link>
+      {/* Quick Links Section */}
+      <section className="container mx-auto px-4 py-16 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Explore Our Roasting Tools</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            <Link href="/ai-roast-generator" className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
+              <h3 className="text-xl font-semibold mb-2 text-purple-400">AI Roast Generator</h3>
+              <p className="text-gray-400 text-sm">Advanced AI-powered roasting with multiple styles</p>
+            </Link>
+            <Link href="/instagram-profile-analyzer" className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
+              <h3 className="text-xl font-semibold mb-2 text-purple-400">Profile Analyzer</h3>
+              <p className="text-gray-400 text-sm">Deep dive into any Instagram profile</p>
+            </Link>
+            <Link href="/free-instagram-roast-generator-no-signup" className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
+              <h3 className="text-xl font-semibold mb-2 text-purple-400">Free Generator</h3>
+              <p className="text-gray-400 text-sm">No signup, no email, just instant roasts</p>
+            </Link>
+            <Link href="/ultimate-guide-instagram-roasting" className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
+              <h3 className="text-xl font-semibold mb-2 text-purple-400">Ultimate Guide</h3>
+              <p className="text-gray-400 text-sm">Everything about Instagram roasting</p>
+            </Link>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-6 mt-6">
+            <Link href="/gen-z-roast-generator-online" className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
+              <h3 className="text-xl font-semibold mb-2 text-pink-400">Gen Z Generator</h3>
+              <p className="text-gray-400 text-sm">Roasts that hit different fr fr</p>
+            </Link>
+            <Link href="/savage-instagram-roasts-examples" className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
+              <h3 className="text-xl font-semibold mb-2 text-pink-400">Savage Examples</h3>
+              <p className="text-gray-400 text-sm">100+ brutal roasts that destroyed</p>
+            </Link>
+            <Link href="/funny-things-to-comment-on-instagram" className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
+              <h3 className="text-xl font-semibold mb-2 text-pink-400">Funny Comments</h3>
+              <p className="text-gray-400 text-sm">500+ hilarious comment ideas</p>
+            </Link>
+            <Link href="/how-to-roast-someone-on-instagram" className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
+              <h3 className="text-xl font-semibold mb-2 text-pink-400">How to Roast</h3>
+              <p className="text-gray-400 text-sm">Step-by-step roasting tutorial</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer with Comprehensive Links */}
+      <footer className="bg-gray-900 border-t border-gray-800">
+        <div className="container mx-auto px-4 py-12">
+          <FooterLinks />
+          
+          <div className="mt-8 pt-8 border-t border-gray-800">
+            <div className="flex justify-between items-center">
+              <div>
+                <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Roast a Profile
+                </Link>
+                <p className="text-gray-400 text-sm mt-2">© 2025 Roast a Profile. All rights reserved.</p>
+              </div>
+              <div className="flex gap-6">
+                <Link href="/privacy" className="text-gray-400 hover:text-white transition text-sm">Privacy Policy</Link>
+                <Link href="/terms" className="text-gray-400 hover:text-white transition text-sm">Terms of Service</Link>
+                <Link href="/support" className="text-gray-400 hover:text-white transition text-sm">Support</Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>

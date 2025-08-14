@@ -337,26 +337,84 @@ export default function AIRoastGeneratorPage() {
         </div>
       </section>
 
-      {/* Internal Links */}
+      {/* Enhanced Internal Links */}
       <section className="container mx-auto px-4 py-16 border-t border-gray-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8 text-center">Explore More</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Link href="/instagram-roaster" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-              <div className="text-3xl mb-2">📸</div>
-              <h3 className="font-semibold mb-1">Instagram Roaster</h3>
-              <p className="text-sm text-gray-400">Complete guide to roasting</p>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold mb-8 text-center">Explore Our Full Suite of Tools</h2>
+          
+          {/* Primary Tools */}
+          <div className="grid md:grid-cols-4 gap-4 mb-8">
+            <Link href="/instagram-profile-analyzer" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="text-3xl mb-2">🔍</div>
+              <h3 className="font-semibold mb-1">Profile Analyzer</h3>
+              <p className="text-sm text-gray-400">Deep profile analysis</p>
             </Link>
-            <Link href="/what-is-instagram-roasting" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-              <div className="text-3xl mb-2">❓</div>
-              <h3 className="font-semibold mb-1">What is Roasting?</h3>
-              <p className="text-sm text-gray-400">Learn the culture</p>
+            <Link href="/free-instagram-roast-generator-no-signup" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="text-3xl mb-2">🆓</div>
+              <h3 className="font-semibold mb-1">Free Generator</h3>
+              <p className="text-sm text-gray-400">No signup required</p>
             </Link>
-            <Link href="/faq" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-              <div className="text-3xl mb-2">💡</div>
-              <h3 className="font-semibold mb-1">FAQs</h3>
-              <p className="text-sm text-gray-400">All your questions answered</p>
+            <Link href="/gen-z-roast-generator-online" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="text-3xl mb-2">💯</div>
+              <h3 className="font-semibold mb-1">Gen Z Generator</h3>
+              <p className="text-sm text-gray-400">Modern slang roasts</p>
             </Link>
+            <Link href="/savage-instagram-roasts-examples" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="text-3xl mb-2">🔥</div>
+              <h3 className="font-semibold mb-1">Savage Examples</h3>
+              <p className="text-sm text-gray-400">100+ brutal roasts</p>
+            </Link>
+          </div>
+          
+          {/* Roast Styles */}
+          <h3 className="text-xl font-semibold mb-4 text-center">Choose Your Style</h3>
+          <div className="grid md:grid-cols-4 gap-4 mb-8">
+            <Link href="/roast-styles/savage" className="text-center p-4 bg-purple-900/30 rounded-lg hover:bg-purple-900/50 transition-colors">
+              <h3 className="font-semibold text-red-400">Savage Mode</h3>
+              <p className="text-sm text-gray-400">Maximum brutality</p>
+            </Link>
+            <Link href="/roast-styles/friendly" className="text-center p-4 bg-purple-900/30 rounded-lg hover:bg-purple-900/50 transition-colors">
+              <h3 className="font-semibold text-green-400">Friendly Fire</h3>
+              <p className="text-sm text-gray-400">Playful teasing</p>
+            </Link>
+            <Link href="/roast-styles/gen-z" className="text-center p-4 bg-purple-900/30 rounded-lg hover:bg-purple-900/50 transition-colors">
+              <h3 className="font-semibold text-pink-400">Gen Z Style</h3>
+              <p className="text-sm text-gray-400">No cap fr fr</p>
+            </Link>
+            <Link href="/roast-styles/shakespearean" className="text-center p-4 bg-purple-900/30 rounded-lg hover:bg-purple-900/50 transition-colors">
+              <h3 className="font-semibold text-purple-400">Shakespearean</h3>
+              <p className="text-sm text-gray-400">Classical wit</p>
+            </Link>
+          </div>
+          
+          {/* Learning Resources */}
+          <h3 className="text-xl font-semibold mb-4 text-center">Master the Art</h3>
+          <div className="grid md:grid-cols-3 gap-4 mb-8">
+            <Link href="/ultimate-guide-instagram-roasting" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="text-3xl mb-2">📚</div>
+              <h3 className="font-semibold mb-1">Ultimate Guide</h3>
+              <p className="text-sm text-gray-400">Complete roasting guide</p>
+            </Link>
+            <Link href="/how-to-roast-someone-on-instagram" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="text-3xl mb-2">🎯</div>
+              <h3 className="font-semibold mb-1">How to Roast</h3>
+              <p className="text-sm text-gray-400">Step-by-step tutorial</p>
+            </Link>
+            <Link href="/funny-things-to-comment-on-instagram" className="text-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="text-3xl mb-2">💬</div>
+              <h3 className="font-semibold mb-1">Funny Comments</h3>
+              <p className="text-sm text-gray-400">500+ comment ideas</p>
+            </Link>
+          </div>
+          
+          {/* Comparisons */}
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link href="/vs-cleve-ai" className="px-4 py-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-sm">Compare with Cleve AI</Link>
+            <Link href="/vs-olly-social" className="px-4 py-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-sm">Compare with Olly Social</Link>
+            <Link href="/what-is-instagram-roasting" className="px-4 py-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-sm">What is Roasting?</Link>
+            <Link href="/roast-examples" className="px-4 py-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-sm">See Examples</Link>
+            <Link href="/blog" className="px-4 py-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-sm">Read Blog</Link>
+            <Link href="/download" className="px-4 py-2 bg-purple-600/50 rounded-lg hover:bg-purple-600/70 transition text-sm">Get the App</Link>
           </div>
         </div>
       </section>
