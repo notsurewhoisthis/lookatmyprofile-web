@@ -31,24 +31,21 @@ export async function GET(request: NextRequest) {
               marginBottom: 40,
             }}
           >
-            <svg
-              width="80"
-              height="80"
-              viewBox="0 0 100 100"
-              style={{ marginRight: 20 }}
+            <div
+              style={{
+                width: 80,
+                height: 80,
+                borderRadius: '50%',
+                backgroundColor: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 20,
+                fontSize: 50,
+              }}
             >
-              <circle cx="50" cy="50" r="45" fill="white" opacity="0.9" />
-              <text
-                x="50"
-                y="65"
-                fontSize="50"
-                fill="#764ba2"
-                textAnchor="middle"
-                style={{ fontWeight: 'bold' }}
-              >
-                🔥
-              </text>
-            </svg>
+              🔥
+            </div>
             <div
               style={{
                 fontSize: 40,
