@@ -5,7 +5,28 @@ export const runtime = 'edge';
 
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
+    const url = new URL(request.url);
+    
+    // Check if this is a malformed URL (has path segments after /api/og/)
+    const pathAfterOg = url.pathname.replace('/api/og', '');
+    if (pathAfterOg && pathAfterOg !== '/') {
+      // This is a malformed URL like /api/og?title=Some Title
+      // Extract title from the malformed path
+      const possibleTitle = decodeURIComponent(pathAfterOg.replace(/^\//, '').replace(/\?title=/, ''));
+      
+      // Redirect to the proper URL format
+      const properUrl = `/api/og?title=${encodeURIComponent(possibleTitle)}`;
+      return new Response(null, {
+        status: 301,
+        headers: {
+          'Location': new URL(properUrl, request.url).toString(),
+          'Cache-Control': 'public, max-age=31536000',
+        }
+      });
+    }
+    
+    // Normal processing for properly formatted URLs
+    const { searchParams } = url;
     const title = searchParams.get('title') || 'Roast a Profile';
     
     // Return proper image response with headers
