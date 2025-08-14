@@ -5,7 +5,7 @@
 ```
 ⚠️ MANDATORY: Always work with GitHub blog posts, NEVER local files!
 📍 GitHub URL: https://github.com/notsurewhoisthis/lookatmyprofile-web/tree/main/public/blog-data
-✅ Blog Count: 31 posts (as of Jan 13, 2025) - UPDATED COUNT!
+✅ Blog Count: 38 posts (as of Jan 14, 2025) - UPDATED COUNT!
 🔄 Workflow: GitHub → Local Pull → Edit → Push to GitHub → Deploy to Heroku
 ```
 
@@ -15,7 +15,7 @@
 🚀 Heroku App:        lookatmyprofile-web
 📊 GA4 ID:            G-FMHXYGPTF1
 💻 GitHub:            https://github.com/notsurewhoisthis/lookatmyprofile-web
-📝 Blog Content:      GitHub: /public/blog-data/ (31 JSON files - UPDATED!)
+📝 Blog Content:      GitHub: /public/blog-data/ (38 JSON files - UPDATED!)
 🎨 Tech Stack:        Next.js 15.4.5, TypeScript, Tailwind CSS
 🤖 Automation:        n8n workflow for automated blog posting
 🎯 SEO Score:         9.2/10 (Jan 2025 audit)
@@ -33,7 +33,7 @@
 ### ⚠️ CRITICAL NOTES FOR NEW DEVELOPERS
 1. **GITHUB IS SOURCE OF TRUTH:** Always check GitHub for blog posts, NEVER trust local files
    - GitHub: https://github.com/notsurewhoisthis/lookatmyprofile-web/tree/main/public/blog-data
-   - Current count: 31 blog posts (verify on GitHub before any work) - UPDATED!
+   - Current count: 38 blog posts (verify on GitHub before any work) - UPDATED!
 2. **Two Git remotes exist:** `origin` (Heroku) and `github` (GitHub) - keep both in sync!
 3. **GA4 ID must be:** `G-FMHXYGPTF1` (not placeholder `G-XXXXXXXXXX`)
 4. **Heroku uses:** `$PORT` environment variable (configured in package.json start script)
@@ -89,7 +89,7 @@
 - **Core Web Vitals**: All green
 - **Mobile Usability**: 100/100
 - **SEO Audit Score**: 9.2/10
-- **Blog Posts**: 31 (all indexed) - UPDATED!
+- **Blog Posts**: 38 (all indexed) - UPDATED!
 - **Total Pages**: 54 static pages (including new definition page)
 
 ---
@@ -140,7 +140,7 @@ To ensure the site is discoverable and properly indexed by AI services (ChatGPT,
 - **File Modified:** `/app/sitemap.xml/route.ts`
 - **Changes Made:**
   - Added new definition page with priority 0.9
-  - Verified all 31 blog posts are included
+  - Verified all 38 blog posts are included
   - Maintained proper lastmod dates for freshness signals
 - **Impact:** Ensures AI crawlers discover all content efficiently
 
@@ -504,7 +504,7 @@ web: npm start    # Tells Heroku how to start the app
 ```
 ⚠️ NEVER trust local blog files - GitHub is ALWAYS the source of truth!
 📍 Check GitHub FIRST: https://github.com/notsurewhoisthis/lookatmyprofile-web/tree/main/public/blog-data
-✅ Current count: 31 blog posts (always verify on GitHub) - UPDATED Jan 13, 2025!
+✅ Current count: 38 blog posts (always verify on GitHub) - UPDATED Jan 14, 2025!
 🔄 If local differs from GitHub: Pull from GitHub, never push local changes without verification
 ```
 
@@ -581,7 +581,7 @@ git pull github main  # GitHub is source of truth!
 git pull origin main  # Then pull from Heroku
 
 # 3. Verify blog count matches GitHub
-ls public/blog-data/*.json | wc -l  # Should be 31 (as of Jan 13, 2025)
+ls public/blog-data/*.json | wc -l  # Should be 38 (as of Jan 14, 2025)
 
 # 4. Make your changes (if any)
 # ... edit files ...
@@ -914,7 +914,7 @@ gtag('event', 'generate_roast', {
 ### Critical Reminders
 - **NEVER** trust local blog files over GitHub
 - **ALWAYS** pull from GitHub before starting work
-- **VERIFY** blog count matches GitHub (31 as of Jan 13, 2025)
+- **VERIFY** blog count matches GitHub (38 as of Jan 14, 2025)
 - **CHECK** sitemap.xml includes all blog posts after deployment
 - **TEST** new blog posts appear on /blog page
 - **ENSURE** n8n webhook works for automated posting

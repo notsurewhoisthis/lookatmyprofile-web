@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: 'Turn your Instagram into comedy gold with AI-powered roasts and profile analysis.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://www.lookatmyprofile.org/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Roast a Profile - AI Instagram Roaster'
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     creator: '@roastaprofile',
     title: 'AI Instagram Profile Roaster - Get Roasted!',
     description: 'Turn your Instagram into comedy gold with AI-powered roasts.',
-    images: ['/twitter-card.jpg']
+    images: ['https://www.lookatmyprofile.org/twitter-card.jpg']
   },
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#6366f1',
