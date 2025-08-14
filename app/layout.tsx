@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema } from "../components/StructuredData";
@@ -14,7 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#6366f1',
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.lookatmyprofile.org'),
   title: {
     template: '%s | Roast a Profile - AI Instagram Roaster',
     default: 'Roast a Profile - AI Instagram Profile Roaster & Analyzer'
@@ -37,7 +44,7 @@ export const metadata: Metadata = {
     description: 'Turn your Instagram into comedy gold with AI-powered roasts and profile analysis.',
     images: [
       {
-        url: 'https://www.lookatmyprofile.org/og-image.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Roast a Profile - AI Instagram Roaster'
@@ -50,10 +57,8 @@ export const metadata: Metadata = {
     creator: '@roastaprofile',
     title: 'AI Instagram Profile Roaster - Get Roasted!',
     description: 'Turn your Instagram into comedy gold with AI-powered roasts.',
-    images: ['https://www.lookatmyprofile.org/twitter-card.jpg']
+    images: ['/twitter-card.jpg']
   },
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#6366f1',
 };
 
 export default function RootLayout({
