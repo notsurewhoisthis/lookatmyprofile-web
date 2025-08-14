@@ -42,7 +42,7 @@ const blogData = {
   publishedAt: new Date().toISOString(),
   updatedAt: new Date().toISOString(), // For structured data
   author: {  // FIXED: Changed from string to object
-    name: "AI Content Team",
+    name: "Roast Team",
     bio: "Expert content creators powered by AI and data-driven insights"
   },
   metrics: {
