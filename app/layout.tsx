@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   creator: 'Roast a Profile',
   publisher: 'Roast a Profile',
   robots: 'index, follow',
+  alternates: {
+    canonical: 'https://www.lookatmyprofile.org'
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

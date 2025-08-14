@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Gen Z Mode - No Cap Instagram Roasts | Roast a Profile',
   description: 'Get roasted in Gen Z slang that hits different. Our AI speaks fluent TikTok and delivers burns that are straight bussin fr fr.',
   keywords: 'gen z instagram roast, no cap roaster, bussin profile burns, tiktok slang roasts, fr fr roasting',
+  alternates: {
+    canonical: 'https://www.lookatmyprofile.org/roast-styles/gen-z'
+  },
   openGraph: {
     title: 'Gen Z Mode - Instagram Roasts That Hit Different',
     description: 'No cap, these roasts are bussin. Get dragged in the language of TikTok and Twitter.',

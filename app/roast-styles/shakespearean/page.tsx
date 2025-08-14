@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Shakespearean - Eloquent Instagram Roasts | Roast a Profile',
   description: 'Experience Instagram roasts in the style of Shakespeare. Eloquent burns delivered in old English that would make the Bard himself proud.',
   keywords: 'shakespearean instagram roast, eloquent profile roaster, old english social media humor, literary roasts',
+  alternates: {
+    canonical: 'https://www.lookatmyprofile.org/roast-styles/shakespearean'
+  },
   openGraph: {
     title: 'Shakespearean Mode - Eloquent Instagram Roasts in Old English',
     description: 'Thy Instagram doth receive most eloquent burns. Experience roasting as Shakespeare intended.',

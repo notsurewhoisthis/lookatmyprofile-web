@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Friendly Fire - Playful Instagram Roasts | Roast a Profile',
   description: 'Get lighthearted, playful roasts for Instagram profiles. Perfect for friends, our Friendly Fire mode delivers jokes without the sting.',
   keywords: 'friendly instagram roast, playful profile jokes, lighthearted social media humor, friendly roast generator',
+  alternates: {
+    canonical: 'https://www.lookatmyprofile.org/roast-styles/friendly'
+  },
   openGraph: {
     title: 'Friendly Fire - Playful Instagram Roasts for Friends',
     description: 'Fun, lighthearted roasts that make everyone laugh. Perfect for sharing with friends.',

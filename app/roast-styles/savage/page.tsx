@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Savage Mode - Brutal Instagram Roasts | Roast a Profile',
   description: 'Get the most brutal, savage AI roasts for Instagram profiles. Our Savage Mode delivers burns that leave marks. Not for the faint-hearted.',
   keywords: 'savage instagram roast, brutal profile roaster, harsh social media burns, savage mode AI',
+  alternates: {
+    canonical: 'https://www.lookatmyprofile.org/roast-styles/savage'
+  },
   openGraph: {
     title: 'Savage Mode - Brutal Instagram Roasts That Hurt',
     description: 'Experience the most savage AI roasts that will make you question everything about your Instagram.',
