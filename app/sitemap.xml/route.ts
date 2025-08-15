@@ -20,6 +20,7 @@ export async function GET() {
     { url: '/my-insta-personality', priority: 0.95, changefreq: 'daily', lastmod: new Date().toISOString() },
     { url: '/instagram-engagement-calculator', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/instagram-caption-generator', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/instagram-growth-hacks-2025', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
     
     // Roast styles pages
     { url: '/roast-styles', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
