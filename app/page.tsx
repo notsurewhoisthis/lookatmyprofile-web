@@ -13,11 +13,14 @@ export default function Home() {
           <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             Roast a Profile
           </Link>
-          <div className="flex gap-6">
-            <Link href="/roast-generator" className="hover:text-purple-400 transition">Roast Generator</Link>
-            <Link href="/roast-styles" className="hover:text-purple-400 transition">Roast Styles</Link>
-            <Link href="/blog" className="hover:text-purple-400 transition">Blog</Link>
-            <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Download App</Link>
+          <div className="flex gap-4 items-center">
+            <Link href="/roast-generator" className="hover:text-purple-400 transition text-sm md:text-base">Roast</Link>
+            <Link href="/instagram-bio-generator" className="hover:text-purple-400 transition text-sm md:text-base">Bio</Link>
+            <Link href="/instagram-caption-generator" className="hover:text-purple-400 transition text-sm md:text-base">Captions</Link>
+            <Link href="/my-insta-personality" className="hover:text-purple-400 transition text-sm md:text-base">Personality</Link>
+            <Link href="/instagram-engagement-calculator" className="hover:text-purple-400 transition text-sm md:text-base">Calculator</Link>
+            <Link href="/blog" className="hover:text-purple-400 transition text-sm md:text-base">Blog</Link>
+            <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition text-sm md:text-base">Get App</Link>
           </div>
         </div>
       </nav>
@@ -58,6 +61,41 @@ export default function Home() {
           <div className="text-center">
             <div className="text-3xl font-bold text-white">10K+</div>
             <div className="text-sm">5-Star Reviews</div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🔥 NEW Featured Instagram Tools Section */}
+      <section className="container mx-auto px-4 py-12 bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-2xl my-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-2">🚀 New Instagram Tools</h2>
+          <p className="text-center text-gray-400 mb-8">Trending tools used by millions</p>
+          <div className="grid md:grid-cols-4 gap-4">
+            <Link href="/instagram-bio-generator" className="bg-gradient-to-br from-purple-800/50 to-pink-800/50 p-6 rounded-xl hover:scale-105 transition-all group">
+              <div className="text-3xl mb-3">✨</div>
+              <h3 className="text-lg font-bold mb-2">Bio Generator</h3>
+              <p className="text-sm text-gray-300">Create perfect bios instantly</p>
+              <p className="text-xs text-purple-400 mt-2 group-hover:text-purple-300">Try now →</p>
+            </Link>
+            <Link href="/my-insta-personality" className="bg-gradient-to-br from-yellow-800/50 to-orange-800/50 p-6 rounded-xl hover:scale-105 transition-all group relative">
+              <div className="absolute top-2 right-2 px-2 py-1 bg-red-500 text-xs rounded-full animate-pulse">VIRAL</div>
+              <div className="text-3xl mb-3">🎭</div>
+              <h3 className="text-lg font-bold mb-2">My Insta Personality</h3>
+              <p className="text-sm text-gray-300">AI personality test & roast</p>
+              <p className="text-xs text-orange-400 mt-2 group-hover:text-orange-300">Take test →</p>
+            </Link>
+            <Link href="/instagram-engagement-calculator" className="bg-gradient-to-br from-blue-800/50 to-purple-800/50 p-6 rounded-xl hover:scale-105 transition-all group">
+              <div className="text-3xl mb-3">📊</div>
+              <h3 className="text-lg font-bold mb-2">Engagement Calculator</h3>
+              <p className="text-sm text-gray-300">Check your influence level</p>
+              <p className="text-xs text-blue-400 mt-2 group-hover:text-blue-300">Calculate →</p>
+            </Link>
+            <Link href="/instagram-caption-generator" className="bg-gradient-to-br from-pink-800/50 to-purple-800/50 p-6 rounded-xl hover:scale-105 transition-all group">
+              <div className="text-3xl mb-3">📝</div>
+              <h3 className="text-lg font-bold mb-2">Caption Generator</h3>
+              <p className="text-sm text-gray-300">Captions that get likes</p>
+              <p className="text-xs text-pink-400 mt-2 group-hover:text-pink-300">Generate →</p>
+            </Link>
           </div>
         </div>
       </section>
@@ -110,24 +148,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Popular Tools Section */}
+      {/* Popular Tools Section - Updated with NEW tools */}
       <section className="container mx-auto px-4 py-20 bg-gray-900/50">
-        <h2 className="text-4xl font-bold text-center mb-12">Popular Roasting Tools</h2>
+        <h2 className="text-4xl font-bold text-center mb-12">Popular Instagram Tools</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <Link href="/gen-z-roast-generator-online" className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg hover:from-purple-900/70 hover:to-pink-900/70 transition">
+          <Link href="/my-insta-personality" className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 p-6 rounded-lg hover:from-yellow-900/70 hover:to-orange-900/70 transition relative">
+            <span className="absolute top-3 right-3 px-2 py-1 bg-red-500 text-xs rounded-full">TRENDING</span>
+            <h3 className="text-xl font-bold mb-2">🎭 My Insta Personality</h3>
+            <p className="text-gray-300 text-sm mb-3">Viral AI personality test that roasts you</p>
+            <p className="text-yellow-400 text-sm">Take the test →</p>
+          </Link>
+          <Link href="/instagram-bio-generator" className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg hover:from-purple-900/70 hover:to-pink-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">✨ Bio Generator</h3>
+            <p className="text-gray-300 text-sm mb-3">Perfect Instagram bios in seconds</p>
+            <p className="text-purple-400 text-sm">Create bio →</p>
+          </Link>
+          <Link href="/instagram-engagement-calculator" className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 p-6 rounded-lg hover:from-blue-900/70 hover:to-purple-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">📊 Engagement Calculator</h3>
+            <p className="text-gray-300 text-sm mb-3">Calculate your influence & engagement rate</p>
+            <p className="text-blue-400 text-sm">Calculate now →</p>
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-6">
+          <Link href="/instagram-caption-generator" className="bg-gradient-to-br from-pink-900/50 to-purple-900/50 p-6 rounded-lg hover:from-pink-900/70 hover:to-purple-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">📝 Caption Generator</h3>
+            <p className="text-gray-300 text-sm mb-3">Engaging captions that get likes</p>
+            <p className="text-pink-400 text-sm">Generate captions →</p>
+          </Link>
+          <Link href="/gen-z-roast-generator-online" className="bg-gradient-to-br from-green-900/50 to-blue-900/50 p-6 rounded-lg hover:from-green-900/70 hover:to-blue-900/70 transition">
             <h3 className="text-xl font-bold mb-2">💅 Gen Z Roast Generator</h3>
             <p className="text-gray-300 text-sm mb-3">Roasts that hit different fr fr no cap</p>
-            <p className="text-purple-400 text-sm">Generate Gen Z roast →</p>
+            <p className="text-green-400 text-sm">Generate Gen Z roast →</p>
           </Link>
           <Link href="/savage-instagram-roasts-examples" className="bg-gradient-to-br from-red-900/50 to-orange-900/50 p-6 rounded-lg hover:from-red-900/70 hover:to-orange-900/70 transition">
             <h3 className="text-xl font-bold mb-2">🔥 Savage Roast Examples</h3>
             <p className="text-gray-300 text-sm mb-3">100+ brutal roasts that destroyed people</p>
             <p className="text-orange-400 text-sm">See examples →</p>
-          </Link>
-          <Link href="/funny-things-to-comment-on-instagram" className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 p-6 rounded-lg hover:from-blue-900/70 hover:to-purple-900/70 transition">
-            <h3 className="text-xl font-bold mb-2">💬 Funny Comment Ideas</h3>
-            <p className="text-gray-300 text-sm mb-3">500+ hilarious things to comment</p>
-            <p className="text-blue-400 text-sm">Get ideas →</p>
           </Link>
         </div>
       </section>

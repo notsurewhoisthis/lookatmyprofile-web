@@ -15,6 +15,12 @@ export async function GET() {
     { url: '/roast-examples', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/what-is-instagram-roasting', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
     
+    // NEW HIGH-PRIORITY SEO PAGES (Added Jan 15, 2025)
+    { url: '/instagram-bio-generator', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/my-insta-personality', priority: 0.95, changefreq: 'daily', lastmod: new Date().toISOString() },
+    { url: '/instagram-engagement-calculator', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/instagram-caption-generator', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    
     // Roast styles pages
     { url: '/roast-styles', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/roast-styles/savage', priority: 0.8, changefreq: 'weekly', lastmod: new Date().toISOString() },

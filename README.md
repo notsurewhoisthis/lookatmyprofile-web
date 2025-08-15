@@ -1004,31 +1004,31 @@ the n8n workflow is below (this is used for auto creating content, then pushing 
             {
               "id": "2e8af591-eb66-4f67-9287-9ec1414184bc",
               "name": "topic",
-              "value": "={{ $json.choices[0].message.content.match(/\"topic\":\\s*\"([^\"]+)\"/)?.[1] ||    $json.choices[0].message.content.match(/topic['\"]?:\\s*['\"]([^'\"]+)/)?.[1] || 'Technology Trends' }}",
+              "value": "={{ \n  (() => {\n    try {\n      const content = $json.choices[0].message.content;\n      // Remove any markdown code blocks if present\n      const cleanContent = content.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n      // Find JSON object\n      const jsonMatch = cleanContent.match(/\\{.*\\}/s);\n      if (jsonMatch) {\n        const parsed = JSON.parse(jsonMatch[0]);\n        return parsed.topic;\n      }\n    } catch(e) {\n      // Fallback: try to extract topic directly\n      const topicMatch = content.match(/\"topic\"\\s*:\\s*\"([^\"]+)\"/);\n      if (topicMatch) return topicMatch[1];\n    }\n    return 'Social Media Trends ' + new Date().toISOString().split('T')[0];\n  })()\n}}",
               "type": "string"
             },
             {
               "id": "0f49374b-36f3-476d-a77d-8b4944e73e6f",
               "name": "category",
-              "value": "={{ $json.choices[0].message.content.match(/\"category\":\\s*\"([^\"]+)\"/)?.[1] || 'Technology' }}",
+              "value": "={{ \n  (() => {\n    try {\n      const content = $json.choices[0].message.content;\n      const cleanContent = content.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n      const jsonMatch = cleanContent.match(/\\{.*\\}/s);\n      if (jsonMatch) {\n        const parsed = JSON.parse(jsonMatch[0]);\n        return parsed.category;\n      }\n    } catch(e) {\n      const categoryMatch = content.match(/\"category\"\\s*:\\s*\"([^\"]+)\"/);\n      if (categoryMatch) return categoryMatch[1];\n    }\n    return 'Social Media Culture';\n  })()\n}}",
               "type": "string"
             },
             {
               "id": "8d7490b1-c8f6-4c20-b399-94c717cf94c6",
               "name": "keywords",
-              "value": "={{ JSON.parse($json.choices[0].message.content.match(/\"keywords\":\\s*(\\[[^\\]]+\\])/)?.[1] || '[\"technology\", \"innovation\",    \"trends\"]') }}",
+              "value": "={{ \n  (() => {\n    try {\n      const content = $json.choices[0].message.content;\n      const cleanContent = content.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n      const jsonMatch = cleanContent.match(/\\{.*\\}/s);\n      if (jsonMatch) {\n        const parsed = JSON.parse(jsonMatch[0]);\n        return parsed.keywords;\n      }\n    } catch(e) {\n      const keywordsMatch = content.match(/\"keywords\"\\s*:\\s*\\[([^\\]]+)\\]/);\n      if (keywordsMatch) {\n        return JSON.parse('[' + keywordsMatch[1] + ']');\n      }\n    }\n    return [\"social media\", \"trends\", \"viral\", \"gen z\"];\n  })()\n}}",
               "type": "array"
             },
             {
               "id": "109e4f8a-58b7-46ba-8887-71d27e4a1626",
               "name": "angle",
-              "value": "={{ $json.choices[0].message.content.match(/\"angle\":\\s*\"([^\"]+)\"/)?.[1] || 'comprehensive guide' }}",
+              "value": "={{ \n  (() => {\n    try {\n      const content = $json.choices[0].message.content;\n      const cleanContent = content.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n      const jsonMatch = cleanContent.match(/\\{.*\\}/s);\n      if (jsonMatch) {\n        const parsed = JSON.parse(jsonMatch[0]);\n        return parsed.angle;\n      }\n    } catch(e) {\n      const angleMatch = content.match(/\"angle\"\\s*:\\s*\"([^\"]+)\"/);\n      if (angleMatch) return angleMatch[1];\n    }\n    return 'comprehensive guide';\n  })()\n}}",
               "type": "string"
             },
             {
               "id": "0f126326-932f-4b64-9353-a21610147697",
               "name": "searchQuery",
-              "value": "={{ $json.topic + ' ' + new Date().getFullYear() + ' latest developments statistics data' }}",
+              "value": "={{ \n  (() => {\n    try {\n      const content = $json.choices[0].message.content;\n      const cleanContent = content.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n      \n      // Try to parse the keywords instead of topic for search\n      let keywords = null;\n      let topic = null;\n      \n      // Parse JSON to get both topic and keywords\n      const jsonMatch = cleanContent.match(/\\{[\\s\\S]*\\}/);\n      if (jsonMatch) {\n        try {\n          const parsed = JSON.parse(jsonMatch[0]);\n          keywords = parsed.keywords;\n          topic = parsed.topic;\n        } catch(parseError) {\n          // JSON parsing failed\n        }\n      }\n      \n      // If we have keywords, use them for search\n      if (keywords && Array.isArray(keywords) && keywords.length > 0) {\n        // Use first 2-3 keywords plus year for search\n        return keywords.slice(0, 3).join(' ') + ' 2025 trends';\n      }\n      \n      // If we have a topic but no keywords, extract key terms\n      if (topic) {\n        // Extract the main subject (first few words) for search\n        const words = topic.split(' ').slice(0, 5);\n        return words.join(' ') + ' 2025';\n      }\n      \n      // Fallback: try regex for keywords\n      const keywordsMatch = cleanContent.match(/\"keywords\"\\s*:\\s*\\[([^\\]]+)\\]/);\n      if (keywordsMatch) {\n        try {\n          const keywordsList = JSON.parse('[' + keywordsMatch[1] + ']');\n          return keywordsList.slice(0, 3).join(' ') + ' 2025 trends';\n        } catch(e) {\n          // Failed to parse keywords\n        }\n      }\n      \n    } catch(e) {\n      // Silent fail\n    }\n    \n    // Simple fallback\n    return \"social media trends 2025\";\n  })()\n}}",
               "type": "string"
             }
           ]
@@ -1131,8 +1131,7 @@ the n8n workflow is below (this is used for auto creating content, then pushing 
         "rule": {
           "interval": [
             {
-              "field": "hours",
-              "hoursInterval": 4
+              "field": "hours"
             }
           ]
         }
@@ -1152,11 +1151,11 @@ the n8n workflow is below (this is used for auto creating content, then pushing 
         "messages": {
           "message": [
             {
-              "content": " You are a trend analyst finding diverse, fresh topics across different industries focusing on social media and Gen Z. Avoid repetitive topics by exploring new angles each time.",
+              "content": " You are a trend analyst for a Gen Z social media blog. Generate ONE unique, fresh topic that hasn't been covered recently. Focus on current trends, viral moments, and emerging social media phenomena.",
               "role": "system"
             },
             {
-              "content": "=Find 5 trending topics from DIFFERENT categories. Pick ONE random topic from these areas:\n  {{ [\"GenZ on Technology & AI\", \"Social Media and mental health\", \"New social media platforms\", \"Gen Z Entertainment & Gaming\", \"Gen Z Education & Career\", \"Gen Z language\", \"Social media Fashion & Beauty\"][Math.floor(Math.random() * 10)] }}\n\nFor the selected category, find:\n  1. The hottest trending topic (last 7 days)\n  2. Key statistics and data points\n  3. Why it matters now\n  4. Target audience insights\n  5. Content angle suggestions\n\n  Return as JSON:\n  {\n    \"topic\": \"specific topic title\",\n    \"category\": \"category name\",\n    \"keywords\": [\"keyword1\", \"keyword2\", \"keyword3\"],\n    \"stats\": [\"stat1\", \"stat2\"],\n    \"angle\": \"unique perspective\",\n    \"audience\": \"target demographic\"\n  }\n"
+              "content": "={{ (function() {\nconst topics = [\n    \"Instagram influencer fails\",\n\"Tiktok influencer trends and fails\",\n\"Latest tiktok trends\",\n\"Latest instagram trends\",\n\"Staged authenticity of Instagram influencers\",\n\"The Instagram ad-pocalypse and the death of the feed\",\n\"Instagram Reels as a TikTok graveyard\",\n\"The 'photo dump' backlash to curated aesthetics\",\n\"Instagram 'Close Friends' humblebrags\",\n\"Instagram status messages cringe\",\n\"Dating app disasters - Hinge, Bumble, Tinder red flags\",\n\"LinkedIn corporate cringe and hustle culture\",\n\"Twitter/X drama and ratio culture\",\n\"ASMR trend in social media\",\n\"TikTok brainrot and the sludge content epidemic\",\n\"TikTok NPC streamers\",\n\"TikTok's de-influencing grift\",\n\"TikTok's main character syndrome\",\n\"The exhausting 48-hour micro-trend cycle on TikTok\",\n\"TikTok Live battles\",\n\"Couple influencers and monetizing relationships\",\n\"Strava fitness flexing culture\",\n\"Spotify Wrapped shaming\",\n\"Reddit and relationship advice disasters\",\n\"AI art fails and the uncanny valley of extra fingers\",\n\"ChatGPT fails and unhinged AI conversations\",\n\"Facebook marketplace scams and weirdness\",\n\"Pinterest aesthetic obsessions\",\n\"YouTube Shorts creators failing\",\n\"WhatsApp family group disasters\",\n\"Temu/Shein hauls and the fast fashion apocalypse\",\n\"Fake Amazon reviews and AI-generated product stories\",\n\"The empty promise of Metaverse ghost towns\",\n\"Slack emoji wars and corporate communication drama\",\n\"Nextdoor neighbourhood drama and petty complaints\",\n\"Duolingo's threatening owl and passive-aggressive learning\",\n\"Food delivery app support chat nightmares\",\n\"Wellness influencers and their pseudoscience\",\n\"The unrealistic '#dayinthelife' video trend\",\n];\n\n    const now = $now;\n    const randomIndex = (now.toMillis() % topics.length);\n    const selectedTopic = topics[randomIndex];\n\n    return \"Generate a blog post idea about: \" + selectedTopic + \"\\n\\n\" +\n        \"Respond with ONLY a valid JSON object (no markdown, no extra text).\\n\\n\" +\n        \"Example response format:\\n\" +\n        '{\"topic\": \"Instagram Lunatics Strike Again: Why Corporate Motivational Posts Are Getting More Unhinged in 2025\", \"category\": \"Social Media Culture\", \"keywords\": [\"linkedin\", \"corporate cringe\", \"hustle culture\", \"workplace humor\"], \"angle\": \"roast compilation\"}\\n\\n' +\n        \"Now generate for: \" + selectedTopic + \"\\n\" +\n        \"Requirements: topic must be specific and catchy, category must be one of (Social Media Culture, Platform Wars, Gen Z Trends, Viral Phenomena, Digital Behavior), keywords must be 4 actual search terms, angle must be one of (exposé, guide, roast compilation, trend analysis, personality test, hot takes, investigation)\";\n})() }}"
             }
           ]
         },
