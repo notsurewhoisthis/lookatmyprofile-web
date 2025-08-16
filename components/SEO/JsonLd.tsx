@@ -133,6 +133,10 @@ export const LocalAppSchema = () => {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "Roast a Profile",
+    "image": [
+      "https://www.lookatmyprofile.org/app-icon.png",
+      "https://www.lookatmyprofile.org/app-banner.jpg"
+    ],
     "operatingSystem": "iOS, Android",
     "applicationCategory": "EntertainmentApplication",
     "aggregateRating": {
@@ -143,7 +147,48 @@ export const LocalAppSchema = () => {
     "offers": {
       "@type": "Offer",
       "price": "0",
-      "priceCurrency": "USD"
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.lookatmyprofile.org/download",
+      "seller": {
+        "@type": "Organization",
+        "name": "Roast a Profile"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": 0,
+        "returnMethod": "https://schema.org/ReturnNotPermitted",
+        "returnFees": "https://schema.org/ReturnNotPermitted"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          }
+        }
+      }
     },
     "author": {
       "@type": "Organization",

@@ -37,6 +37,11 @@ export const SoftwareApplicationSchema = () => {
     "@type": "SoftwareApplication",
     "name": "Roast a Profile",
     "description": "AI Instagram profile roaster and analyzer that generates funny roasts and provides personality insights based on your social media activity.",
+    "image": [
+      "https://www.lookatmyprofile.org/app-icon.png",
+      "https://www.lookatmyprofile.org/screenshots/screenshot-1.jpg",
+      "https://www.lookatmyprofile.org/screenshots/screenshot-2.jpg"
+    ],
     "operatingSystem": "iOS, Android",
     "applicationCategory": "SocialNetworkingApplication",
     "aggregateRating": {
@@ -49,7 +54,48 @@ export const SoftwareApplicationSchema = () => {
     "offers": {
       "@type": "Offer",
       "price": "0",
-      "priceCurrency": "USD"
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.lookatmyprofile.org/download",
+      "seller": {
+        "@type": "Organization",
+        "name": "Roast a Profile"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": 0,
+        "returnMethod": "https://schema.org/ReturnNotPermitted",
+        "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          }
+        }
+      }
     },
     "downloadUrl": "https://apps.apple.com/us/app/roast-a-profile/id6749272485",
     "screenshot": [

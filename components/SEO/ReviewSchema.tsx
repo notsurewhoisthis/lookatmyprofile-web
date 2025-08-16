@@ -4,6 +4,11 @@ export function ReviewSchema() {
     "@type": "Product",
     "name": "Roast a Profile - AI Instagram Roaster",
     "description": "AI-powered Instagram profile roaster and analyzer that generates hilarious, personalized roasts instantly",
+    "image": [
+      "https://www.lookatmyprofile.org/product-image.jpg",
+      "https://www.lookatmyprofile.org/app-screenshot-1.jpg",
+      "https://www.lookatmyprofile.org/app-screenshot-2.jpg"
+    ],
     "brand": {
       "@type": "Brand",
       "name": "Roast a Profile"
@@ -65,7 +70,47 @@ export function ReviewSchema() {
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "priceValidUntil": "2025-12-31"
+      "priceValidUntil": "2025-12-31",
+      "url": "https://www.lookatmyprofile.org",
+      "seller": {
+        "@type": "Organization",
+        "name": "Roast a Profile"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          }
+        }
+      }
     }
   };
 
