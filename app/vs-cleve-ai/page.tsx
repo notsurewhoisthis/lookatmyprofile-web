@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
+import { ComparisonTable } from '@/components/SEO/ComparisonTable';
+import { InternalLinkFooter } from '@/components/SEO/InternalLinkFooter';
 
 export const metadata: Metadata = {
   title: 'Roast a Profile vs Cleve AI - Complete Comparison 2025',

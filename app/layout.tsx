@@ -33,7 +33,14 @@ export const metadata: Metadata = {
   publisher: 'Roast a Profile',
   robots: 'index, follow',
   alternates: {
-    canonical: 'https://www.lookatmyprofile.org'
+    canonical: 'https://www.lookatmyprofile.org',
+    languages: {
+      'en-US': 'https://www.lookatmyprofile.org',
+      'en-GB': 'https://www.lookatmyprofile.org/en-gb',
+      'en-AU': 'https://www.lookatmyprofile.org/en-au',
+      'es-US': 'https://www.lookatmyprofile.org/es-us',
+      'es-MX': 'https://www.lookatmyprofile.org/es-mx'
+    }
   },
   openGraph: {
     type: 'website',

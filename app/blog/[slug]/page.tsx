@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import { getAuthorByName } from '@/lib/authors';
 import { FAQSchema, generateBlogFAQs } from '@/components/SEO/FAQSchema';
 import { RelatedPosts } from '@/components/RelatedPosts';
 
@@ -184,6 +185,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const authorData = getAuthorByName(post.author?.name || 'Roast Master');
+
   // Generate structured data for SEO
   const structuredData = {
     '@context': 'https://schema.org',
@@ -192,7 +195,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.description,
     author: {
       '@type': 'Person',
-      name: post.author.name
+      '@id': authorData ? `https://www.lookatmyprofile.org/authors/${authorData.slug}#author` : undefined,
+      name: post.author.name,
+      url: authorData ? `https://www.lookatmyprofile.org/authors/${authorData.slug}` : undefined
     },
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
