@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getAuthorByName } from '@/lib/authors';
 import { FAQSchema, generateBlogFAQs } from '@/components/SEO/FAQSchema';
 import { RelatedPosts } from '@/components/RelatedPosts';
+import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
 interface BlogPost {
   slug: string;
@@ -223,6 +224,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <BreadcrumbSchema 
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Blog', url: '/blog' },
+          { name: post.title, url: `/blog/${post.slug}` }
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

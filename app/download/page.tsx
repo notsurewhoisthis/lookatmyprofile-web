@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import OptimizedImage from "../../components/OptimizedImage";
 import { SoftwareApplicationSchema } from "../../components/StructuredData";
+import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Download Roast a Profile - AI Instagram Roaster App | iOS & Android',
@@ -68,6 +69,12 @@ export default function DownloadPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <BreadcrumbSchema 
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Download', url: '/download' }
+        ]}
+      />
       <SoftwareApplicationSchema />
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">

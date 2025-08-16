@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
 import { FooterLinks } from '@/components/SEO/InternalLinks';
+import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
 export default function Home() {
   return (
     <>
+      <BreadcrumbSchema 
+        items={[
+          { name: 'Home', url: '/' }
+        ]}
+      />
       <FAQSchema faqs={commonFAQs.homepage} pageTitle="Home" />
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       {/* Navigation */}

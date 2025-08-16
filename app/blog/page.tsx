@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { Metadata } from 'next';
 import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
+import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Blog - Instagram Roasting Tips, Social Media Trends & Gen Z Humor',
@@ -115,6 +116,12 @@ export default async function BlogPage() {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <BreadcrumbSchema 
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Blog', url: '/blog' }
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
