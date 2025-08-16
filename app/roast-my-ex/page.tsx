@@ -273,7 +273,7 @@ export default function RoastMyExPage() {
         <InlineLinks 
           links={[
             { href: '/roast-styles/savage', label: 'Savage Mode' },
-            { href: '/roast-videos', label: 'Roast Videos' },
+            { href: '/roast-examples', label: 'Roast Examples' },
             { href: '/roast-glossary', label: 'Roast Dictionary' },
             { href: '/how-to-roast-someone-on-instagram', label: 'How to Roast' },
             { href: '/funny-things-to-comment-on-instagram', label: 'Funny Comments' },

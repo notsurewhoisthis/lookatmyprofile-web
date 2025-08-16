@@ -37,7 +37,6 @@ export async function GET() {
     // Content hub pages (Added Jan 16, 2025)
     { url: '/roast-glossary', priority: 0.85, changefreq: 'monthly', lastmod: new Date().toISOString() },
     { url: '/roast-my-ex', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
-    { url: '/roast-videos', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/topics', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/topics/instagram-psychology', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/topics/social-media-humor', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },

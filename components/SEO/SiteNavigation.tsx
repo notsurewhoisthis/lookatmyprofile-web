@@ -23,7 +23,6 @@ export const siteLinks = {
     { href: '/roast-styles/gen-z', label: 'Gen Z' },
   ],
   content: [
-    { href: '/roast-videos', label: 'Roast Videos' },
     { href: '/roast-examples', label: 'Roast Examples' },
     { href: '/roast-glossary', label: 'Roasting Dictionary' },
     { href: '/roast-my-ex', label: 'Roast My Ex' },
