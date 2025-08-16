@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
-import { FooterLinks } from '@/components/SEO/InternalLinks';
+import { FooterNavigation } from '@/components/SEO/SiteNavigation';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 import { QASchema, commonQA } from '@/components/SEO/QASchema';
 
@@ -283,27 +283,7 @@ export default function Home() {
       </section>
 
       {/* Footer with Comprehensive Links */}
-      <footer className="bg-gray-900 border-t border-gray-800">
-        <div className="container mx-auto px-4 py-12">
-          <FooterLinks />
-          
-          <div className="mt-8 pt-8 border-t border-gray-800">
-            <div className="flex justify-between items-center">
-              <div>
-                <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Roast a Profile
-                </Link>
-                <p className="text-gray-400 text-sm mt-2">© 2025 Roast a Profile. All rights reserved.</p>
-              </div>
-              <div className="flex gap-6">
-                <Link href="/privacy" className="text-gray-400 hover:text-white transition text-sm">Privacy Policy</Link>
-                <Link href="/terms" className="text-gray-400 hover:text-white transition text-sm">Terms of Service</Link>
-                <Link href="/support" className="text-gray-400 hover:text-white transition text-sm">Support</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <FooterNavigation currentPath="/" />
     </div>
     </>
   );
