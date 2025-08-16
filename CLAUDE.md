@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+> **Note**: This is the public version of the project documentation. For local development with specific paths and configurations, create a `CLAUDE.local.md` file (template below) which is gitignored.
+
 ## Project Overview
 This is the "Roast a Profile" SEO website - a comprehensive Next.js application designed to drive organic traffic and app downloads for the AI Instagram Profile Roaster iOS app.
 
@@ -13,7 +15,7 @@ This is the "Roast a Profile" SEO website - a comprehensive Next.js application 
 - **Framework**: Next.js 15.4.5 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS with dark theme and gradient design
-- **Deployment**: Heroku (deployed to `instagram-profile-analyzer` app)
+- **Deployment**: Heroku
 - **Package Manager**: npm
 
 ### Key Features
@@ -27,7 +29,7 @@ This is the "Roast a Profile" SEO website - a comprehensive Next.js application 
 ## Project Structure
 
 ```
-/Users/heni/SEO/web/
+./
 ├── app/                    # Next.js App Router pages
 │   ├── page.tsx           # Homepage
 │   ├── roast-generator/   # Main tool page
@@ -63,7 +65,6 @@ This is the "Roast a Profile" SEO website - a comprehensive Next.js application 
 
 ### Local Development
 ```bash
-cd /Users/heni/SEO/web
 npm install
 npm run dev
 ```
@@ -76,12 +77,12 @@ npm start
 ```
 
 ### Deployment
-The site is deployed to Heroku under the `instagram-profile-analyzer` app:
+The site is deployed to Heroku:
 ```bash
-cd /Users/heni/SEO/web
 git add .
 git commit -m "Your commit message"
-git push heroku main
+git push origin main  # Push to Heroku
+git push github main  # Push to GitHub
 ```
 
 ## Key Implementation Details
@@ -128,10 +129,10 @@ git push heroku main
 ## Deployment Notes
 
 ### Heroku Configuration
-- App Name: `instagram-profile-analyzer`
 - Domain: https://www.lookatmyprofile.org/ (connected via DNS)
 - Build Pack: Node.js
 - Environment: Production
+- App Name: Check with `heroku apps:info`
 
 ### Common Issues & Solutions
 1. **JSX Syntax Errors**: Escape special characters (e.g., `< 2 hrs` → `&lt; 2 hrs`)
@@ -181,7 +182,37 @@ When working on this codebase:
 6. **Test locally first** - Always run `npm run build` before deploying
 
 ## Related Documentation
-- `/Users/heni/SEO/TECHNICAL_SEO_IMPLEMENTATION.md` - Detailed SEO strategy
-- `/Users/heni/SEO/WEBSITE_STRUCTURE.md` - Site architecture details
-- `/Users/heni/SEO/CONTENT_HUB_STRATEGY.md` - Content planning
-- `/Users/heni/SEO/DEPLOYMENT_INSTRUCTIONS.md` - Deployment guide
+- `TECHNICAL_SEO_IMPLEMENTATION.md` - Detailed SEO strategy
+- `WEBSITE_STRUCTURE.md` - Site architecture details
+- `CONTENT_HUB_STRATEGY.md` - Content planning
+- `DEPLOYMENT_INSTRUCTIONS.md` - Deployment guide
+- `CLAUDE.local.md` - Local environment configuration (create this locally, not in repo)
+
+## Creating Your Local Configuration
+
+Create a `CLAUDE.local.md` file in your project root with your specific paths:
+
+```markdown
+# CLAUDE.local.md - LOCAL CONFIGURATION (DO NOT COMMIT)
+
+## Local Development Paths
+- **Project Root**: `/path/to/your/project`
+
+## Heroku Configuration
+- **App Name**: `your-heroku-app-name`
+- **Production URL**: https://your-domain.com/
+
+## Git Remotes
+- origin → Heroku deployment
+- github → GitHub source control
+
+## Local Commands
+# Navigate to project
+cd /path/to/your/project
+
+# Deploy to production
+git push github main  # GitHub first
+git push origin main  # Then Heroku
+```
+
+This file is automatically ignored by git.
