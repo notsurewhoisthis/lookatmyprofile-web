@@ -156,6 +156,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NEW Content Hub Section */}
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-4xl font-bold text-center mb-12">🔥 New Content & Features</h2>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <Link href="/roast-my-ex" className="bg-gradient-to-br from-red-900/50 to-pink-900/50 p-6 rounded-lg hover:from-red-900/70 hover:to-pink-900/70 transition relative">
+            <span className="absolute top-3 right-3 px-2 py-1 bg-red-500 text-xs rounded-full animate-pulse">NEW</span>
+            <h3 className="text-xl font-bold mb-2">💔 Roast My Ex</h3>
+            <p className="text-gray-300 text-sm mb-3">Therapeutic roasts for your ex's profile</p>
+            <p className="text-red-400 text-sm">Get revenge roasts →</p>
+          </Link>
+          <Link href="/roast-glossary" className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-6 rounded-lg hover:from-purple-900/70 hover:to-blue-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">📖 Roasting Dictionary</h3>
+            <p className="text-gray-300 text-sm mb-3">Learn what "mid", "clapped" & more mean</p>
+            <p className="text-purple-400 text-sm">Master the slang →</p>
+          </Link>
+          <Link href="/topics" className="bg-gradient-to-br from-green-900/50 to-teal-900/50 p-6 rounded-lg hover:from-green-900/70 hover:to-teal-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">🧠 Knowledge Hub</h3>
+            <p className="text-gray-300 text-sm mb-3">Psychology & humor deep dives</p>
+            <p className="text-green-400 text-sm">Explore topics →</p>
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mt-6">
+          <Link href="/topics/instagram-psychology" className="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 p-6 rounded-lg hover:from-indigo-900/70 hover:to-purple-900/70 transition">
+            <h3 className="text-xl font-bold mb-2">🎭 Instagram Psychology</h3>
+            <p className="text-gray-300 text-sm mb-3">Why we post, like, and roast explained</p>
+            <p className="text-indigo-400 text-sm">Learn the science →</p>
+          </Link>
+          <Link href="/authors" className="bg-gradient-to-br from-gray-800/50 to-gray-700/50 p-6 rounded-lg hover:from-gray-800/70 hover:to-gray-700/70 transition">
+            <h3 className="text-xl font-bold mb-2">✍️ Meet Our Authors</h3>
+            <p className="text-gray-300 text-sm mb-3">Expert roasters and content creators</p>
+            <p className="text-gray-400 text-sm">View profiles →</p>
+          </Link>
+        </div>
+      </section>
+
       {/* Popular Tools Section - Updated with NEW tools */}
       <section className="container mx-auto px-4 py-20 bg-gray-900/50">
         <h2 className="text-4xl font-bold text-center mb-12">Popular Instagram Tools</h2>

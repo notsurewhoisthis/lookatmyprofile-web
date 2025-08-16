@@ -51,7 +51,7 @@ export default function SupportPage() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY_HERE', // Replace with your Web3Forms access key or use the test key
+          access_key: '0f956355-ec37-4284-b31d-3b7c7800df64', // Web3Forms access key
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
