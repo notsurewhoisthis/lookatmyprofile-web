@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { QASchema } from '@/components/SEO/QASchema';
+import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Savage Mode - Brutal Instagram Roasts | Roast a Profile',
@@ -16,8 +18,31 @@ export const metadata: Metadata = {
 };
 
 export default function SavageRoastPage() {
+  const savageQA = [
+    {
+      question: "What makes Savage Mode different from other roast styles?",
+      answer: "Savage Mode delivers brutally honest, no-holds-barred roasts that cut deep. Unlike friendly or witty styles, Savage Mode focuses on maximum impact with zero sugar-coating, targeting your Instagram persona's deepest insecurities."
+    },
+    {
+      question: "Is Savage Mode appropriate for everyone?",
+      answer: "No, Savage Mode is designed for those who can handle intense humor and brutal honesty. It's perfect for roast battles and thick-skinned users, but not recommended for sensitive individuals or professional contexts."
+    },
+    {
+      question: "How harsh are Savage Mode roasts really?",
+      answer: "Savage Mode roasts are intentionally harsh, targeting everything from your filtered selfies to your life choices. They're designed to be memorable burns that make you reconsider your entire social media presence."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-950 to-black text-white">
+      <BreadcrumbSchema 
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Roast Styles', url: '/roast-styles' },
+          { name: 'Savage Mode', url: '/roast-styles/savage' }
+        ]}
+      />
+      <QASchema qaItems={savageQA} pageName="Savage Roast Style" />
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">

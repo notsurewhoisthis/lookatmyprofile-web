@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { QASchema } from '@/components/SEO/QASchema';
+import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Friendly Fire - Playful Instagram Roasts | Roast a Profile',
@@ -16,8 +18,31 @@ export const metadata: Metadata = {
 };
 
 export default function FriendlyRoastPage() {
+  const friendlyQA = [
+    {
+      question: "What is Friendly Fire roasting style?",
+      answer: "Friendly Fire is our lighthearted roasting style that delivers playful jokes and gentle teasing without being mean or hurtful. It's perfect for sharing with friends, family, or coworkers who can appreciate good-natured humor."
+    },
+    {
+      question: "Who should use the Friendly Fire roast style?",
+      answer: "Friendly Fire is ideal for roasting friends, family members, or colleagues in a fun way. It's also great for social media posts where you want to be funny without offending anyone or damaging relationships."
+    },
+    {
+      question: "How funny are Friendly Fire roasts?",
+      answer: "Friendly Fire roasts are genuinely funny but focus on clever observations and witty wordplay rather than harsh burns. They're designed to make everyone laugh, including the person being roasted."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-green-900 to-teal-900 text-white">
+      <BreadcrumbSchema 
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Roast Styles', url: '/roast-styles' },
+          { name: 'Friendly Fire', url: '/roast-styles/friendly' }
+        ]}
+      />
+      <QASchema qaItems={friendlyQA} pageName="Friendly Roast Style" />
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">

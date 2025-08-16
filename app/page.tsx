@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
 import { FooterLinks } from '@/components/SEO/InternalLinks';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
+import { QASchema, commonQA } from '@/components/SEO/QASchema';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         ]}
       />
       <FAQSchema faqs={commonFAQs.homepage} pageTitle="Home" />
+      <QASchema qaItems={commonQA.homepage} pageName="Homepage" />
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">

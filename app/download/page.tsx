@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import OptimizedImage from "../../components/OptimizedImage";
 import { SoftwareApplicationSchema } from "../../components/StructuredData";
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
+import { QASchema, commonQA } from '@/components/SEO/QASchema';
 
 export const metadata: Metadata = {
   title: 'Download Roast a Profile - AI Instagram Roaster App | iOS & Android',
@@ -75,6 +76,7 @@ export default function DownloadPage() {
           { name: 'Download', url: '/download' }
         ]}
       />
+      <QASchema qaItems={commonQA.downloadPage} pageName="Download Page" />
       <SoftwareApplicationSchema />
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
