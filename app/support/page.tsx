@@ -1,20 +1,11 @@
-import Link from "next/link";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: 'Support & Contact | Roast a Profile',
-  description: 'Get help with Roast a Profile. Contact our support team, report issues, or find answers to common problems.',
-  keywords: 'roast a profile support, instagram roaster help, AI roast generator contact',
-  openGraph: {
-    title: 'Support - Roast a Profile',
-    description: 'We\'re here to help with any questions or issues.',
-    url: 'https://www.lookatmyprofile.org/support',
-  }
-};
-
 'use client';
 
+import Link from "next/link";
 import React from 'react';
+import { FooterNavigation } from '@/components/SEO/SiteNavigation';
+
+// Note: Metadata must be in a separate server component file
+// For now, using client component for form functionality
 
 export default function SupportPage() {
   const [formData, setFormData] = React.useState({
@@ -105,7 +96,6 @@ export default function SupportPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
-      <Header />
       
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20">
@@ -360,17 +350,8 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 border-t border-gray-800">
-        <div className="flex justify-between items-center">
-          <p className="text-gray-400">© 2025 Roast a Profile. Here to help 24/7.</p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition">Privacy</Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white transition">Terms</Link>
-            <Link href="/faq" className="text-gray-400 hover:text-white transition">FAQ</Link>
-          </div>
-        </div>
-      </footer>
+      {/* Footer Navigation */}
+      <FooterNavigation currentPath="/support" />
     </div>
   );
 }

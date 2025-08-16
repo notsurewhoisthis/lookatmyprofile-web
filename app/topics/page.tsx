@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 import { InternalLinkFooter } from '@/components/SEO/InternalLinkFooter';
+import { FooterNavigation, InlineLinks, siteLinks } from '@/components/SEO/SiteNavigation';
 
 export const metadata: Metadata = {
   title: 'Topic Hubs - Instagram Roasting Knowledge Center',
@@ -217,7 +218,17 @@ export default function TopicsPage() {
           </div>
         </div>
 
+        <InlineLinks 
+          links={[
+            ...siteLinks.roastStyles,
+            ...siteLinks.tools.slice(0, 3),
+            ...siteLinks.content.filter(l => !l.href.includes('/topics'))
+          ].slice(0, 10)}
+          title="Explore Our Tools & Resources"
+        />
+        
         <InternalLinkFooter />
+        <FooterNavigation currentPath="/topics" />
       </main>
     </>
   );

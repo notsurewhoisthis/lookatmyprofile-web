@@ -5,6 +5,7 @@ import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 import { HowToSchema } from '@/components/SEO/HowToSchema';
 import { InternalLinkFooter } from '@/components/SEO/InternalLinkFooter';
 import { SpeakableSchema } from '@/components/SEO/SpeakableSchema';
+import { FooterNavigation, InlineLinks, siteLinks } from '@/components/SEO/SiteNavigation';
 
 export const metadata: Metadata = {
   title: 'Roast My Ex - Generate Savage Ex Boyfriend/Girlfriend Roasts',
@@ -269,7 +270,20 @@ export default function RoastMyExPage() {
           </div>
         </div>
 
+        <InlineLinks 
+          links={[
+            { href: '/roast-styles/savage', label: 'Savage Mode' },
+            { href: '/roast-videos', label: 'Roast Videos' },
+            { href: '/roast-glossary', label: 'Roast Dictionary' },
+            { href: '/how-to-roast-someone-on-instagram', label: 'How to Roast' },
+            { href: '/funny-things-to-comment-on-instagram', label: 'Funny Comments' },
+            { href: '/topics/instagram-psychology', label: 'Instagram Psychology' }
+          ]}
+          title="More Roasting Resources"
+        />
+        
         <InternalLinkFooter />
+        <FooterNavigation currentPath="/roast-my-ex" />
       </main>
     </>
   );

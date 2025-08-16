@@ -34,6 +34,18 @@ export async function GET() {
     { url: '/instagram-profile-analyzer', priority: 0.95, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/ultimate-guide-instagram-roasting', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
     
+    // Content hub pages (Added Jan 16, 2025)
+    { url: '/roast-glossary', priority: 0.85, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    { url: '/roast-my-ex', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-videos', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/topics', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/topics/instagram-psychology', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/topics/social-media-humor', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/authors', priority: 0.75, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    { url: '/authors/roast-master', priority: 0.7, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    { url: '/authors/alex-morgan', priority: 0.7, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    { url: '/authors/sam-rivera', priority: 0.7, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    
     // Long-tail keyword pages
     { url: '/free-instagram-roast-generator-no-signup', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/gen-z-roast-generator-online', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },

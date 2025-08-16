@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
+import { FooterNavigation, InlineLinks, siteLinks } from '@/components/SEO/SiteNavigation';
 
 export const metadata: Metadata = {
   title: 'Best Instagram Roast Videos - TikTok & YouTube Compilations',
@@ -282,17 +283,20 @@ export default function RoastVideosPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 border-t border-gray-800">
-        <div className="flex justify-between items-center">
-          <p className="text-gray-400">© 2025 Roast a Profile. Watch responsibly.</p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition">Privacy</Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white transition">Terms</Link>
-            <Link href="/support" className="text-gray-400 hover:text-white transition">Support</Link>
-          </div>
-        </div>
-      </footer>
+      {/* Internal Links */}
+      <InlineLinks 
+        links={[
+          { href: '/roast-generator', label: 'AI Roast Generator' },
+          { href: '/roast-my-ex', label: 'Roast My Ex' },
+          { href: '/roast-glossary', label: 'Roasting Dictionary' },
+          ...siteLinks.roastStyles.filter(l => l.href !== '/roast-styles'),
+          { href: '/topics', label: 'Knowledge Hub' }
+        ].slice(0, 10)}
+        title="Explore More Roasting Tools"
+      />
+
+      {/* Footer Navigation */}
+      <FooterNavigation currentPath="/roast-videos" />
     </div>
   );
 }

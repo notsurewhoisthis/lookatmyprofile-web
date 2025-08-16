@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 import { InternalLinkFooter } from '@/components/SEO/InternalLinkFooter';
 import { SpeakableSchema } from '@/components/SEO/SpeakableSchema';
+import { FooterNavigation, InlineLinks, siteLinks } from '@/components/SEO/SiteNavigation';
 
 export const metadata: Metadata = {
   title: 'Roasting Dictionary - Instagram Roast Terms & Slang Glossary',
@@ -300,7 +301,16 @@ export default function RoastGlossaryPage() {
           </div>
         </div>
 
+        <InlineLinks 
+          links={[
+            ...siteLinks.roastStyles,
+            ...siteLinks.content.filter(l => l.href !== '/roast-glossary')
+          ].slice(0, 8)}
+          title="Explore More Roasting Content"
+        />
+        
         <InternalLinkFooter />
+        <FooterNavigation currentPath="/roast-glossary" />
       </main>
     </>
   );
