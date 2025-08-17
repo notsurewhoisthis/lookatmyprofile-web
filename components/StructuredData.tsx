@@ -202,7 +202,12 @@ export const BreadcrumbSchema = ({ items }: {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": `https://www.lookatmyprofile.org${item.href}`
+      "item": {
+        "@type": "WebPage",
+        "@id": `https://www.lookatmyprofile.org${item.href}`,
+        "url": `https://www.lookatmyprofile.org${item.href}`,
+        "name": item.label
+      }
     }))
   }
 

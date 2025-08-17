@@ -15,7 +15,12 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.url
+      "item": {
+        "@type": "WebPage",
+        "@id": item.url,
+        "url": item.url,
+        "name": item.name
+      }
     }))
   };
 
