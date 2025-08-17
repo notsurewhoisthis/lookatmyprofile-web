@@ -12,7 +12,7 @@
 ### Quick Reference Card
 ```
 🌐 Production URL:     https://www.lookatmyprofile.org
-🚀 Heroku App:        lookatmyprofile-web (v194 as of Jan 16, 2025)
+🚀 Heroku App:        lookatmyprofile-web (v224 as of Jan 17, 2025)
 📊 GA4 ID:            G-FMHXYGPTF1
 💻 GitHub:            https://github.com/notsurewhoisthis/lookatmyprofile-web
 📝 Blog Content:      GitHub: /public/blog-data/ (96 JSON files)
@@ -26,14 +26,35 @@
 ```
 
 ## Executive Summary
-**Last Updated:** January 16, 2025 - Contact Form Fixed & Deployed  
+**Last Updated:** January 17, 2025 - BreadcrumbList Schema Fixed  
 **Project Name:** Roast a Profile - AI Instagram Profile Roaster  
 **Purpose:** SEO-optimized website to drive organic traffic and iOS app downloads  
-**Latest Changes:** Working contact form with HTML submission, animated thank-you page  
+**Latest Changes:** Fixed BreadcrumbList schema validation error, working contact form  
 **SEO Status:** Fully optimized with all schemas, complete sitemap, and internal linking  
 **Support System:** Web3Forms contact form operational for user inquiries
 
-## 🚀 Latest Updates (January 16, 2025)
+## 🚀 Latest Updates (January 17, 2025)
+
+### BreadcrumbList Schema Fix - RESOLVED ✅
+**Problem:** Google Search Console reported "Invalid URL in field 'id' (in 'itemListElement.item')"  
+**Solution:** Updated all BreadcrumbList schemas to use proper WebPage object with @id field  
+**Result:** Schema now validates correctly in Google's Rich Results Test
+
+#### Technical Changes Made:
+1. **Schema Structure Updated**
+   - Changed from: Simple string URL in `item` field
+   - Changed to: WebPage object with `@id`, `url`, and `name` properties
+   - Files fixed: BreadcrumbSchema.tsx, Breadcrumbs.tsx, JsonLd.tsx, StructuredData.tsx
+
+2. **Correct Implementation:**
+   ```javascript
+   "item": {
+     "@type": "WebPage",
+     "@id": "https://www.lookatmyprofile.org/page-url",
+     "url": "https://www.lookatmyprofile.org/page-url",
+     "name": "Page Name"
+   }
+   ```
 
 ### Contact Form Fix - WORKING ✅
 **Problem:** JavaScript fetch API was causing "Failed to fetch" errors  
@@ -305,7 +326,7 @@ If you see "The same version of this code has already been built":
    - App: lookatmyprofile-web
    - Monitor dyno hours
    - Check logs for errors
-   - Current version: v194
+   - Current version: v224
 
 4. **n8n Workflow** - Blog automation
    - Runs daily at scheduled time
@@ -394,6 +415,6 @@ If you see "The same version of this code has already been built":
 ---
 
 *Document prepared for project handover*  
-*Last updated: January 16, 2025*  
-*Current deployment: v194 (Working contact form with HTML submission)*  
+*Last updated: January 17, 2025*  
+*Current deployment: v224 (BreadcrumbList schema fixed + working contact form)*  
 *For AI assistance, refer to CLAUDE.md for context*
