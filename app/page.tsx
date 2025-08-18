@@ -1,8 +1,24 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
 import { FooterNavigation } from '@/components/SEO/SiteNavigation';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 import { QASchema, commonQA } from '@/components/SEO/QASchema';
+
+export const metadata: Metadata = {
+  title: 'Roast a Profile - AI Instagram Profile Roaster & Analyzer',
+  description: 'Get hilarious AI-generated roasts of Instagram profiles. Analyze posts, generate funny comments, and discover what your Instagram really says about you.',
+  keywords: 'Instagram roast, profile roaster, AI Instagram analyzer, funny social media tool, Instagram comment generator',
+  alternates: {
+    canonical: 'https://www.lookatmyprofile.org/'
+  },
+  openGraph: {
+    title: 'AI Instagram Profile Roaster - Get Roasted!',
+    description: 'Turn your Instagram into comedy gold with AI-powered roasts and profile analysis.',
+    url: 'https://www.lookatmyprofile.org/',
+    type: 'website',
+  }
+};
 
 export default function Home() {
   return (
