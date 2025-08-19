@@ -1,0 +1,227 @@
+{
+  "generated": "2025-08-19T19:43:49.577Z",
+  "totalFiles": 41,
+  "files": [
+    {
+      "slug": "username-generator-aesthetic-1755632629570",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/username-generator/aesthetic.json"
+    },
+    {
+      "slug": "username-generator-funny-1755632629571",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/username-generator/funny.json"
+    },
+    {
+      "slug": "username-generator-creative-1755632629571",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/username-generator/creative.json"
+    },
+    {
+      "slug": "username-generator-minimalist-1755632629571",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/username-generator/minimalist.json"
+    },
+    {
+      "slug": "username-generator-y2k-1755632629571",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/username-generator/y2k.json"
+    },
+    {
+      "slug": "bio-templates-fitness-1755632629571",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/bio-templates/fitness.json"
+    },
+    {
+      "slug": "bio-templates-travel-1755632629572",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/bio-templates/travel.json"
+    },
+    {
+      "slug": "bio-templates-food-1755632629572",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/bio-templates/food.json"
+    },
+    {
+      "slug": "bio-templates-fashion-1755632629572",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/bio-templates/fashion.json"
+    },
+    {
+      "slug": "bio-templates-tech-1755632629572",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/bio-templates/tech.json"
+    },
+    {
+      "slug": "bio-templates-art-1755632629572",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/bio-templates/art.json"
+    },
+    {
+      "slug": "bio-templates-music-1755632629573",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/bio-templates/music.json"
+    },
+    {
+      "slug": "bio-templates-wellness-1755632629573",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/bio-templates/wellness.json"
+    },
+    {
+      "slug": "caption-generator-birthday-1755632629573",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/caption-generator/birthday.json"
+    },
+    {
+      "slug": "caption-generator-vacation-1755632629573",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/caption-generator/vacation.json"
+    },
+    {
+      "slug": "caption-generator-selfie-1755632629573",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/caption-generator/selfie.json"
+    },
+    {
+      "slug": "caption-generator-food-1755632629573",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/caption-generator/food.json"
+    },
+    {
+      "slug": "caption-generator-workout-1755632629574",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/caption-generator/workout.json"
+    },
+    {
+      "slug": "caption-generator-coffee-1755632629574",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/caption-generator/coffee.json"
+    },
+    {
+      "slug": "caption-generator-sunset-1755632629574",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/caption-generator/sunset.json"
+    },
+    {
+      "slug": "caption-generator-outfit-1755632629574",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/caption-generator/outfit.json"
+    },
+    {
+      "slug": "hashtag-generator-lifestyle-1755632629574",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/hashtag-generator/lifestyle.json"
+    },
+    {
+      "slug": "hashtag-generator-motivation-1755632629574",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/hashtag-generator/motivation.json"
+    },
+    {
+      "slug": "hashtag-generator-photography-1755632629575",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/hashtag-generator/photography.json"
+    },
+    {
+      "slug": "hashtag-generator-beauty-1755632629575",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/hashtag-generator/beauty.json"
+    },
+    {
+      "slug": "hashtag-generator-nature-1755632629575",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/hashtag-generator/nature.json"
+    },
+    {
+      "slug": "hashtag-generator-art-1755632629575",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/hashtag-generator/art.json"
+    },
+    {
+      "slug": "hashtag-generator-business-1755632629575",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/hashtag-generator/business.json"
+    },
+    {
+      "slug": "hashtag-generator-pets-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/hashtag-generator/pets.json"
+    },
+    {
+      "slug": "personality-analyzer-influencer-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/personality-analyzer/influencer.json"
+    },
+    {
+      "slug": "personality-analyzer-comedian-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/personality-analyzer/comedian.json"
+    },
+    {
+      "slug": "personality-analyzer-educator-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/personality-analyzer/educator.json"
+    },
+    {
+      "slug": "personality-analyzer-aesthetic-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/personality-analyzer/aesthetic.json"
+    },
+    {
+      "slug": "personality-analyzer-authentic-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/personality-analyzer/authentic.json"
+    },
+    {
+      "slug": "roast-generator-basic-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/roast-generator/basic.json"
+    },
+    {
+      "slug": "roast-generator-tryhard-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/roast-generator/tryhard.json"
+    },
+    {
+      "slug": "roast-generator-aesthetic_fail-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/roast-generator/aesthetic_fail.json"
+    },
+    {
+      "slug": "roast-generator-oversharer-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/roast-generator/oversharer.json"
+    },
+    {
+      "slug": "instagram-challenges-creative-1755632629576",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/instagram-challenges/creative.json"
+    },
+    {
+      "slug": "instagram-challenges-fitness-1755632629577",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/instagram-challenges/fitness.json"
+    },
+    {
+      "slug": "instagram-challenges-lifestyle-1755632629577",
+      "filePath": "/Users/heni/lookatmyprofile-web/public/generated-data/instagram-challenges/lifestyle.json"
+    }
+  ],
+  "categories": {
+    "username-generator": [
+      "aesthetic",
+      "funny",
+      "creative",
+      "minimalist",
+      "y2k"
+    ],
+    "bio-templates": [
+      "fitness",
+      "travel",
+      "food",
+      "fashion",
+      "tech",
+      "art",
+      "music",
+      "wellness"
+    ],
+    "caption-generator": [
+      "birthday",
+      "vacation",
+      "selfie",
+      "food",
+      "workout",
+      "coffee",
+      "sunset",
+      "outfit"
+    ],
+    "hashtag-generator": [
+      "lifestyle",
+      "motivation",
+      "photography",
+      "beauty",
+      "nature",
+      "art",
+      "business",
+      "pets"
+    ],
+    "personality-analyzer": [
+      "influencer",
+      "comedian",
+      "educator",
+      "aesthetic",
+      "authentic"
+    ],
+    "roast-generator": [
+      "basic",
+      "tryhard",
+      "aesthetic_fail",
+      "oversharer"
+    ],
+    "instagram-challenges": [
+      "creative",
+      "fitness",
+      "lifestyle"
+    ]
+  }
+}
