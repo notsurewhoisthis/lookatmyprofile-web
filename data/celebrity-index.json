@@ -1,0 +1,1972 @@
+{
+  "categories": {
+    "athlete": [
+      {
+        "name": "Cristiano Ronaldo",
+        "handle": "cristiano",
+        "followers": "662M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "gym-obsessed",
+          "shirtless-selfies",
+          "product-placement"
+        ]
+      },
+      {
+        "name": "Lionel Messi",
+        "handle": "leomessi",
+        "followers": "506M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "humble-brag",
+          "family-man",
+          "goat-debates"
+        ]
+      },
+      {
+        "name": "Virat Kohli",
+        "handle": "virat.kohli",
+        "followers": "273M",
+        "category": "athlete",
+        "niche": "cricket",
+        "traits": [
+          "aggressive-player",
+          "fitness-freak",
+          "brand-deals"
+        ]
+      },
+      {
+        "name": "Neymar Jr",
+        "handle": "neymarjr",
+        "followers": "219M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "diving-master",
+          "party-boy",
+          "hairstyle-changes"
+        ]
+      },
+      {
+        "name": "LeBron James",
+        "handle": "kingjames",
+        "followers": "158M",
+        "category": "athlete",
+        "niche": "basketball",
+        "traits": [
+          "goat-debates",
+          "taco-tuesday",
+          "activism"
+        ]
+      },
+      {
+        "name": "Ronaldinho",
+        "handle": "ronaldinho",
+        "followers": "75M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "joga-bonito",
+          "party-legend",
+          "smile"
+        ]
+      },
+      {
+        "name": "David Beckham",
+        "handle": "davidbeckham",
+        "followers": "87M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "fashion-icon",
+          "posh-spice",
+          "miami"
+        ]
+      }
+    ],
+    "celebrity": [
+      {
+        "name": "Selena Gomez",
+        "handle": "selenagomez",
+        "followers": "417M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "mental-health-advocate",
+          "beauty-brand",
+          "cryptic-posts"
+        ]
+      },
+      {
+        "name": "Dwayne Johnson",
+        "handle": "therock",
+        "followers": "392M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "gym-motivation",
+          "cheat-meals",
+          "tequila-promotion"
+        ]
+      },
+      {
+        "name": "Ariana Grande",
+        "handle": "arianagrande",
+        "followers": "374M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "ponytail",
+          "whistle-notes",
+          "relationship-drama"
+        ]
+      },
+      {
+        "name": "Beyoncé",
+        "handle": "beyonce",
+        "followers": "310M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "flawless-image",
+          "beyhive",
+          "surprise-drops"
+        ]
+      },
+      {
+        "name": "Justin Bieber",
+        "handle": "justinbieber",
+        "followers": "294M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "baby-to-zaddy",
+          "jesus-phase",
+          "peaches"
+        ]
+      },
+      {
+        "name": "Taylor Swift",
+        "handle": "taylorswift",
+        "followers": "280M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "easter-eggs",
+          "cat-lady",
+          "boyfriend-songs"
+        ]
+      },
+      {
+        "name": "Jennifer Lopez",
+        "handle": "jlo",
+        "followers": "247M",
+        "category": "celebrity",
+        "niche": "entertainment",
+        "traits": [
+          "ageless",
+          "wedding-planner",
+          "bronx-girl"
+        ]
+      },
+      {
+        "name": "Nicki Minaj",
+        "handle": "nickiminaj",
+        "followers": "224M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "barbz",
+          "alter-egos",
+          "twitter-fights"
+        ]
+      },
+      {
+        "name": "Miley Cyrus",
+        "handle": "mileycyrus",
+        "followers": "214M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "hannah-montana",
+          "wrecking-ball",
+          "reinvention"
+        ]
+      },
+      {
+        "name": "Katy Perry",
+        "handle": "katyperry",
+        "followers": "204M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "left-shark",
+          "costume-queen",
+          "orlando-bloom"
+        ]
+      },
+      {
+        "name": "Zendaya",
+        "handle": "zendaya",
+        "followers": "182M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "fashion-icon",
+          "spider-romance",
+          "euphoria"
+        ]
+      },
+      {
+        "name": "Kevin Hart",
+        "handle": "kevinhart4real",
+        "followers": "178M",
+        "category": "celebrity",
+        "niche": "comedy",
+        "traits": [
+          "short-jokes",
+          "workout-videos",
+          "bromance"
+        ]
+      },
+      {
+        "name": "Cardi B",
+        "handle": "iamcardib",
+        "followers": "165M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "okurrr",
+          "no-filter",
+          "nail-videos"
+        ]
+      },
+      {
+        "name": "Demi Lovato",
+        "handle": "ddlovato",
+        "followers": "154M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "recovery-journey",
+          "pronouns",
+          "aliens"
+        ]
+      },
+      {
+        "name": "Rihanna",
+        "handle": "badgalriri",
+        "followers": "151M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "fenty-empire",
+          "no-album",
+          "savage-replies"
+        ]
+      },
+      {
+        "name": "Ellen DeGeneres",
+        "handle": "ellen",
+        "followers": "138M",
+        "category": "celebrity",
+        "niche": "tv-host",
+        "traits": [
+          "be-kind",
+          "dance-moves",
+          "controversy"
+        ]
+      },
+      {
+        "name": "Drake",
+        "handle": "champagnepapi",
+        "followers": "142M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "certified-lover-boy",
+          "memes",
+          "toronto"
+        ]
+      },
+      {
+        "name": "Billie Eilish",
+        "handle": "billieeilish",
+        "followers": "125M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "baggy-clothes",
+          "whisper-singing",
+          "gen-z-icon"
+        ]
+      },
+      {
+        "name": "Shakira",
+        "handle": "shakira",
+        "followers": "91M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "hips-dont-lie",
+          "tax-evasion",
+          "pique-drama"
+        ]
+      },
+      {
+        "name": "Priyanka Chopra",
+        "handle": "priyankachopra",
+        "followers": "91M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "global-icon",
+          "nick-jonas",
+          "bollywood-hollywood"
+        ]
+      },
+      {
+        "name": "Chris Brown",
+        "handle": "chrisbrownofficial",
+        "followers": "145M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "dance-moves",
+          "controversies",
+          "comeback-king"
+        ]
+      },
+      {
+        "name": "Vin Diesel",
+        "handle": "vindiesel",
+        "followers": "102M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "family-quotes",
+          "fast-furious",
+          "groot"
+        ]
+      },
+      {
+        "name": "Emma Watson",
+        "handle": "emmawatson",
+        "followers": "74M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "hermione",
+          "activism",
+          "book-club"
+        ]
+      },
+      {
+        "name": "Shawn Mendes",
+        "handle": "shawnmendes",
+        "followers": "72M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "canadian-nice",
+          "camila-drama",
+          "tattoos"
+        ]
+      },
+      {
+        "name": "Camila Cabello",
+        "handle": "camila_cabello",
+        "followers": "65M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "havana",
+          "shawn-drama",
+          "latina-pride"
+        ]
+      },
+      {
+        "name": "Dua Lipa",
+        "handle": "dualipa",
+        "followers": "88M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "dance-moves",
+          "retro-vibes",
+          "vacation-queen"
+        ]
+      },
+      {
+        "name": "Gal Gadot",
+        "handle": "galgadot",
+        "followers": "109M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "wonder-woman",
+          "imagine-video",
+          "israeli-pride"
+        ]
+      },
+      {
+        "name": "Bruno Mars",
+        "handle": "24kgoldn",
+        "followers": "68M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "silk-sonic",
+          "hat-collection",
+          "vegas"
+        ]
+      },
+      {
+        "name": "Chris Hemsworth",
+        "handle": "chrishemsworth",
+        "followers": "59M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "thor",
+          "australian",
+          "workout-app"
+        ]
+      },
+      {
+        "name": "Marshmello",
+        "handle": "marshmellomusic",
+        "followers": "56M",
+        "category": "celebrity",
+        "niche": "dj",
+        "traits": [
+          "helmet-mystery",
+          "fortnite",
+          "edm"
+        ]
+      },
+      {
+        "name": "Anitta",
+        "handle": "anitta",
+        "followers": "64M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "brazilian-queen",
+          "multilingual",
+          "twerking"
+        ]
+      },
+      {
+        "name": "Maluma",
+        "handle": "maluma",
+        "followers": "64M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "latin-heartthrob",
+          "baby-face",
+          "reggaeton"
+        ]
+      },
+      {
+        "name": "Snoop Dogg",
+        "handle": "snoopdogg",
+        "followers": "86M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "420-lifestyle",
+          "martha-stewart",
+          "name-changes"
+        ]
+      },
+      {
+        "name": "Will Smith",
+        "handle": "willsmith",
+        "followers": "73M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "slap-gate",
+          "motivational",
+          "fresh-prince"
+        ]
+      },
+      {
+        "name": "Tom Holland",
+        "handle": "tomholland2013",
+        "followers": "65M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "spider-man",
+          "spoiler-alert",
+          "zendaya"
+        ]
+      },
+      {
+        "name": "Jason Momoa",
+        "handle": "prideofgypsies",
+        "followers": "16M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "aquaman",
+          "rock-climbing",
+          "pink-clothes"
+        ]
+      },
+      {
+        "name": "Gordon Ramsay",
+        "handle": "gordongram",
+        "followers": "18M",
+        "category": "celebrity",
+        "niche": "chef",
+        "traits": [
+          "idiot-sandwich",
+          "angry-chef",
+          "tiktok-dad"
+        ]
+      },
+      {
+        "name": "Blake Lively",
+        "handle": "blakelively",
+        "followers": "45M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "gossip-girl",
+          "ryan-reynolds",
+          "met-gala"
+        ]
+      },
+      {
+        "name": "Ryan Reynolds",
+        "handle": "vancityreynolds",
+        "followers": "54M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "deadpool",
+          "canadian",
+          "blake-lively"
+        ]
+      },
+      {
+        "name": "Lil Nas X",
+        "handle": "lilnasx",
+        "followers": "11M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "old-town-road",
+          "satan-shoes",
+          "trolling"
+        ]
+      }
+    ],
+    "influencer": [
+      {
+        "name": "Kylie Jenner",
+        "handle": "kyliejenner",
+        "followers": "393M",
+        "category": "influencer",
+        "niche": "beauty",
+        "traits": [
+          "lip-kits",
+          "private-jets",
+          "baby-photos"
+        ]
+      },
+      {
+        "name": "Kim Kardashian",
+        "handle": "kimkardashian",
+        "followers": "355M",
+        "category": "influencer",
+        "niche": "reality-tv",
+        "traits": [
+          "skims-ads",
+          "filtered-reality",
+          "lawyer-journey"
+        ]
+      },
+      {
+        "name": "Khloe Kardashian",
+        "handle": "khloekardashian",
+        "followers": "302M",
+        "category": "influencer",
+        "niche": "reality-tv",
+        "traits": [
+          "revenge-body",
+          "photoshop-fails",
+          "relationship-chaos"
+        ]
+      },
+      {
+        "name": "Kourtney Kardashian",
+        "handle": "kourtneykardash",
+        "followers": "221M",
+        "category": "influencer",
+        "niche": "reality-tv",
+        "traits": [
+          "poosh-lifestyle",
+          "pda-overload",
+          "organic-everything"
+        ]
+      },
+      {
+        "name": "MrBeast",
+        "handle": "mrbeast",
+        "followers": "60M",
+        "category": "influencer",
+        "niche": "youtube",
+        "traits": [
+          "money-giveaways",
+          "stunts",
+          "burger-chain"
+        ]
+      },
+      {
+        "name": "Lele Pons",
+        "handle": "lelepons",
+        "followers": "53M",
+        "category": "influencer",
+        "niche": "comedy",
+        "traits": [
+          "vine-star",
+          "latina",
+          "cringe-comedy"
+        ]
+      },
+      {
+        "name": "James Charles",
+        "handle": "jamescharles",
+        "followers": "22M",
+        "category": "influencer",
+        "niche": "beauty",
+        "traits": [
+          "sister",
+          "drama-magnet",
+          "makeup"
+        ]
+      },
+      {
+        "name": "Charli D'Amelio",
+        "handle": "charlidamelio",
+        "followers": "45M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "renegade",
+          "dunkin",
+          "gen-z"
+        ]
+      },
+      {
+        "name": "Addison Rae",
+        "handle": "addisonraee",
+        "followers": "38M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "kourtney-bestie",
+          "acting-attempt",
+          "tiktok-dance"
+        ]
+      },
+      {
+        "name": "Khaby Lame",
+        "handle": "khaby00",
+        "followers": "81M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "silent-comedy",
+          "life-hacks",
+          "hand-gestures"
+        ]
+      },
+      {
+        "name": "Bretman Rock",
+        "handle": "bretmanrock",
+        "followers": "18M",
+        "category": "influencer",
+        "niche": "beauty",
+        "traits": [
+          "filipino-pride",
+          "abs",
+          "sassy"
+        ]
+      },
+      {
+        "name": "Liza Koshy",
+        "handle": "lizakoshy",
+        "followers": "18M",
+        "category": "influencer",
+        "niche": "comedy",
+        "traits": [
+          "puns",
+          "energy",
+          "youtube-og"
+        ]
+      },
+      {
+        "name": "Emma Chamberlain",
+        "handle": "emmachamberlain",
+        "followers": "15M",
+        "category": "influencer",
+        "niche": "lifestyle",
+        "traits": [
+          "coffee-obsessed",
+          "relatable",
+          "met-gala"
+        ]
+      },
+      {
+        "name": "Dixie D'Amelio",
+        "handle": "dixiedamelio",
+        "followers": "22M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "charlies-sister",
+          "music-attempt",
+          "noah-beck"
+        ]
+      },
+      {
+        "name": "Sommer Ray",
+        "handle": "sommerray",
+        "followers": "25M",
+        "category": "influencer",
+        "niche": "fitness",
+        "traits": [
+          "booty-workouts",
+          "dating-history",
+          "fitness-app"
+        ]
+      },
+      {
+        "name": "Bella Poarch",
+        "handle": "bellapoarch",
+        "followers": "13M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "m-to-the-b",
+          "tattoos",
+          "navy-vet"
+        ]
+      },
+      {
+        "name": "Zach King",
+        "handle": "zachking",
+        "followers": "29M",
+        "category": "influencer",
+        "niche": "magic",
+        "traits": [
+          "editing-magic",
+          "vine-og",
+          "wholesome"
+        ]
+      },
+      {
+        "name": "David Dobrik",
+        "handle": "daviddobrik",
+        "followers": "13M",
+        "category": "influencer",
+        "niche": "youtube",
+        "traits": [
+          "vlog-squad",
+          "tesla-giveaways",
+          "controversy"
+        ]
+      }
+    ],
+    "model": [
+      {
+        "name": "Kendall Jenner",
+        "handle": "kendalljenner",
+        "followers": "286M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "runway-queen",
+          "tequila-818",
+          "dating-athletes"
+        ]
+      },
+      {
+        "name": "Gigi Hadid",
+        "handle": "gigihadid",
+        "followers": "78M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "supermodel",
+          "baby-mama",
+          "pasta-queen"
+        ]
+      },
+      {
+        "name": "Cara Delevingne",
+        "handle": "caradelevingne",
+        "followers": "42M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "eyebrows",
+          "queer-icon",
+          "acting-pivot"
+        ]
+      },
+      {
+        "name": "Bella Hadid",
+        "handle": "bellahadid",
+        "followers": "61M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "depression-posts",
+          "palestine",
+          "weeknd-drama"
+        ]
+      },
+      {
+        "name": "Hailey Bieber",
+        "handle": "haileybieber",
+        "followers": "53M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "rhode-beauty",
+          "glazed-donut",
+          "selena-drama"
+        ]
+      }
+    ]
+  },
+  "topFollowers": [
+    {
+      "name": "Cristiano Ronaldo",
+      "handle": "cristiano",
+      "followers": "662M",
+      "category": "athlete",
+      "niche": "soccer",
+      "traits": [
+        "gym-obsessed",
+        "shirtless-selfies",
+        "product-placement"
+      ]
+    },
+    {
+      "name": "Lionel Messi",
+      "handle": "leomessi",
+      "followers": "506M",
+      "category": "athlete",
+      "niche": "soccer",
+      "traits": [
+        "humble-brag",
+        "family-man",
+        "goat-debates"
+      ]
+    },
+    {
+      "name": "Selena Gomez",
+      "handle": "selenagomez",
+      "followers": "417M",
+      "category": "celebrity",
+      "niche": "music",
+      "traits": [
+        "mental-health-advocate",
+        "beauty-brand",
+        "cryptic-posts"
+      ]
+    },
+    {
+      "name": "Kylie Jenner",
+      "handle": "kyliejenner",
+      "followers": "393M",
+      "category": "influencer",
+      "niche": "beauty",
+      "traits": [
+        "lip-kits",
+        "private-jets",
+        "baby-photos"
+      ]
+    },
+    {
+      "name": "Dwayne Johnson",
+      "handle": "therock",
+      "followers": "392M",
+      "category": "celebrity",
+      "niche": "actor",
+      "traits": [
+        "gym-motivation",
+        "cheat-meals",
+        "tequila-promotion"
+      ]
+    },
+    {
+      "name": "Ariana Grande",
+      "handle": "arianagrande",
+      "followers": "374M",
+      "category": "celebrity",
+      "niche": "music",
+      "traits": [
+        "ponytail",
+        "whistle-notes",
+        "relationship-drama"
+      ]
+    },
+    {
+      "name": "Kim Kardashian",
+      "handle": "kimkardashian",
+      "followers": "355M",
+      "category": "influencer",
+      "niche": "reality-tv",
+      "traits": [
+        "skims-ads",
+        "filtered-reality",
+        "lawyer-journey"
+      ]
+    },
+    {
+      "name": "Beyoncé",
+      "handle": "beyonce",
+      "followers": "310M",
+      "category": "celebrity",
+      "niche": "music",
+      "traits": [
+        "flawless-image",
+        "beyhive",
+        "surprise-drops"
+      ]
+    },
+    {
+      "name": "Khloe Kardashian",
+      "handle": "khloekardashian",
+      "followers": "302M",
+      "category": "influencer",
+      "niche": "reality-tv",
+      "traits": [
+        "revenge-body",
+        "photoshop-fails",
+        "relationship-chaos"
+      ]
+    },
+    {
+      "name": "Justin Bieber",
+      "handle": "justinbieber",
+      "followers": "294M",
+      "category": "celebrity",
+      "niche": "music",
+      "traits": [
+        "baby-to-zaddy",
+        "jesus-phase",
+        "peaches"
+      ]
+    },
+    {
+      "name": "Kendall Jenner",
+      "handle": "kendalljenner",
+      "followers": "286M",
+      "category": "model",
+      "niche": "fashion",
+      "traits": [
+        "runway-queen",
+        "tequila-818",
+        "dating-athletes"
+      ]
+    },
+    {
+      "name": "Taylor Swift",
+      "handle": "taylorswift",
+      "followers": "280M",
+      "category": "celebrity",
+      "niche": "music",
+      "traits": [
+        "easter-eggs",
+        "cat-lady",
+        "boyfriend-songs"
+      ]
+    },
+    {
+      "name": "Virat Kohli",
+      "handle": "virat.kohli",
+      "followers": "273M",
+      "category": "athlete",
+      "niche": "cricket",
+      "traits": [
+        "aggressive-player",
+        "fitness-freak",
+        "brand-deals"
+      ]
+    },
+    {
+      "name": "Jennifer Lopez",
+      "handle": "jlo",
+      "followers": "247M",
+      "category": "celebrity",
+      "niche": "entertainment",
+      "traits": [
+        "ageless",
+        "wedding-planner",
+        "bronx-girl"
+      ]
+    },
+    {
+      "name": "Nicki Minaj",
+      "handle": "nickiminaj",
+      "followers": "224M",
+      "category": "celebrity",
+      "niche": "music",
+      "traits": [
+        "barbz",
+        "alter-egos",
+        "twitter-fights"
+      ]
+    },
+    {
+      "name": "Kourtney Kardashian",
+      "handle": "kourtneykardash",
+      "followers": "221M",
+      "category": "influencer",
+      "niche": "reality-tv",
+      "traits": [
+        "poosh-lifestyle",
+        "pda-overload",
+        "organic-everything"
+      ]
+    },
+    {
+      "name": "Neymar Jr",
+      "handle": "neymarjr",
+      "followers": "219M",
+      "category": "athlete",
+      "niche": "soccer",
+      "traits": [
+        "diving-master",
+        "party-boy",
+        "hairstyle-changes"
+      ]
+    },
+    {
+      "name": "Miley Cyrus",
+      "handle": "mileycyrus",
+      "followers": "214M",
+      "category": "celebrity",
+      "niche": "music",
+      "traits": [
+        "hannah-montana",
+        "wrecking-ball",
+        "reinvention"
+      ]
+    },
+    {
+      "name": "Katy Perry",
+      "handle": "katyperry",
+      "followers": "204M",
+      "category": "celebrity",
+      "niche": "music",
+      "traits": [
+        "left-shark",
+        "costume-queen",
+        "orlando-bloom"
+      ]
+    },
+    {
+      "name": "Zendaya",
+      "handle": "zendaya",
+      "followers": "182M",
+      "category": "celebrity",
+      "niche": "actor",
+      "traits": [
+        "fashion-icon",
+        "spider-romance",
+        "euphoria"
+      ]
+    }
+  ],
+  "byNiche": {
+    "soccer": [
+      {
+        "name": "Cristiano Ronaldo",
+        "handle": "cristiano",
+        "followers": "662M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "gym-obsessed",
+          "shirtless-selfies",
+          "product-placement"
+        ]
+      },
+      {
+        "name": "Lionel Messi",
+        "handle": "leomessi",
+        "followers": "506M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "humble-brag",
+          "family-man",
+          "goat-debates"
+        ]
+      },
+      {
+        "name": "Neymar Jr",
+        "handle": "neymarjr",
+        "followers": "219M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "diving-master",
+          "party-boy",
+          "hairstyle-changes"
+        ]
+      },
+      {
+        "name": "Ronaldinho",
+        "handle": "ronaldinho",
+        "followers": "75M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "joga-bonito",
+          "party-legend",
+          "smile"
+        ]
+      },
+      {
+        "name": "David Beckham",
+        "handle": "davidbeckham",
+        "followers": "87M",
+        "category": "athlete",
+        "niche": "soccer",
+        "traits": [
+          "fashion-icon",
+          "posh-spice",
+          "miami"
+        ]
+      }
+    ],
+    "music": [
+      {
+        "name": "Selena Gomez",
+        "handle": "selenagomez",
+        "followers": "417M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "mental-health-advocate",
+          "beauty-brand",
+          "cryptic-posts"
+        ]
+      },
+      {
+        "name": "Ariana Grande",
+        "handle": "arianagrande",
+        "followers": "374M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "ponytail",
+          "whistle-notes",
+          "relationship-drama"
+        ]
+      },
+      {
+        "name": "Beyoncé",
+        "handle": "beyonce",
+        "followers": "310M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "flawless-image",
+          "beyhive",
+          "surprise-drops"
+        ]
+      },
+      {
+        "name": "Justin Bieber",
+        "handle": "justinbieber",
+        "followers": "294M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "baby-to-zaddy",
+          "jesus-phase",
+          "peaches"
+        ]
+      },
+      {
+        "name": "Taylor Swift",
+        "handle": "taylorswift",
+        "followers": "280M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "easter-eggs",
+          "cat-lady",
+          "boyfriend-songs"
+        ]
+      },
+      {
+        "name": "Nicki Minaj",
+        "handle": "nickiminaj",
+        "followers": "224M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "barbz",
+          "alter-egos",
+          "twitter-fights"
+        ]
+      },
+      {
+        "name": "Miley Cyrus",
+        "handle": "mileycyrus",
+        "followers": "214M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "hannah-montana",
+          "wrecking-ball",
+          "reinvention"
+        ]
+      },
+      {
+        "name": "Katy Perry",
+        "handle": "katyperry",
+        "followers": "204M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "left-shark",
+          "costume-queen",
+          "orlando-bloom"
+        ]
+      },
+      {
+        "name": "Cardi B",
+        "handle": "iamcardib",
+        "followers": "165M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "okurrr",
+          "no-filter",
+          "nail-videos"
+        ]
+      },
+      {
+        "name": "Demi Lovato",
+        "handle": "ddlovato",
+        "followers": "154M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "recovery-journey",
+          "pronouns",
+          "aliens"
+        ]
+      },
+      {
+        "name": "Rihanna",
+        "handle": "badgalriri",
+        "followers": "151M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "fenty-empire",
+          "no-album",
+          "savage-replies"
+        ]
+      },
+      {
+        "name": "Drake",
+        "handle": "champagnepapi",
+        "followers": "142M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "certified-lover-boy",
+          "memes",
+          "toronto"
+        ]
+      },
+      {
+        "name": "Billie Eilish",
+        "handle": "billieeilish",
+        "followers": "125M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "baggy-clothes",
+          "whisper-singing",
+          "gen-z-icon"
+        ]
+      },
+      {
+        "name": "Shakira",
+        "handle": "shakira",
+        "followers": "91M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "hips-dont-lie",
+          "tax-evasion",
+          "pique-drama"
+        ]
+      },
+      {
+        "name": "Chris Brown",
+        "handle": "chrisbrownofficial",
+        "followers": "145M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "dance-moves",
+          "controversies",
+          "comeback-king"
+        ]
+      },
+      {
+        "name": "Shawn Mendes",
+        "handle": "shawnmendes",
+        "followers": "72M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "canadian-nice",
+          "camila-drama",
+          "tattoos"
+        ]
+      },
+      {
+        "name": "Camila Cabello",
+        "handle": "camila_cabello",
+        "followers": "65M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "havana",
+          "shawn-drama",
+          "latina-pride"
+        ]
+      },
+      {
+        "name": "Dua Lipa",
+        "handle": "dualipa",
+        "followers": "88M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "dance-moves",
+          "retro-vibes",
+          "vacation-queen"
+        ]
+      },
+      {
+        "name": "Bruno Mars",
+        "handle": "24kgoldn",
+        "followers": "68M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "silk-sonic",
+          "hat-collection",
+          "vegas"
+        ]
+      },
+      {
+        "name": "Anitta",
+        "handle": "anitta",
+        "followers": "64M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "brazilian-queen",
+          "multilingual",
+          "twerking"
+        ]
+      },
+      {
+        "name": "Maluma",
+        "handle": "maluma",
+        "followers": "64M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "latin-heartthrob",
+          "baby-face",
+          "reggaeton"
+        ]
+      },
+      {
+        "name": "Snoop Dogg",
+        "handle": "snoopdogg",
+        "followers": "86M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "420-lifestyle",
+          "martha-stewart",
+          "name-changes"
+        ]
+      },
+      {
+        "name": "Lil Nas X",
+        "handle": "lilnasx",
+        "followers": "11M",
+        "category": "celebrity",
+        "niche": "music",
+        "traits": [
+          "old-town-road",
+          "satan-shoes",
+          "trolling"
+        ]
+      }
+    ],
+    "beauty": [
+      {
+        "name": "Kylie Jenner",
+        "handle": "kyliejenner",
+        "followers": "393M",
+        "category": "influencer",
+        "niche": "beauty",
+        "traits": [
+          "lip-kits",
+          "private-jets",
+          "baby-photos"
+        ]
+      },
+      {
+        "name": "James Charles",
+        "handle": "jamescharles",
+        "followers": "22M",
+        "category": "influencer",
+        "niche": "beauty",
+        "traits": [
+          "sister",
+          "drama-magnet",
+          "makeup"
+        ]
+      },
+      {
+        "name": "Bretman Rock",
+        "handle": "bretmanrock",
+        "followers": "18M",
+        "category": "influencer",
+        "niche": "beauty",
+        "traits": [
+          "filipino-pride",
+          "abs",
+          "sassy"
+        ]
+      }
+    ],
+    "actor": [
+      {
+        "name": "Dwayne Johnson",
+        "handle": "therock",
+        "followers": "392M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "gym-motivation",
+          "cheat-meals",
+          "tequila-promotion"
+        ]
+      },
+      {
+        "name": "Zendaya",
+        "handle": "zendaya",
+        "followers": "182M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "fashion-icon",
+          "spider-romance",
+          "euphoria"
+        ]
+      },
+      {
+        "name": "Priyanka Chopra",
+        "handle": "priyankachopra",
+        "followers": "91M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "global-icon",
+          "nick-jonas",
+          "bollywood-hollywood"
+        ]
+      },
+      {
+        "name": "Vin Diesel",
+        "handle": "vindiesel",
+        "followers": "102M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "family-quotes",
+          "fast-furious",
+          "groot"
+        ]
+      },
+      {
+        "name": "Emma Watson",
+        "handle": "emmawatson",
+        "followers": "74M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "hermione",
+          "activism",
+          "book-club"
+        ]
+      },
+      {
+        "name": "Gal Gadot",
+        "handle": "galgadot",
+        "followers": "109M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "wonder-woman",
+          "imagine-video",
+          "israeli-pride"
+        ]
+      },
+      {
+        "name": "Chris Hemsworth",
+        "handle": "chrishemsworth",
+        "followers": "59M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "thor",
+          "australian",
+          "workout-app"
+        ]
+      },
+      {
+        "name": "Will Smith",
+        "handle": "willsmith",
+        "followers": "73M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "slap-gate",
+          "motivational",
+          "fresh-prince"
+        ]
+      },
+      {
+        "name": "Tom Holland",
+        "handle": "tomholland2013",
+        "followers": "65M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "spider-man",
+          "spoiler-alert",
+          "zendaya"
+        ]
+      },
+      {
+        "name": "Jason Momoa",
+        "handle": "prideofgypsies",
+        "followers": "16M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "aquaman",
+          "rock-climbing",
+          "pink-clothes"
+        ]
+      },
+      {
+        "name": "Blake Lively",
+        "handle": "blakelively",
+        "followers": "45M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "gossip-girl",
+          "ryan-reynolds",
+          "met-gala"
+        ]
+      },
+      {
+        "name": "Ryan Reynolds",
+        "handle": "vancityreynolds",
+        "followers": "54M",
+        "category": "celebrity",
+        "niche": "actor",
+        "traits": [
+          "deadpool",
+          "canadian",
+          "blake-lively"
+        ]
+      }
+    ],
+    "reality-tv": [
+      {
+        "name": "Kim Kardashian",
+        "handle": "kimkardashian",
+        "followers": "355M",
+        "category": "influencer",
+        "niche": "reality-tv",
+        "traits": [
+          "skims-ads",
+          "filtered-reality",
+          "lawyer-journey"
+        ]
+      },
+      {
+        "name": "Khloe Kardashian",
+        "handle": "khloekardashian",
+        "followers": "302M",
+        "category": "influencer",
+        "niche": "reality-tv",
+        "traits": [
+          "revenge-body",
+          "photoshop-fails",
+          "relationship-chaos"
+        ]
+      },
+      {
+        "name": "Kourtney Kardashian",
+        "handle": "kourtneykardash",
+        "followers": "221M",
+        "category": "influencer",
+        "niche": "reality-tv",
+        "traits": [
+          "poosh-lifestyle",
+          "pda-overload",
+          "organic-everything"
+        ]
+      }
+    ],
+    "fashion": [
+      {
+        "name": "Kendall Jenner",
+        "handle": "kendalljenner",
+        "followers": "286M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "runway-queen",
+          "tequila-818",
+          "dating-athletes"
+        ]
+      },
+      {
+        "name": "Gigi Hadid",
+        "handle": "gigihadid",
+        "followers": "78M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "supermodel",
+          "baby-mama",
+          "pasta-queen"
+        ]
+      },
+      {
+        "name": "Cara Delevingne",
+        "handle": "caradelevingne",
+        "followers": "42M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "eyebrows",
+          "queer-icon",
+          "acting-pivot"
+        ]
+      },
+      {
+        "name": "Bella Hadid",
+        "handle": "bellahadid",
+        "followers": "61M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "depression-posts",
+          "palestine",
+          "weeknd-drama"
+        ]
+      },
+      {
+        "name": "Hailey Bieber",
+        "handle": "haileybieber",
+        "followers": "53M",
+        "category": "model",
+        "niche": "fashion",
+        "traits": [
+          "rhode-beauty",
+          "glazed-donut",
+          "selena-drama"
+        ]
+      }
+    ],
+    "cricket": [
+      {
+        "name": "Virat Kohli",
+        "handle": "virat.kohli",
+        "followers": "273M",
+        "category": "athlete",
+        "niche": "cricket",
+        "traits": [
+          "aggressive-player",
+          "fitness-freak",
+          "brand-deals"
+        ]
+      }
+    ],
+    "entertainment": [
+      {
+        "name": "Jennifer Lopez",
+        "handle": "jlo",
+        "followers": "247M",
+        "category": "celebrity",
+        "niche": "entertainment",
+        "traits": [
+          "ageless",
+          "wedding-planner",
+          "bronx-girl"
+        ]
+      }
+    ],
+    "comedy": [
+      {
+        "name": "Kevin Hart",
+        "handle": "kevinhart4real",
+        "followers": "178M",
+        "category": "celebrity",
+        "niche": "comedy",
+        "traits": [
+          "short-jokes",
+          "workout-videos",
+          "bromance"
+        ]
+      },
+      {
+        "name": "Lele Pons",
+        "handle": "lelepons",
+        "followers": "53M",
+        "category": "influencer",
+        "niche": "comedy",
+        "traits": [
+          "vine-star",
+          "latina",
+          "cringe-comedy"
+        ]
+      },
+      {
+        "name": "Liza Koshy",
+        "handle": "lizakoshy",
+        "followers": "18M",
+        "category": "influencer",
+        "niche": "comedy",
+        "traits": [
+          "puns",
+          "energy",
+          "youtube-og"
+        ]
+      }
+    ],
+    "basketball": [
+      {
+        "name": "LeBron James",
+        "handle": "kingjames",
+        "followers": "158M",
+        "category": "athlete",
+        "niche": "basketball",
+        "traits": [
+          "goat-debates",
+          "taco-tuesday",
+          "activism"
+        ]
+      }
+    ],
+    "tv-host": [
+      {
+        "name": "Ellen DeGeneres",
+        "handle": "ellen",
+        "followers": "138M",
+        "category": "celebrity",
+        "niche": "tv-host",
+        "traits": [
+          "be-kind",
+          "dance-moves",
+          "controversy"
+        ]
+      }
+    ],
+    "dj": [
+      {
+        "name": "Marshmello",
+        "handle": "marshmellomusic",
+        "followers": "56M",
+        "category": "celebrity",
+        "niche": "dj",
+        "traits": [
+          "helmet-mystery",
+          "fortnite",
+          "edm"
+        ]
+      }
+    ],
+    "chef": [
+      {
+        "name": "Gordon Ramsay",
+        "handle": "gordongram",
+        "followers": "18M",
+        "category": "celebrity",
+        "niche": "chef",
+        "traits": [
+          "idiot-sandwich",
+          "angry-chef",
+          "tiktok-dad"
+        ]
+      }
+    ],
+    "youtube": [
+      {
+        "name": "MrBeast",
+        "handle": "mrbeast",
+        "followers": "60M",
+        "category": "influencer",
+        "niche": "youtube",
+        "traits": [
+          "money-giveaways",
+          "stunts",
+          "burger-chain"
+        ]
+      },
+      {
+        "name": "David Dobrik",
+        "handle": "daviddobrik",
+        "followers": "13M",
+        "category": "influencer",
+        "niche": "youtube",
+        "traits": [
+          "vlog-squad",
+          "tesla-giveaways",
+          "controversy"
+        ]
+      }
+    ],
+    "tiktok": [
+      {
+        "name": "Charli D'Amelio",
+        "handle": "charlidamelio",
+        "followers": "45M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "renegade",
+          "dunkin",
+          "gen-z"
+        ]
+      },
+      {
+        "name": "Addison Rae",
+        "handle": "addisonraee",
+        "followers": "38M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "kourtney-bestie",
+          "acting-attempt",
+          "tiktok-dance"
+        ]
+      },
+      {
+        "name": "Khaby Lame",
+        "handle": "khaby00",
+        "followers": "81M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "silent-comedy",
+          "life-hacks",
+          "hand-gestures"
+        ]
+      },
+      {
+        "name": "Dixie D'Amelio",
+        "handle": "dixiedamelio",
+        "followers": "22M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "charlies-sister",
+          "music-attempt",
+          "noah-beck"
+        ]
+      },
+      {
+        "name": "Bella Poarch",
+        "handle": "bellapoarch",
+        "followers": "13M",
+        "category": "influencer",
+        "niche": "tiktok",
+        "traits": [
+          "m-to-the-b",
+          "tattoos",
+          "navy-vet"
+        ]
+      }
+    ],
+    "lifestyle": [
+      {
+        "name": "Emma Chamberlain",
+        "handle": "emmachamberlain",
+        "followers": "15M",
+        "category": "influencer",
+        "niche": "lifestyle",
+        "traits": [
+          "coffee-obsessed",
+          "relatable",
+          "met-gala"
+        ]
+      }
+    ],
+    "fitness": [
+      {
+        "name": "Sommer Ray",
+        "handle": "sommerray",
+        "followers": "25M",
+        "category": "influencer",
+        "niche": "fitness",
+        "traits": [
+          "booty-workouts",
+          "dating-history",
+          "fitness-app"
+        ]
+      }
+    ],
+    "magic": [
+      {
+        "name": "Zach King",
+        "handle": "zachking",
+        "followers": "29M",
+        "category": "influencer",
+        "niche": "magic",
+        "traits": [
+          "editing-magic",
+          "vine-og",
+          "wholesome"
+        ]
+      }
+    ]
+  }
+}

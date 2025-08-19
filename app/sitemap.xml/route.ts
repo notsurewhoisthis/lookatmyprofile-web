@@ -65,6 +65,77 @@ export async function GET() {
     { url: '/terms', priority: 0.5, changefreq: 'yearly' },
   ];
 
+  // Dynamically get celebrity roast pages
+  const celebrityPages: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [];
+  try {
+    const celebDataPath = path.join(process.cwd(), 'data', 'celebrity-roasts.json');
+    if (fs.existsSync(celebDataPath)) {
+      const content = fs.readFileSync(celebDataPath, 'utf-8');
+      const celebRoasts = JSON.parse(content);
+      
+      // Add main celebrity roasts index page
+      celebrityPages.push({
+        url: '/celebrity-roasts',
+        priority: 0.9,
+        changefreq: 'weekly',
+        lastmod: new Date().toISOString()
+      });
+      
+      // Add individual celebrity roast pages
+      celebRoasts.forEach((roast: any) => {
+        celebrityPages.push({
+          url: `/celebrity-roasts/${roast.slug}`,
+          priority: 0.85,
+          changefreq: 'weekly',
+          lastmod: new Date().toISOString()
+        });
+      });
+    }
+  } catch (error) {
+    console.error('Error reading celebrity roast pages:', error);
+  }
+
+  // Dynamically get tool pages
+  const toolPages: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [];
+  try {
+    const toolDataPath = path.join(process.cwd(), 'data', 'generated-pages.json');
+    if (fs.existsSync(toolDataPath)) {
+      const content = fs.readFileSync(toolDataPath, 'utf-8');
+      const tools = JSON.parse(content);
+      
+      // Add main tools index page
+      toolPages.push({
+        url: '/tools',
+        priority: 0.9,
+        changefreq: 'weekly',
+        lastmod: new Date().toISOString()
+      });
+      
+      // Add category pages
+      const categories = ['username-generator', 'bio-generator', 'caption-generator', 'hashtag-generator', 'roast-generator', 'personality-analyzer'];
+      categories.forEach(category => {
+        toolPages.push({
+          url: `/tools/${category}`,
+          priority: 0.85,
+          changefreq: 'weekly',
+          lastmod: new Date().toISOString()
+        });
+      });
+      
+      // Add individual tool pages
+      tools.forEach((tool: any) => {
+        toolPages.push({
+          url: `/tools/${tool.category}/${tool.slug}`,
+          priority: 0.8,
+          changefreq: 'monthly',
+          lastmod: new Date().toISOString()
+        });
+      });
+    }
+  } catch (error) {
+    console.error('Error reading tool pages:', error);
+  }
+
   // Dynamically get blog posts from JSON files
   const blogPosts: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [];
   try {
@@ -102,7 +173,7 @@ export async function GET() {
     console.error('Error reading blog posts for sitemap:', error);
   }
 
-  const allPages = [...staticPages, ...blogPosts];
+  const allPages = [...staticPages, ...celebrityPages, ...toolPages, ...blogPosts];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

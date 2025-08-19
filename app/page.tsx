@@ -39,6 +39,7 @@ export default function Home() {
           </Link>
           <div className="flex gap-4 items-center">
             <Link href="/roast-generator" className="hover:text-purple-400 transition text-sm md:text-base">Roast</Link>
+            <Link href="/celebrity-roasts" className="hover:text-purple-400 transition text-sm md:text-base">Celebrities</Link>
             <Link href="/instagram-bio-generator" className="hover:text-purple-400 transition text-sm md:text-base">Bio</Link>
             <Link href="/instagram-caption-generator" className="hover:text-purple-400 transition text-sm md:text-base">Captions</Link>
             <Link href="/my-insta-personality" className="hover:text-purple-400 transition text-sm md:text-base">Personality</Link>
