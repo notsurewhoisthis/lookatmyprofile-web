@@ -37,9 +37,9 @@ export default function FriendlyRoastPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-green-900 to-teal-900 text-white">
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Roast Styles', url: '/roast-styles' },
-          { name: 'Friendly Fire', url: '/roast-styles/friendly' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Roast Styles', url: 'https://www.lookatmyprofile.org/roast-styles' },
+          { name: 'Friendly Fire', url: 'https://www.lookatmyprofile.org/roast-styles/friendly' }
         ]}
       />
       <QASchema qaItems={friendlyQA} pageName="Friendly Roast Style" />

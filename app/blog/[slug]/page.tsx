@@ -226,8 +226,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Blog', url: '/blog' },
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Blog', url: 'https://www.lookatmyprofile.org/blog' },
           { name: post.title, url: `/blog/${post.slug}` }
         ]}
       />

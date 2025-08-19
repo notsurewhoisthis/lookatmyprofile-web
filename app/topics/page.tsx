@@ -86,8 +86,8 @@ export default function TopicsPage() {
 
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Topics', url: '/topics' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Topics', url: 'https://www.lookatmyprofile.org/topics' }
         ]}
       />
 

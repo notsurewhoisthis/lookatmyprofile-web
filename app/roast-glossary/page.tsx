@@ -173,8 +173,8 @@ export default function RoastGlossaryPage() {
 
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Roast Glossary', url: '/roast-glossary' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Roast Glossary', url: 'https://www.lookatmyprofile.org/roast-glossary' }
         ]}
       />
 

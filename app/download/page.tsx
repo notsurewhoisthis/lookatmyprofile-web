@@ -72,8 +72,8 @@ export default function DownloadPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Download', url: '/download' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Download', url: 'https://www.lookatmyprofile.org/download' }
         ]}
       />
       <QASchema qaItems={commonQA.downloadPage} pageName="Download Page" />

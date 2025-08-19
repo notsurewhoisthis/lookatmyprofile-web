@@ -217,9 +217,9 @@ export default function SocialMediaHumorHub() {
 
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Topics', url: '/topics' },
-          { name: 'Social Media Humor', url: '/topics/social-media-humor' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Topics', url: 'https://www.lookatmyprofile.org/topics' },
+          { name: 'Social Media Humor', url: 'https://www.lookatmyprofile.org/topics/social-media-humor' }
         ]}
       />
 

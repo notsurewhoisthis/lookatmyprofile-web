@@ -37,9 +37,9 @@ export default function SavageRoastPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-950 to-black text-white">
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Roast Styles', url: '/roast-styles' },
-          { name: 'Savage Mode', url: '/roast-styles/savage' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Roast Styles', url: 'https://www.lookatmyprofile.org/roast-styles' },
+          { name: 'Savage Mode', url: 'https://www.lookatmyprofile.org/roast-styles/savage' }
         ]}
       />
       <QASchema qaItems={savageQA} pageName="Savage Roast Style" />

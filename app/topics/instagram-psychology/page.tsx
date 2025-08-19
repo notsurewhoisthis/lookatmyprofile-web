@@ -181,9 +181,9 @@ export default function InstagramPsychologyHub() {
 
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Topics', url: '/topics' },
-          { name: 'Instagram Psychology', url: '/topics/instagram-psychology' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Topics', url: 'https://www.lookatmyprofile.org/topics' },
+          { name: 'Instagram Psychology', url: 'https://www.lookatmyprofile.org/topics/instagram-psychology' }
         ]}
       />
 

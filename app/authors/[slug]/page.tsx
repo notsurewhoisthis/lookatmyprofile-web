@@ -118,8 +118,8 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
       
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Authors', url: '/authors' },
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Authors', url: 'https://www.lookatmyprofile.org/authors' },
           { name: author.name, url: `/authors/${author.slug}` }
         ]}
       />

@@ -107,9 +107,9 @@ export default function RoastMyExPage() {
 
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Roast Generator', url: '/roast-generator' },
-          { name: 'Roast My Ex', url: '/roast-my-ex' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Roast Generator', url: 'https://www.lookatmyprofile.org/roast-generator' },
+          { name: 'Roast My Ex', url: 'https://www.lookatmyprofile.org/roast-my-ex' }
         ]}
       />
 

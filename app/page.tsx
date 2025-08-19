@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' }
         ]}
       />
       <FAQSchema faqs={commonFAQs.homepage} pageTitle="Home" />

@@ -58,8 +58,8 @@ export default async function AuthorsPage() {
       
       <BreadcrumbSchema 
         items={[
-          { name: 'Home', url: '/' },
-          { name: 'Authors', url: '/authors' }
+          { name: 'Home', url: 'https://www.lookatmyprofile.org/' },
+          { name: 'Authors', url: 'https://www.lookatmyprofile.org/authors' }
         ]}
       />
 
