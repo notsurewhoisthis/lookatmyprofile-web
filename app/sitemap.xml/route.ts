@@ -44,6 +44,10 @@ export async function GET() {
     { url: '/authors/roast-master', priority: 0.7, changefreq: 'monthly', lastmod: new Date().toISOString() },
     { url: '/authors/alex-morgan', priority: 0.7, changefreq: 'monthly', lastmod: new Date().toISOString() },
     { url: '/authors/sam-rivera', priority: 0.7, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    { url: '/reels-hub', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-personas', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-challenges', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
+    { url: '/roast-intel', priority: 0.8, changefreq: 'monthly', lastmod: new Date().toISOString() },
     
     // Long-tail keyword pages
     { url: '/free-instagram-roast-generator-no-signup', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
@@ -136,6 +140,26 @@ export async function GET() {
     console.error('Error reading tool pages:', error);
   }
 
+  // Dynamically add persona landing pages
+  const personaPages: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [];
+  try {
+    const personaPath = path.join(process.cwd(), 'data', 'roast-personas.json');
+    if (fs.existsSync(personaPath)) {
+      const raw = fs.readFileSync(personaPath, 'utf-8');
+      const personas = JSON.parse(raw);
+      personas.forEach((persona: any) => {
+        personaPages.push({
+          url: `/roast-personas/${persona.slug}`,
+          priority: 0.8,
+          changefreq: 'weekly',
+          lastmod: new Date().toISOString()
+        });
+      });
+    }
+  } catch (error) {
+    console.error('Error reading persona pages:', error);
+  }
+
   // Dynamically get blog posts from JSON files
   const blogPosts: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [];
   try {
@@ -173,7 +197,7 @@ export async function GET() {
     console.error('Error reading blog posts for sitemap:', error);
   }
 
-  const allPages = [...staticPages, ...celebrityPages, ...toolPages, ...blogPosts];
+  const allPages = [...staticPages, ...celebrityPages, ...toolPages, ...personaPages, ...blogPosts];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

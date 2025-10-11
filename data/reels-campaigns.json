@@ -1,0 +1,44 @@
+[
+  {
+    "id": "valorant-pro-tips-roast",
+    "title": "Valorant Whiff Highlight → Roast Reel",
+    "hook": "POV: your duo instalocked Duelist then whiffs every shot 🔫",
+    "cta": "Tap the link in bio to auto-generate your squad’s roast with UTM tracking.",
+    "publishingWindow": "Tuesdays 7:30 PM ET",
+    "audioSuggestion": "valorant-toxic-freebeat-2025",
+    "utm": {
+      "source": "instagram",
+      "medium": "reels",
+      "campaign": "valorant_roast_drop",
+      "content": "week1_duelist_whiff"
+    }
+  },
+  {
+    "id": "dating-app-red-flags-roast",
+    "title": "Roasting Dating App Red Flags",
+    "hook": "Send this to the friend who still has fish pics in 2025 🐟",
+    "cta": "Swipe up to drop the profile and the AI roaster spits out the clapback.",
+    "publishingWindow": "Fridays 6:00 PM ET",
+    "audioSuggestion": "retro-pop-snippet-viral-2025",
+    "utm": {
+      "source": "instagram",
+      "medium": "reels",
+      "campaign": "dating_bio_roast",
+      "content": "week2_fish_pic_special"
+    }
+  },
+  {
+    "id": "remote-work-bingo-roast",
+    "title": "Remote Work Bingo Roast",
+    "hook": "When the standup hits 47 minutes because ‘just one more thing…’ 🗓️",
+    "cta": "Grab the standup roast prompt kit—link in bio with analytics baked in.",
+    "publishingWindow": "Wednesdays 11:00 AM ET",
+    "audioSuggestion": "lofi-productivity-breakbeat",
+    "utm": {
+      "source": "instagram",
+      "medium": "reels",
+      "campaign": "remote_roast_series",
+      "content": "week3_zoom_saga"
+    }
+  }
+]

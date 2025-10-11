@@ -4,8 +4,27 @@ export const siteLinks = {
   core: [
     { href: '/', label: 'Home', priority: 1 },
     { href: '/roast-generator', label: 'Roast Generator', priority: 1 },
+    { href: '/celebrity-roasts', label: 'Celebrity Roasts', priority: 1 },
+    { href: '/tools', label: 'Instagram Tools', priority: 1 },
     { href: '/download', label: 'Download App', priority: 1 },
     { href: '/blog', label: 'Blog', priority: 1 },
+  ],
+  celebrityRoasts: [
+    { href: '/celebrity-roasts', label: 'All Celebrities' },
+    { href: '/celebrity-roasts/cristiano-instagram-roast-savage', label: 'Cristiano Ronaldo' },
+    { href: '/celebrity-roasts/selenagomez-instagram-roast-funny', label: 'Selena Gomez' },
+    { href: '/celebrity-roasts/therock-instagram-roast-gen-z', label: 'The Rock' },
+    { href: '/celebrity-roasts/taylorswift-instagram-roast-savage', label: 'Taylor Swift' },
+    { href: '/celebrity-roasts/mrbeast-instagram-roast-savage', label: 'MrBeast' },
+  ],
+  toolCategories: [
+    { href: '/tools', label: 'All Tools (500+)' },
+    { href: '/tools/username-generator', label: 'Username Ideas (120)' },
+    { href: '/tools/bio-generator', label: 'Bio Templates (250)' },
+    { href: '/tools/caption-generator', label: 'Caption Ideas (50)' },
+    { href: '/tools/hashtag-generator', label: 'Hashtag Sets (30)' },
+    { href: '/tools/roast-generator', label: 'Roast Types (40)' },
+    { href: '/tools/personality-analyzer', label: 'Personality Tests (10)' },
   ],
   tools: [
     { href: '/roast-generator', label: 'AI Roast Generator' },
@@ -27,6 +46,9 @@ export const siteLinks = {
     { href: '/roast-glossary', label: 'Roasting Dictionary' },
     { href: '/roast-my-ex', label: 'Roast My Ex' },
     { href: '/what-is-instagram-roasting', label: 'What is Roasting?' },
+    { href: '/reels-hub', label: 'Roast Reels Hub' },
+    { href: '/roast-challenges', label: 'Roast Me Royale' },
+    { href: '/roast-intel', label: 'Roast Intelligence' }
   ],
   topics: [
     { href: '/topics', label: 'Knowledge Hub' },
@@ -44,6 +66,7 @@ export const siteLinks = {
     { href: '/gen-z-roast-generator-online', label: 'Gen Z Generator' },
     { href: '/savage-instagram-roasts-examples', label: 'Savage Examples' },
     { href: '/ai-roast-generator', label: 'AI Generator' },
+    { href: '/roast-personas', label: 'Persona Landing Pages' }
   ],
   comparison: [
     { href: '/vs-cleve-ai', label: 'vs Cleve AI' },
@@ -71,12 +94,50 @@ export function FooterNavigation({ currentPath }: FooterNavigationProps) {
   return (
     <footer className="bg-gray-900 border-t border-gray-800 mt-20">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-5 gap-8">
-          {/* Tools Column */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
+          {/* AI Tools Column */}
           <div>
             <h3 className="font-bold text-white mb-4">AI Tools</h3>
             <ul className="space-y-2">
               {siteLinks.tools.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href}
+                    className={`text-gray-400 hover:text-purple-400 transition text-sm ${
+                      currentPath === link.href ? 'text-purple-400' : ''
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Tool Categories Column */}
+          <div>
+            <h3 className="font-bold text-white mb-4">500+ Tools</h3>
+            <ul className="space-y-2">
+              {siteLinks.toolCategories.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href}
+                    className={`text-gray-400 hover:text-purple-400 transition text-sm ${
+                      currentPath === link.href ? 'text-purple-400' : ''
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Celebrity Roasts Column */}
+          <div>
+            <h3 className="font-bold text-white mb-4">Celebrities</h3>
+            <ul className="space-y-2">
+              {siteLinks.celebrityRoasts.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href}

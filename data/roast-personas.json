@@ -1,0 +1,149 @@
+[
+  {
+    "slug": "ai-roast-generator-gamers",
+    "title": "AI Roast Generator for Gamers",
+    "metaDescription": "Level up trash talk with an AI roast generator built for Twitch streamers, esports squads, and Discord communities.",
+    "searchIntent": "Users want savage but clever gaming roasts they can drop into party chats, Twitch, and Instagram Stories.",
+    "audienceSignals": [
+      "Gen Z & Gen Alpha gamers",
+      "Streams on Twitch, Kick, YouTube Gaming",
+      "Shares highlights on Instagram Reels"
+    ],
+    "painPoints": [
+      "Need fresh shade that references current games and patches",
+      "Want roasts that are witty without violating platform policies",
+      "Desire quick copy they can overlay on gameplay clips"
+    ],
+    "keywordTargets": [
+      "gaming roast generator",
+      "ai roast bot for gamers",
+      "funny gaming insults 2025",
+      "twitch roast me ai"
+    ],
+    "contentBlocks": [
+      {
+        "heading": "Drop 200 IQ Roasts Mid-Stream",
+        "summary": "Generate aim-assist level burns tailored to shooters, MOBAs, and party games."
+      },
+      {
+        "heading": "Safe Mode + Savage Mode Switch",
+        "summary": "Toggle profanity filters so you can clap back without risking Twitch bans."
+      },
+      {
+        "heading": "Instant Reels Export",
+        "summary": "Download roast captions sized for 9:16 and share straight to Instagram."
+      }
+    ],
+    "samplePrompts": [
+      "Roast a Valorant teammate who instalocked Jett then went 3/17",
+      "Clap back at a Mario Kart friend who only throws blue shells",
+      "Trash talk a League jungler who hasn’t secured a single objective"
+    ],
+    "recommendedCTAs": [
+      "Launch Gamer Mode",
+      "Build a Roast Highlight Reel",
+      "Challenge Your Squad"
+    ],
+    "relatedReels": [
+      "valorant-pro-tips-roast"
+    ]
+  },
+  {
+    "slug": "instagram-roast-generator-dating-app-bios",
+    "title": "AI Roast Generator for Dating App Bios",
+    "metaDescription": "Turn cringe dating app bios into viral roasts perfect for Instagram stories and group chats.",
+    "searchIntent": "Social media users want humorous callouts for Hinge, Tinder, and Bumble profiles they screenshot.",
+    "audienceSignals": [
+      "Dating app veterans",
+      "Group chat meme curators",
+      "Weekend brunch storytellers"
+    ],
+    "painPoints": [
+      "Need punchy roasts that stay playful not cruel",
+      "Want roasts formatted for Instagram Stories",
+      "Looking for hashtags and captions that go viral"
+    ],
+    "keywordTargets": [
+      "tinder roast generator",
+      "dating profile roast captions",
+      "hinge prompts roast ideas",
+      "funny dating app burns"
+    ],
+    "contentBlocks": [
+      {
+        "heading": "Screenshot → Roast in 30 Seconds",
+        "summary": "Upload a dating profile screenshot and get three roast variations tuned for IG Stories."
+      },
+      {
+        "heading": "Viral Caption Pack",
+        "summary": "Auto-generate hashtags and trending audio recommendations to fuel Reels reach."
+      },
+      {
+        "heading": "Consent-First Humor",
+        "summary": "Use the friendly-fire toggle for roasts you can actually send to a match."
+      }
+    ],
+    "samplePrompts": [
+      "Roast a Tinder profile that still quotes The Office",
+      "Make fun of a guy whose whole profile is fish pics",
+      "Call out a Hinge prompt that just says ‘pineapple on pizza?’"
+    ],
+    "recommendedCTAs": [
+      "Roast This Bio",
+      "Share to Close Friends",
+      "Spin Up a Reel"
+    ],
+    "relatedReels": [
+      "dating-app-red-flags-roast"
+    ]
+  },
+  {
+    "slug": "ai-roast-generator-office-culture",
+    "title": "AI Roast Generator for Office Culture",
+    "metaDescription": "Light up Slack with HR-safe roasts, onboarding jokes, and corporate meme fuel.",
+    "searchIntent": "Marketing, HR, and startup teams want team-building roast material that’s funny but brand-safe.",
+    "audienceSignals": [
+      "Fully remote SaaS teams",
+      "People Ops & culture managers",
+      "LinkedIn power users"
+    ],
+    "painPoints": [
+      "Need humor that won’t trigger HR tickets",
+      "Want roasts to spice up all-hands and retros",
+      "Looking for LinkedIn-friendly memes"
+    ],
+    "keywordTargets": [
+      "office roast generator",
+      "team building roast game",
+      "funny retrospective icebreakers",
+      "hr safe ai roasts"
+    ],
+    "contentBlocks": [
+      {
+        "heading": "HR Guardrails Built-In",
+        "summary": "Tone sliders keep jokes inclusive, positive, and ready for company-wide meetings."
+      },
+      {
+        "heading": "Retro & Standup Pack",
+        "summary": "Generate roasts framed as kudos, call-outs, or meme slides for your next all-hands."
+      },
+      {
+        "heading": "LinkedIn Share Mode",
+        "summary": "Turn roasts into meme posts sized for LinkedIn carousels with CTA copy."
+      }
+    ],
+    "samplePrompts": [
+      "Roast the coworker who always says ‘circle back’",
+      "Playful jab at the PM who lives in Miro boards",
+      "Icebreaker for a remote retro with time zones everywhere"
+    ],
+    "recommendedCTAs": [
+      "Start Office Edition",
+      "Generate Retro Icebreakers",
+      "Export LinkedIn Carousel"
+    ],
+    "relatedReels": [
+      "remote-work-bingo-roast"
+    ]
+  }
+]

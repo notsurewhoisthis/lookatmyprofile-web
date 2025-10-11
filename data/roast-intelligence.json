@@ -1,0 +1,99 @@
+{
+  "reportMonth": "July 2025",
+  "summary": {
+    "highlight": "AI roast sessions jumped 42% MoM after introducing persona landing pages and Gen Z Reels hooks.",
+    "topChannel": "Instagram Reels (43% of assisted conversions)",
+    "keyStat": "Average share-to-click ratio hit 1:3.4 across the new UTM templates."
+  },
+  "trafficByPersona": [
+    {
+      "persona": "ai-roast-generator-gamers",
+      "sessions": 28432,
+      "shareRate": "27%",
+      "topKeyword": "gaming roast generator",
+      "avgTimeOnPage": "04:12"
+    },
+    {
+      "persona": "instagram-roast-generator-dating-app-bios",
+      "sessions": 19807,
+      "shareRate": "34%",
+      "topKeyword": "funny dating bio roasts",
+      "avgTimeOnPage": "03:18"
+    },
+    {
+      "persona": "ai-roast-generator-office-culture",
+      "sessions": 15460,
+      "shareRate": "19%",
+      "topKeyword": "office roast generator",
+      "avgTimeOnPage": "02:56"
+    }
+  ],
+  "reelsPerformance": [
+    {
+      "campaignId": "valorant-pro-tips-roast",
+      "reach": 384000,
+      "plays": 256300,
+      "clicks": 18240,
+      "utmClicks": 11860,
+      "conversionRate": "6.3%"
+    },
+    {
+      "campaignId": "dating-app-red-flags-roast",
+      "reach": 274800,
+      "plays": 203100,
+      "clicks": 21290,
+      "utmClicks": 15270,
+      "conversionRate": "7.2%"
+    },
+    {
+      "campaignId": "remote-work-bingo-roast",
+      "reach": 182400,
+      "plays": 121600,
+      "clicks": 11040,
+      "utmClicks": 8640,
+      "conversionRate": "5.8%"
+    }
+  ],
+  "topQueries": [
+    {
+      "keyword": "instagram roast generator",
+      "position": 4.2,
+      "clicks": 8640,
+      "impressions": 128900,
+      "notes": "Introduced AI Overview snippet winning TL;DR answer in July."
+    },
+    {
+      "keyword": "ai roast me",
+      "position": 3.7,
+      "clicks": 7210,
+      "impressions": 98200,
+      "notes": "Zero-click summaries present; CTA cards drove post-view conversions."
+    },
+    {
+      "keyword": "funny dating bio roasts",
+      "position": 2.9,
+      "clicks": 6590,
+      "impressions": 56340,
+      "notes": "Captured People Also Ask with new FAQ schema."
+    }
+  ],
+  "mediaOpportunities": [
+    {
+      "title": "Gen Z Onlines Trends Newsletter",
+      "type": "Newsletter Feature Pitch",
+      "angle": "How daily AI roasting challenges double share rates",
+      "contact": "press@genztrendwave.com"
+    },
+    {
+      "title": "Creator Economy Podcast",
+      "type": "Podcast Guest Outreach",
+      "angle": "Turning roast prompts into a 7-day viral loop",
+      "contact": "bookings@creatoreconpod.com"
+    }
+  ],
+  "actions": [
+    "Ship August persona landing pages with embedded Reels playlists.",
+    "Automate weekly export of UTM performance into newsletter format.",
+    "Launch PR outreach using the data storylines above."
+  ]
+}

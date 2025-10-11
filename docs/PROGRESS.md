@@ -2,6 +2,28 @@
 
 ## ✅ Completed Today (Aug 16, 2025)
 
+### 3. Reels-to-Web Growth Engine
+- Added `/app/reels-hub/page.tsx` with campaign presets, persona alignment, and UTM builder
+- Created `components/Reels/UtmBuilder.tsx` for reusable analytics tagging
+- Added `data/reels-campaigns.json` for weekly hook scheduling
+
+### 4. Programmatic Persona Landing System
+- Launched `/app/roast-personas` index + dynamic persona routes
+- Added `data/roast-personas.json` with intents, CTAs, and keyword targets
+- Connected persona pages to Reels hub and sitemap for SEO coverage
+
+### 5. Roast Me Royale Challenge Platform
+- Built `/app/roast-challenges/page.tsx` with leaderboard + automation notes
+- Added `data/roast-challenges.json` to power upcoming challenge details
+
+### 6. Roast Intelligence Observatory
+- Published `/app/roast-intel/page.tsx` for monthly reporting
+- Added `data/roast-intelligence.json` for traffic, queries, and media opportunities
+
+### 7. Sitemap & Navigation Refresh
+- Updated global navigation with new growth hubs
+- Extended sitemap generation to include persona pages and strategic hubs
+
 ### 1. Author Pages with E-A-T Signals
 - Created `/app/authors/[slug]/page.tsx` - Individual author pages with full E-A-T schema
 - Created `/app/authors/page.tsx` - Authors index page

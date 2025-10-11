@@ -1,0 +1,69 @@
+{
+  "upcomingChallenge": {
+    "slug": "roast-me-royale-aug-2025",
+    "title": "Roast Me Royale: August 2025",
+    "theme": "Gaming + Dating App Mashups",
+    "submissionWindow": "Aug 18 – Aug 31, 2025",
+    "prizes": [
+      "Feature on @lookatmyprofile reels feed",
+      "1 year Roast a Profile Pro subscription",
+      "Creator spotlight in Roast Intelligence report"
+    ],
+    "submissionTypes": [
+      "Instagram Reel link with UTM tag",
+      "Image or screenshot upload with caption",
+      "30-second audio roast"
+    ],
+    "judgingCriteria": [
+      "Originality & meme fluency",
+      "Community engagement (shares + saves)",
+      "Staying spicy without crossing the line"
+    ],
+    "activationCTAs": [
+      "Generate My Entry",
+      "Grab UTM Link",
+      "See Last Month’s Winners"
+    ]
+  },
+  "leaderboard": [
+    {
+      "rank": 1,
+      "creator": "GGJess",
+      "platform": "Instagram",
+      "entryTitle": "When Your Duo Treats Ranked Like Casual",
+      "views": 128400,
+      "saves": 23640,
+      "engagementRate": "18.4%",
+      "persona": "ai-roast-generator-gamers"
+    },
+    {
+      "rank": 2,
+      "creator": "DateNightDiss",
+      "platform": "Instagram",
+      "entryTitle": "Tinder Bio with 7 Side Hustles",
+      "views": 98210,
+      "saves": 15480,
+      "engagementRate": "15.7%",
+      "persona": "instagram-roast-generator-dating-app-bios"
+    },
+    {
+      "rank": 3,
+      "creator": "SlackSnack",
+      "platform": "TikTok",
+      "entryTitle": "Async Standup Bingo",
+      "views": 65400,
+      "saves": 9100,
+      "engagementRate": "13.9%",
+      "persona": "ai-roast-generator-office-culture"
+    }
+  ],
+  "automation": {
+    "webhook": "/api/challenges/submit",
+    "reviewWorkflow": "n8n_roast_challenge_review",
+    "moderationNotes": [
+      "Auto-flag NSFW language via OpenAI moderation API",
+      "Manual review for copyrighted audio",
+      "Approve entries before live leaderboard push"
+    ]
+  }
+}
