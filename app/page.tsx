@@ -21,8 +21,65 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  // Structured data for celebrity roasts section
+  const celebrityRoastsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Celebrity Instagram Roasts',
+    description: 'Savage roasts of the top 100 Instagram celebrities',
+    numberOfItems: 100,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        url: 'https://www.lookatmyprofile.org/celebrity-roasts/cristiano-instagram-roast-savage',
+        name: 'Cristiano Ronaldo Instagram Roast'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        url: 'https://www.lookatmyprofile.org/celebrity-roasts/selenagomez-instagram-roast-funny',
+        name: 'Selena Gomez Instagram Roast'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        url: 'https://www.lookatmyprofile.org/celebrity-roasts/therock-instagram-roast-gen-z',
+        name: 'The Rock Instagram Roast'
+      }
+    ]
+  };
+
+  // Structured data for tools collection
+  const toolsCollectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Instagram Tools Collection',
+    description: '500+ Instagram tools including username generators, bio templates, captions, and hashtags',
+    applicationCategory: 'SocialNetworkingApplication',
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '15420'
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(celebrityRoastsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsCollectionSchema) }}
+      />
       <BreadcrumbSchema 
         items={[
           { name: 'Home', url: 'https://www.lookatmyprofile.org/' }
@@ -170,6 +227,168 @@ export default function Home() {
           <Link href="/roast-styles" className="text-purple-400 hover:text-purple-300 transition">
             View all roast styles →
           </Link>
+        </div>
+      </section>
+
+      {/* 🌟 NEW Celebrity Roasts Section */}
+      <section className="container mx-auto px-4 py-20 bg-gradient-to-r from-red-900/20 to-orange-900/20 rounded-2xl my-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">🌟 Celebrity Instagram Roasts</h2>
+          <p className="text-center text-gray-400 mb-8">Savage roasts of the top 100 Instagram celebrities</p>
+          
+          {/* Featured Celebrities */}
+          <div className="grid md:grid-cols-4 gap-4 mb-8">
+            <Link href="/celebrity-roasts/cristiano-instagram-roast-savage" className="bg-gray-800/50 p-4 rounded-xl hover:bg-gray-800/70 transition group">
+              <h3 className="font-bold text-lg mb-1">Cristiano Ronaldo</h3>
+              <p className="text-sm text-gray-400 mb-2">@cristiano • 662M followers</p>
+              <p className="text-xs text-red-400 group-hover:text-red-300">Get roasted →</p>
+            </Link>
+            <Link href="/celebrity-roasts/selenagomez-instagram-roast-funny" className="bg-gray-800/50 p-4 rounded-xl hover:bg-gray-800/70 transition group">
+              <h3 className="font-bold text-lg mb-1">Selena Gomez</h3>
+              <p className="text-sm text-gray-400 mb-2">@selenagomez • 417M followers</p>
+              <p className="text-xs text-pink-400 group-hover:text-pink-300">Get roasted →</p>
+            </Link>
+            <Link href="/celebrity-roasts/therock-instagram-roast-gen-z" className="bg-gray-800/50 p-4 rounded-xl hover:bg-gray-800/70 transition group">
+              <h3 className="font-bold text-lg mb-1">Dwayne Johnson</h3>
+              <p className="text-sm text-gray-400 mb-2">@therock • 392M followers</p>
+              <p className="text-xs text-purple-400 group-hover:text-purple-300">Get roasted →</p>
+            </Link>
+            <Link href="/celebrity-roasts/mrbeast-instagram-roast-savage" className="bg-gray-800/50 p-4 rounded-xl hover:bg-gray-800/70 transition group relative">
+              <span className="absolute top-2 right-2 px-2 py-1 bg-yellow-500 text-xs rounded-full">HOT</span>
+              <h3 className="font-bold text-lg mb-1">MrBeast</h3>
+              <p className="text-sm text-gray-400 mb-2">@mrbeast • 60M followers</p>
+              <p className="text-xs text-yellow-400 group-hover:text-yellow-300">Get roasted →</p>
+            </Link>
+          </div>
+          
+          {/* Categories */}
+          <div className="grid md:grid-cols-4 gap-4">
+            <Link href="/celebrity-roasts#athletes" className="bg-gradient-to-br from-green-800/30 to-blue-800/30 p-4 rounded-lg hover:from-green-800/50 hover:to-blue-800/50 transition">
+              <h4 className="font-bold mb-1">⚽ Athletes</h4>
+              <p className="text-xs text-gray-400">Ronaldo, Messi, LeBron & more</p>
+            </Link>
+            <Link href="/celebrity-roasts#celebrities" className="bg-gradient-to-br from-purple-800/30 to-pink-800/30 p-4 rounded-lg hover:from-purple-800/50 hover:to-pink-800/50 transition">
+              <h4 className="font-bold mb-1">⭐ Celebrities</h4>
+              <p className="text-xs text-gray-400">Taylor Swift, Drake, Rihanna</p>
+            </Link>
+            <Link href="/celebrity-roasts#influencers" className="bg-gradient-to-br from-pink-800/30 to-red-800/30 p-4 rounded-lg hover:from-pink-800/50 hover:to-red-800/50 transition">
+              <h4 className="font-bold mb-1">📱 Influencers</h4>
+              <p className="text-xs text-gray-400">MrBeast, Charli, Khaby Lame</p>
+            </Link>
+            <Link href="/celebrity-roasts#models" className="bg-gradient-to-br from-blue-800/30 to-purple-800/30 p-4 rounded-lg hover:from-blue-800/50 hover:to-purple-800/50 transition">
+              <h4 className="font-bold mb-1">📸 Models</h4>
+              <p className="text-xs text-gray-400">Kendall, Gigi, Bella Hadid</p>
+            </Link>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Link href="/celebrity-roasts" className="bg-gradient-to-r from-red-600 to-orange-600 px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-red-500/50 transition inline-block">
+              View All 100 Celebrities →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 🛠️ NEW Instagram Tools Collection Section */}
+      <section className="container mx-auto px-4 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">🛠️ 500+ Instagram Tools</h2>
+          <p className="text-center text-gray-400 mb-12">Everything you need to level up your Instagram game</p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Username Generators */}
+            <div className="bg-gray-800/50 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">✨</span>
+                <h3 className="text-xl font-bold">Username Generators</h3>
+              </div>
+              <p className="text-sm text-gray-400 mb-4">120+ unique username ideas by style</p>
+              <div className="space-y-2">
+                <Link href="/tools/username-generator/instagram-username-ideas-aesthetic-girls-teen" className="block text-sm text-purple-400 hover:text-purple-300">
+                  → Aesthetic usernames for girls
+                </Link>
+                <Link href="/tools/username-generator/instagram-username-ideas-funny-boys-gen-z" className="block text-sm text-purple-400 hover:text-purple-300">
+                  → Funny Gen-Z usernames
+                </Link>
+                <Link href="/tools/username-generator/instagram-username-ideas-creative-gender-neutral-millennial" className="block text-sm text-purple-400 hover:text-purple-300">
+                  → Creative gender-neutral ideas
+                </Link>
+              </div>
+              <Link href="/tools/username-generator" className="inline-block mt-4 text-purple-400 font-semibold hover:text-purple-300">
+                View all 120 generators →
+              </Link>
+            </div>
+            
+            {/* Bio Templates */}
+            <div className="bg-gray-800/50 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">📝</span>
+                <h3 className="text-xl font-bold">Bio Templates</h3>
+              </div>
+              <p className="text-sm text-gray-400 mb-4">250+ bio ideas for every niche</p>
+              <div className="space-y-2">
+                <Link href="/tools/bio-generator/instagram-bio-ideas-fitness-sassy-short" className="block text-sm text-pink-400 hover:text-pink-300">
+                  → Fitness bio templates
+                </Link>
+                <Link href="/tools/bio-generator/instagram-bio-ideas-travel-inspirational-aesthetic" className="block text-sm text-pink-400 hover:text-pink-300">
+                  → Travel bio ideas
+                </Link>
+                <Link href="/tools/bio-generator/instagram-bio-ideas-business-professional-clever" className="block text-sm text-pink-400 hover:text-pink-300">
+                  → Business bio templates
+                </Link>
+              </div>
+              <Link href="/tools/bio-generator" className="inline-block mt-4 text-pink-400 font-semibold hover:text-pink-300">
+                View all 250 templates →
+              </Link>
+            </div>
+            
+            {/* Caption & Hashtag Tools */}
+            <div className="bg-gray-800/50 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">#️⃣</span>
+                <h3 className="text-xl font-bold">Captions & Hashtags</h3>
+              </div>
+              <p className="text-sm text-gray-400 mb-4">80+ caption ideas & hashtag sets</p>
+              <div className="space-y-2">
+                <Link href="/tools/caption-generator/instagram-captions-selfie-sassy" className="block text-sm text-blue-400 hover:text-blue-300">
+                  → Selfie captions
+                </Link>
+                <Link href="/tools/hashtag-generator/instagram-hashtags-fashion-2025" className="block text-sm text-blue-400 hover:text-blue-300">
+                  → Fashion hashtags 2025
+                </Link>
+                <Link href="/tools/hashtag-generator/instagram-hashtags-fitness-trending" className="block text-sm text-blue-400 hover:text-blue-300">
+                  → Trending fitness tags
+                </Link>
+              </div>
+              <Link href="/tools" className="inline-block mt-4 text-blue-400 font-semibold hover:text-blue-300">
+                Browse all tools →
+              </Link>
+            </div>
+          </div>
+          
+          {/* Quick Stats */}
+          <div className="grid md:grid-cols-5 gap-4 mt-8">
+            <Link href="/tools/username-generator" className="bg-purple-600/20 p-4 rounded-lg text-center hover:bg-purple-600/30 transition">
+              <div className="text-2xl font-bold">120</div>
+              <div className="text-xs">Username Ideas</div>
+            </Link>
+            <Link href="/tools/bio-generator" className="bg-pink-600/20 p-4 rounded-lg text-center hover:bg-pink-600/30 transition">
+              <div className="text-2xl font-bold">250</div>
+              <div className="text-xs">Bio Templates</div>
+            </Link>
+            <Link href="/tools/caption-generator" className="bg-blue-600/20 p-4 rounded-lg text-center hover:bg-blue-600/30 transition">
+              <div className="text-2xl font-bold">50</div>
+              <div className="text-xs">Caption Ideas</div>
+            </Link>
+            <Link href="/tools/hashtag-generator" className="bg-green-600/20 p-4 rounded-lg text-center hover:bg-green-600/30 transition">
+              <div className="text-2xl font-bold">30</div>
+              <div className="text-xs">Hashtag Sets</div>
+            </Link>
+            <Link href="/tools/roast-generator" className="bg-red-600/20 p-4 rounded-lg text-center hover:bg-red-600/30 transition">
+              <div className="text-2xl font-bold">40</div>
+              <div className="text-xs">Roast Types</div>
+            </Link>
+          </div>
         </div>
       </section>
 

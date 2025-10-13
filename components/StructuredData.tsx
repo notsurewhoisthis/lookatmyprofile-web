@@ -31,6 +31,27 @@ export const OrganizationSchema = () => {
   )
 }
 
+export const WebsiteSchema = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'LookAtMyProfile',
+    url: 'https://www.lookatmyprofile.org',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://www.lookatmyprofile.org/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string'
+    }
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 export const SoftwareApplicationSchema = () => {
   const schema = {
     "@context": "https://schema.org",

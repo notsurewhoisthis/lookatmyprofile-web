@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getAuthorByName } from '@/lib/authors';
 import { FAQSchema, generateBlogFAQs } from '@/components/SEO/FAQSchema';
 import { RelatedPosts } from '@/components/RelatedPosts';
+import { SpeakableSchema } from '@/components/SEO/SpeakableSchema';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
 interface BlogPost {
@@ -194,6 +195,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
+    image: [`https://www.lookatmyprofile.org/api/og?title=${encodeURIComponent(post.title)}`],
     author: {
       '@type': 'Person',
       '@id': authorData ? `https://www.lookatmyprofile.org/authors/${authorData.slug}#author` : undefined,
@@ -235,6 +237,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <SpeakableSchema url={`https://www.lookatmyprofile.org/blog/${slug}`} headlines={[post.title]} />
       <FAQSchema faqs={blogFAQs} pageTitle={post.title} />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
@@ -263,14 +266,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
               {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span 
-                      key={tag}
-                      className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {post.tags.map((tag) => {
+                    const tagSlug = tag.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+                    return (
+                      <Link
+                        href={`/blog/tag/${tagSlug}`}
+                        key={tag}
+                        className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm hover:bg-gray-700 hover:text-purple-300"
+                      >
+                        #{tag}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </header>

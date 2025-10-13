@@ -194,14 +194,18 @@ export default async function BlogPage() {
                     </div>
                     {(post.tags || post.keywords) && (
                       <div className="flex flex-wrap gap-2 mt-4">
-                        {(post.tags || post.keywords || []).slice(0, 5).map((tag) => (
-                          <span 
-                            key={tag}
-                            className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs hover:bg-purple-800/30 transition-colors"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                        {(post.tags || post.keywords || []).slice(0, 5).map((tag) => {
+                          const tagSlug = tag.toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+                          return (
+                            <Link
+                              href={`/blog/tag/${tagSlug}`}
+                              key={tag}
+                              className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs hover:bg-purple-800/30 transition-colors"
+                            >
+                              #{tag}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </Link>

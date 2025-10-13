@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { OrganizationSchema } from "../components/StructuredData";
+import { OrganizationSchema, WebsiteSchema } from "../components/StructuredData";
 import { GoogleAnalytics, WebVitalsTracking } from "../components/Analytics";
 
 const geistSans = Geist({
@@ -109,6 +109,7 @@ export default function RootLayout({
         
         {/* Global Structured Data */}
         <OrganizationSchema />
+        <WebsiteSchema />
         
         {/* Main Content */}
         {children}

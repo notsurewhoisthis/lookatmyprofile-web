@@ -1,6 +1,16 @@
 import fs from 'fs';
 import path from 'path';
 
+function slugifyTag(tag: string) {
+  return tag
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
 export async function GET() {
   const baseUrl = 'https://www.lookatmyprofile.org';
   
@@ -162,6 +172,7 @@ export async function GET() {
 
   // Dynamically get blog posts from JSON files
   const blogPosts: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [];
+  const tagSet: Map<string, { slug: string; lastmod: string }> = new Map();
   try {
     const blogDataDir = path.join(process.cwd(), 'public', 'blog-data');
     const files = fs.readdirSync(blogDataDir);
@@ -181,6 +192,16 @@ export async function GET() {
             changefreq: 'monthly',
             lastmod: blogData.updatedAt || blogData.publishedAt || new Date().toISOString()
           });
+
+          const tags: string[] = (blogData.tags || blogData.keywords || []) as string[];
+          const lm = blogData.updatedAt || blogData.publishedAt || new Date().toISOString();
+          tags.forEach((t: string) => {
+            const tg = slugifyTag(t);
+            const prev = tagSet.get(tg);
+            if (!prev || new Date(lm).getTime() > new Date(prev.lastmod).getTime()) {
+              tagSet.set(tg, { slug: tg, lastmod: lm });
+            }
+          });
         } catch (error) {
           console.error(`Error parsing blog file ${file}:`, error);
           // Fallback for unparseable files
@@ -197,18 +218,30 @@ export async function GET() {
     console.error('Error reading blog posts for sitemap:', error);
   }
 
-  const allPages = [...staticPages, ...celebrityPages, ...toolPages, ...personaPages, ...blogPosts];
+  // Build tag pages and tag index
+  const tagPages: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [
+    { url: '/blog/tags', priority: 0.6, changefreq: 'weekly', lastmod: new Date().toISOString() }
+  ];
+  for (const { slug, lastmod } of tagSet.values()) {
+    tagPages.push({ url: `/blog/tag/${slug}`, priority: 0.6, changefreq: 'weekly', lastmod });
+  }
+
+  const allPages = [...staticPages, ...celebrityPages, ...toolPages, ...personaPages, ...blogPosts, ...tagPages];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
-${allPages.map(page => `  <url>
-    <loc>${baseUrl}${page.url}</loc>
-    <lastmod>${page.lastmod || new Date().toISOString()}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`).join('\n')}
+${allPages.map(page => {
+  const isBlog = page.url.startsWith('/blog/') && !page.url.startsWith('/blog/tag');
+  let imageBlock = '';
+  if (isBlog) {
+    const slug = page.url.replace('/blog/', '');
+    const og = `${baseUrl}/api/og?title=${encodeURIComponent(slug.replace(/-/g, ' '))}`;
+    imageBlock = `\n    <image:image>\n      <image:loc>${og}</image:loc>\n    </image:image>`;
+  }
+  return `  <url>\n    <loc>${baseUrl}${page.url}</loc>\n    <lastmod>${page.lastmod || new Date().toISOString()}</lastmod>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority}</priority>${imageBlock}\n  </url>`;
+}).join('\n')}
 </urlset>`;
 
   return new Response(sitemap, {
