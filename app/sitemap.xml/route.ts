@@ -58,6 +58,11 @@ export async function GET() {
     { url: '/roast-personas', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/roast-challenges', priority: 0.85, changefreq: 'weekly', lastmod: new Date().toISOString() },
     { url: '/roast-intel', priority: 0.8, changefreq: 'monthly', lastmod: new Date().toISOString() },
+
+    // NEW: E-E-A-T and Authority Pages (Added Jan 15, 2025)
+    { url: '/editorial-standards', priority: 0.7, changefreq: 'yearly', lastmod: new Date().toISOString() },
+    { url: '/ultimate-guide-instagram-roasting-2025', priority: 0.95, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    { url: '/instagram-roasting-report-2025', priority: 0.9, changefreq: 'monthly', lastmod: new Date().toISOString() },
     
     // Long-tail keyword pages
     { url: '/free-instagram-roast-generator-no-signup', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
