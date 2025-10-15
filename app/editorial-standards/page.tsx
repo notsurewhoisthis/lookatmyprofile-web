@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Metadata } from 'next/metadata';
+import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
 export const metadata: Metadata = {
