@@ -81,8 +81,9 @@ Disallow: /
 # User-agent: Google-Extended
 # Disallow: /
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://www.lookatmyprofile.org/sitemap.xml
+Sitemap: https://www.lookatmyprofile.org/image-sitemap.xml
 
 # Cache control
 # Cache for 24 hours

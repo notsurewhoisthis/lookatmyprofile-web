@@ -4,6 +4,8 @@ import { FAQSchema, commonFAQs } from '@/components/SEO/FAQSchema';
 import { FooterNavigation } from '@/components/SEO/SiteNavigation';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 import { QASchema, commonQA } from '@/components/SEO/QASchema';
+import { Testimonials } from '@/components/Testimonials';
+import { YouTubeEmbed, VideoEmbeds } from '@/components/SEO/VideoSchema';
 
 export const metadata: Metadata = {
   title: 'Roast a Profile - AI Instagram Profile Roaster & Analyzer',
@@ -486,6 +488,30 @@ export default function Home() {
             <h3 className="text-xl font-bold mb-2">Get Roasted</h3>
             <p className="text-gray-400">Receive your personalized roast instantly</p>
           </div>
+        </div>
+      </section>
+
+      {/* Video Demo Section */}
+      <section className="container mx-auto px-4 py-20 bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-2xl my-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">🎥 See It In Action</h2>
+          <p className="text-center text-gray-400 mb-8">Watch how our AI roasts Instagram profiles in real-time</p>
+          <YouTubeEmbed
+            videoId={VideoEmbeds.howItWorks.videoId}
+            title={VideoEmbeds.howItWorks.title}
+            description={VideoEmbeds.howItWorks.description}
+            uploadDate={VideoEmbeds.howItWorks.uploadDate}
+            className="max-w-3xl mx-auto"
+          />
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-4xl font-bold text-center mb-4">⭐ What Users Are Saying</h2>
+        <p className="text-center text-gray-400 mb-12">Join 15,000+ happy users who got roasted</p>
+        <div className="max-w-6xl mx-auto">
+          <Testimonials limit={6} showSchema={true} />
         </div>
       </section>
 

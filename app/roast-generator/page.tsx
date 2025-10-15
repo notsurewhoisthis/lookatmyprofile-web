@@ -224,6 +224,46 @@ export default function RoastGeneratorPage() {
         </div>
       </section>
 
+      {/* Testimonials Mini Section */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center mb-8">
+          <h2 className="text-3xl font-bold mb-3">⭐ Loved By Thousands</h2>
+          <p className="text-gray-400">Join 15,000+ users who got roasted</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+            <div className="flex gap-1 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-yellow-400">★</span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-4 text-sm">"This roast had me DYING 😂 Accuracy level: 💯 My friends couldn't stop laughing!"</p>
+            <p className="font-semibold text-white text-sm">Sarah M.</p>
+            <p className="text-gray-500 text-xs">App Store</p>
+          </div>
+          <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+            <div className="flex gap-1 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-yellow-400">★</span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-4 text-sm">"Best app ever! The savage mode absolutely destroyed my profile and I loved every second of it 🔥"</p>
+            <p className="font-semibold text-white text-sm">Mike Johnson</p>
+            <p className="text-gray-500 text-xs">App Store</p>
+          </div>
+          <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700">
+            <div className="flex gap-1 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-yellow-400">★</span>
+              ))}
+            </div>
+            <p className="text-gray-300 mb-4 text-sm">"I can't believe how accurate this AI is. It roasted my aesthetic pics and called me out perfectly 💀"</p>
+            <p className="font-semibold text-white text-sm">Jessica L.</p>
+            <p className="text-gray-500 text-xs">Twitter</p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="container mx-auto px-4 py-20 bg-black/30">
         <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
