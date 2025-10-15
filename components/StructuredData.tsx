@@ -20,7 +20,39 @@ export const OrganizationSchema = () => {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "support@lookatmyprofile.org"
-    }
+    },
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.lookatmyprofile.org/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPage",
+        "name": "Instagram Roast Generator",
+        "url": "https://www.lookatmyprofile.org/roast-generator"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Blog",
+        "url": "https://www.lookatmyprofile.org/blog"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Editorial Standards",
+        "url": "https://www.lookatmyprofile.org/editorial-standards"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Download App",
+        "url": "https://www.lookatmyprofile.org/download"
+      }
+    ]
   }
 
   return (

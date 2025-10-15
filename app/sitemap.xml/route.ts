@@ -63,6 +63,10 @@ export async function GET() {
     { url: '/editorial-standards', priority: 0.7, changefreq: 'yearly', lastmod: new Date().toISOString() },
     { url: '/ultimate-guide-instagram-roasting-2025', priority: 0.95, changefreq: 'monthly', lastmod: new Date().toISOString() },
     { url: '/instagram-roasting-report-2025', priority: 0.9, changefreq: 'monthly', lastmod: new Date().toISOString() },
+
+    // NEW: Pillar Content Hubs (Phase 5 - Jan 15, 2025)
+    { url: '/instagram-psychology-hub', priority: 0.95, changefreq: 'monthly', lastmod: new Date().toISOString() },
+    { url: '/gen-z-social-media-trends-2025', priority: 0.95, changefreq: 'monthly', lastmod: new Date().toISOString() },
     
     // Long-tail keyword pages
     { url: '/free-instagram-roast-generator-no-signup', priority: 0.9, changefreq: 'weekly', lastmod: new Date().toISOString() },
