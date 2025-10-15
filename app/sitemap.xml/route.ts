@@ -226,7 +226,19 @@ export async function GET() {
     tagPages.push({ url: `/blog/tag/${slug}`, priority: 0.6, changefreq: 'weekly', lastmod });
   }
 
-  const allPages = [...staticPages, ...celebrityPages, ...toolPages, ...personaPages, ...blogPosts, ...tagPages];
+  // Build paginated blog pages
+  const paginatedBlogPages: Array<{ url: string; priority: number; changefreq: string; lastmod?: string }> = [];
+  const totalBlogPages = Math.ceil(blogPosts.length / 20); // 20 posts per page
+  for (let i = 2; i <= totalBlogPages; i++) {
+    paginatedBlogPages.push({
+      url: `/blog/page/${i}`,
+      priority: 0.7,
+      changefreq: 'daily',
+      lastmod: new Date().toISOString()
+    });
+  }
+
+  const allPages = [...staticPages, ...celebrityPages, ...toolPages, ...personaPages, ...blogPosts, ...tagPages, ...paginatedBlogPages];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
