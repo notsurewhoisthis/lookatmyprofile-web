@@ -104,7 +104,7 @@ export default function GenZTrends2025Page() {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold mb-4 text-pink-400">"Photo Dumps" > Curated Posts</h3>
+              <h3 className="text-2xl font-bold mb-4 text-pink-400">"Photo Dumps" &gt; Curated Posts</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Instagram "photo dumps" (carousel posts with 5-10 random photos) have replaced single perfect posts. These are intentionally messy: blurry selfies, screenshots of texts, random memes, 0.5x camera disasters.
               </p>
@@ -166,7 +166,7 @@ export default function GenZTrends2025Page() {
 
             {/* Trend 3 */}
             <section>
-              <h2 className="text-4xl font-bold mb-6 text-purple-400">3. Humor as Social Currency: Memes > Sincerity</h2>
+              <h2 className="text-4xl font-bold mb-6 text-purple-400">3. Humor as Social Currency: Memes &gt; Sincerity</h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Gen Z communicates through layers of irony, sarcasm, and meme references. Being funny is more valuable than being hot, rich, or successful.
               </p>
