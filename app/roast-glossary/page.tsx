@@ -140,6 +140,180 @@ const roastTerms = [
     definition: "Checking someone's energy or mood; failing means bad vibes.",
     example: "Your whole profile failed the vibe check.",
     category: "energy"
+  },
+  {
+    term: "Delulu",
+    definition: "Delusional. When someone has an unrealistic view of themselves or their situation.",
+    example: "Calling yourself an influencer with 200 followers? That's delulu behavior.",
+    category: "personality"
+  },
+  {
+    term: "Fr fr",
+    definition: "For real, for real. Emphasizing genuine truth or agreement.",
+    example: "Fr fr, your content strategy needs a complete reboot.",
+    category: "emphasis"
+  },
+  {
+    term: "Ate and left no crumbs",
+    definition: "Did something perfectly with no room for criticism. Often used sarcastically.",
+    example: "You really thought you ate with that caption... you didn't.",
+    category: "sarcasm"
+  },
+  {
+    term: "Understood the assignment",
+    definition: "Nailed it, did exactly what was expected perfectly.",
+    example: "Your profile pic understood the assignment... to scare people away.",
+    category: "sarcasm"
+  },
+  {
+    term: "Living in your flop era",
+    definition: "Going through a period of consistent failure or poor performance.",
+    example: "Every post this month got 10 likes? You're in your flop era.",
+    category: "failure"
+  },
+  {
+    term: "It's not giving",
+    definition: "Something is not delivering or meeting expectations at all.",
+    example: "Your bio is not giving what you think it's giving.",
+    category: "comparison"
+  },
+  {
+    term: "Unhinged",
+    definition: "Acting wild, chaotic, or completely out of control.",
+    example: "Posting 50 stories a day is unhinged behavior.",
+    category: "behavior"
+  },
+  {
+    term: "Chronically online",
+    definition: "Spending too much time on the internet, losing touch with reality.",
+    example: "You replied within 2 seconds at 3am? Chronically online energy.",
+    category: "lifestyle"
+  },
+  {
+    term: "Gatekeep, Gaslight, Girlboss",
+    definition: "Mocking the toxic positivity and fake empowerment culture.",
+    example: "Your 'motivation Monday' posts are pure gaslight girlboss energy.",
+    category: "trends"
+  },
+  {
+    term: "Tell me you're X without telling me you're X",
+    definition: "Obvious signs someone is a certain way without them stating it.",
+    example: "Tell me you're desperate for likes without telling me you're desperate.",
+    category: "observation"
+  },
+  {
+    term: "Giving nothing",
+    definition: "Completely unimpressive, offering zero value or interest.",
+    example: "Your whole feed is giving nothing but boredom.",
+    category: "general"
+  },
+  {
+    term: "Not you doing X",
+    definition: "Expressing surprise or judgment about someone's actions.",
+    example: "Not you using the same filter in every single photo.",
+    category: "observation"
+  },
+  {
+    term: "The way...",
+    definition: "Emphasizing something notable or shocking about a situation.",
+    example: "The way you think those hashtags are going to help...",
+    category: "emphasis"
+  },
+  {
+    term: "Bestie",
+    definition: "Term of endearment that's often sarcastic in roasts.",
+    example: "Bestie, this ain't it.",
+    category: "address"
+  },
+  {
+    term: "Sis",
+    definition: "Sister; used to address someone, often before delivering a roast.",
+    example: "Sis, we need to talk about these captions.",
+    category: "address"
+  },
+  {
+    term: "Period/Periodt",
+    definition: "End of discussion, that's final. Emphasis on a statement.",
+    example: "Your content is trash, period.",
+    category: "emphasis"
+  },
+  {
+    term: "Sheesh",
+    definition: "Expression of amazement, often sarcastic in roasts.",
+    example: "Sheesh, I've seen better aesthetics at a gas station.",
+    category: "exclamation"
+  },
+  {
+    term: "Respectfully",
+    definition: "Pretending to be polite before saying something harsh.",
+    example: "Respectfully, delete your account.",
+    category: "polite-insult"
+  },
+  {
+    term: "With all due respect",
+    definition: "Classic preface to a disrespectful statement.",
+    example: "With all due respect, your feed is a crime against aesthetics.",
+    category: "polite-insult"
+  },
+  {
+    term: "Not the...",
+    definition: "Expressing disappointment or calling out something specific.",
+    example: "Not the 2015 Tumblr quotes in your bio...",
+    category: "observation"
+  },
+  {
+    term: "I'm weak/I'm dead",
+    definition: "Something is so funny (or bad) it's overwhelming.",
+    example: "I'm dead at you thinking that pose looked good.",
+    category: "reaction"
+  },
+  {
+    term: "Y'all/Yall",
+    definition: "You all; often used to address a group or general audience.",
+    example: "Y'all seeing this profile? Wild.",
+    category: "address"
+  },
+  {
+    term: "Folded",
+    definition: "Gave up, surrendered, or was defeated easily.",
+    example: "You folded faster than a lawn chair when they criticized your posts.",
+    category: "defeat"
+  },
+  {
+    term: "Cooked",
+    definition: "Done for, finished, destroyed.",
+    example: "Your engagement rate? Yeah, you're cooked.",
+    category: "defeat"
+  },
+  {
+    term: "Oof",
+    definition: "Expression of sympathy, embarrassment, or acknowledging something bad.",
+    example: "Oof, only 3 likes on a post from last week.",
+    category: "exclamation"
+  },
+  {
+    term: "Big yikes",
+    definition: "Something is very concerning or embarrassing.",
+    example: "Using 50 hashtags per post is a big yikes from me.",
+    category: "reaction"
+  },
+  {
+    term: "Cringe",
+    definition: "Something so embarrassing it makes you uncomfortable.",
+    example: "Your attempt at going viral was pure cringe.",
+    category: "embarrassment"
+  },
+  {
+    term: "Ick",
+    definition: "Something that suddenly turns you off or disgusts you.",
+    example: "The way you reply to your own posts gives me the ick.",
+    category: "reaction"
+  },
+  {
+    term: "Serving",
+    definition: "Delivering a certain look, vibe, or energy.",
+    example: "Your profile is serving 'trying too hard' energy.",
+    category: "comparison"
   }
 ];
 

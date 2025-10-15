@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { HowToSchema } from '@/components/SEO/HowToSchema';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
+import { QuickAnswer, HowToSteps } from '@/components/SEO/FeaturedSnippet';
+import { LastUpdated } from '@/components/SEO/LastUpdated';
 
 export const metadata: Metadata = {
   title: 'How to Roast Someone on Instagram - Complete Guide 2025',
@@ -67,10 +69,18 @@ export default function HowToRoastPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             How to Roast Someone on Instagram
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
+          <p className="text-xl md:text-2xl text-gray-300 mb-4">
             Master the Art of Instagram Roasting in 2025
           </p>
-          
+          <LastUpdated date="2025-01-15T00:00:00Z" publishedDate="2024-08-13T00:00:00Z" />
+
+          {/* Quick Answer for Featured Snippet */}
+          <QuickAnswer
+            question="How do you roast someone on Instagram?"
+            answer="To roast someone on Instagram: (1) Study their profile for patterns and clichés, (2) Choose a specific roasting style (savage, friendly, Gen-Z, or Shakespearean), (3) Focus on behaviors not appearance, (4) Be clever and specific, not cruel, (5) Use current references and slang. Always keep it funny, not hurtful."
+            className="my-8"
+          />
+
           {/* Quick Action Box */}
           <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 p-6 rounded-xl mb-8">
             <p className="text-lg mb-4">
@@ -109,39 +119,32 @@ export default function HowToRoastPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
             The Fundamentals of Instagram Roasting
           </h2>
-          
-          <div className="space-y-6">
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-purple-400">1. Study the Profile</h3>
-              <p className="text-gray-300 mb-3">
-                Before roasting, analyze their profile thoroughly:
-              </p>
-              <ul className="space-y-2 text-gray-400">
-                <li>• Bio clichés ("Living my best life", "Wanderlust")</li>
-                <li>• Post patterns (all selfies, food pics, gym shots)</li>
-                <li>• Caption style (inspirational quotes, emoji overload)</li>
-                <li>• Filter abuse and editing patterns</li>
-                <li>• Follower-to-following ratio</li>
-              </ul>
-            </div>
 
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-purple-400">2. Find the Patterns</h3>
-              <p className="text-gray-300">
-                Great roasts identify recurring themes. Does every photo have the same pose? 
-                Do they post motivational quotes every Monday? Are all their captions novels? 
-                These patterns are comedy gold.
-              </p>
-            </div>
-
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-purple-400">3. Choose Your Angle</h3>
-              <p className="text-gray-300">
-                Pick one specific aspect to roast. Trying to roast everything at once dilutes 
-                the impact. Focus on their most roastable trait for maximum effect.
-              </p>
-            </div>
-          </div>
+          <HowToSteps
+            steps={[
+              {
+                title: "Study the Profile Thoroughly",
+                description: "Before roasting, analyze their profile for patterns. Look for bio clichés ('Living my best life', 'Wanderlust'), post patterns (all selfies, food pics), caption style (inspirational quotes, emoji overload), filter abuse, and follower-to-following ratio. The best roasts are specific and observational."
+              },
+              {
+                title: "Find Recurring Patterns",
+                description: "Great roasts identify recurring themes and behaviors. Does every photo have the same pose? Do they post motivational quotes every Monday? Are all their captions novels? Do they use 50 hashtags per post? These patterns are comedy gold for roasting material."
+              },
+              {
+                title: "Choose Your Roasting Style",
+                description: "Select from Savage (brutal burns), Friendly (playful teasing), Gen-Z (current slang), or Shakespearean (eloquent insults). Match your style to your audience and relationship with the target. Consider their humor threshold."
+              },
+              {
+                title: "Focus on One Specific Angle",
+                description: "Pick one specific aspect to roast rather than trying to roast everything. Targeting their most roastable trait (excessive filters, caption clichés, posting frequency) creates maximum impact and keeps your roast sharp and memorable."
+              },
+              {
+                title: "Deliver with Perfect Timing",
+                description: "Timing is everything. Roast right after they post something particularly roastable, use current trends and references, and ensure your audience is online and engaged. A well-timed roast can go viral, while a late roast falls flat."
+              }
+            ]}
+            className="mb-8"
+          />
         </div>
       </section>
 
