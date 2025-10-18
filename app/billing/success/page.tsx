@@ -13,7 +13,7 @@ export default function BillingSuccessPage() {
     if (sessionId) {
       document.cookie = `stripe_session=${sessionId}; Path=/; Max-Age=${60*60*24*365}; SameSite=Lax`;
     }
-  }, [sessionId])
+  }, [])
   return (
     
       <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white grid place-items-center px-4">
