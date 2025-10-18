@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
     if (profile.isPrivate) return badRequest('cannot_analyze_private_profiles', 404)
 
     // Optional image for multimodal
-    const base64 = profile.profilePicUrl ? await downloadAsBase64(profile.profilePicUrl) : null
+    const base64 = profile.profilePicUrl ? await downloadAsBase64(String(profile.profilePicUrl)) : null
 
     if (!process.env.OPENAI_API_KEY) {
       return badRequest('OPENAI_API_KEY not configured', 500)
