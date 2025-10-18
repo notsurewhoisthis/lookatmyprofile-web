@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StripeCheckoutButton } from "../../components/StripeCheckoutButton";
 
 export default function RoastGeneratorPage() {
@@ -11,6 +11,7 @@ export default function RoastGeneratorPage() {
   const [roastResult, setRoastResult] = useState('');
   const [error, setError] = useState('');
   const [paymentRequired, setPaymentRequired] = useState(false);
+  const [hasCredit, setHasCredit] = useState(false);
 
   const roastStyles = [
     { id: 'savage', name: 'Savage Mode', emoji: '🔥', color: 'from-red-600 to-orange-600' },
@@ -24,6 +25,11 @@ export default function RoastGeneratorPage() {
     const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'))
     return m ? decodeURIComponent(m[2]) : ''
   }
+
+  useEffect(() => {
+    const s = getCookie('stripe_session')
+    setHasCredit(!!s)
+  }, [])
 
   const handleGenerateRoast = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -112,6 +118,11 @@ export default function RoastGeneratorPage() {
       {/* Generator Form */}
       <section className="container mx-auto px-4 pb-20">
         <div className="max-w-2xl mx-auto">
+          {hasCredit && (
+            <div className="mb-4 p-4 rounded-lg border border-green-500/30 bg-green-500/10 text-green-300 text-sm">
+              Full roast unlocked: your payment will be used on your next generation.
+            </div>
+          )}
           <form onSubmit={handleGenerateRoast} className="space-y-6">
             {/* Username Input */}
             <div>

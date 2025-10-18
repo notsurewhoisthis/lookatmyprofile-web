@@ -40,13 +40,29 @@ export async function POST(req: NextRequest) {
     }
 
     const messages = buildMessages({ language, style, profile, base64Image: base64 || undefined })
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-5-mini-2025-08-07',
-      messages,
-      temperature: 0.9,
-      max_tokens: 1600,
-    })
-    const content = completion.choices?.[0]?.message?.content || 'Overview: Unable to generate roast right now.\nSummary: Try again later.'
+    const preferred = process.env.OPENAI_PAID_MODEL || 'gpt-5-mini-2025-08-07'
+    const fallbacks = [preferred, 'gpt-4o', 'gpt-4o-mini']
+    let content = ''
+    let lastErr: any = null
+    for (const mdl of fallbacks) {
+      try {
+        const completion = await openai.chat.completions.create({
+          model: mdl,
+          messages,
+          temperature: 0.9,
+          max_tokens: 1600,
+        })
+        content = completion.choices?.[0]?.message?.content || ''
+        if (content) break
+      } catch (e) {
+        lastErr = e
+        continue
+      }
+    }
+    if (!content) {
+      console.error('OpenAI generation failed:', lastErr?.message || lastErr)
+      return NextResponse.json({ error: 'internal_error', details: 'openai_failed' }, { status: 500 })
+    }
     const sections = parseSections(content)
 
     // Mark session as used only after successful generation
