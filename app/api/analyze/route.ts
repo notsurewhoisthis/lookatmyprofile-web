@@ -41,10 +41,10 @@ export async function POST(req: NextRequest) {
 
     const messages = buildMessages({ language, style, profile, base64Image: base64 || undefined })
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4o',
       messages,
       temperature: 0.9,
-      max_tokens: 900,
+      max_tokens: 1600,
     })
     const content = completion.choices?.[0]?.message?.content || 'Overview: Unable to generate roast right now.\nSummary: Try again later.'
     const sections = parseSections(content)

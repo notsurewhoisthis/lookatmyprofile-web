@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { StripeCheckoutButton } from "../../components/StripeCheckoutButton";
 
 export default function RoastGeneratorPage() {
   const [username, setUsername] = useState('');
@@ -9,6 +10,7 @@ export default function RoastGeneratorPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [roastResult, setRoastResult] = useState('');
   const [error, setError] = useState('');
+  const [paymentRequired, setPaymentRequired] = useState(false);
 
   const roastStyles = [
     { id: 'savage', name: 'Savage Mode', emoji: '🔥', color: 'from-red-600 to-orange-600' },
@@ -44,7 +46,8 @@ export default function RoastGeneratorPage() {
         body: JSON.stringify({ username: username.replace(/^@/, ''), language: 'en', style: selectedStyle })
       })
       if (res.status === 402) {
-        setError('Payment required ($1.99). Go to Pricing to pay and try again.')
+        setError('Payment required ($1.99) to unlock a full roast.')
+        setPaymentRequired(true)
         setRoastResult('')
       } else if (!res.ok) {
         const data = await res.json().catch(() => ({}))
@@ -89,7 +92,7 @@ export default function RoastGeneratorPage() {
           <div className="flex gap-6">
             <Link href="/roast-styles" className="hover:text-purple-400 transition">Roast Styles</Link>
             <Link href="/blog" className="hover:text-purple-400 transition">Blog</Link>
-            <Link href="/pricing" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Buy Roast</Link>
+            <Link href="/pricing" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Get a Full Roast</Link>
           </div>
         </div>
       </nav>
@@ -183,6 +186,14 @@ export default function RoastGeneratorPage() {
               )}
             </button>
           </form>
+
+          {/* Payment CTA when 402 */}
+          {paymentRequired && (
+            <div className="mt-6 p-6 rounded-xl bg-gray-800 border border-purple-500/30 text-center">
+              <p className="mb-4 text-gray-300">Unlock a detailed, full roast with profile photo analysis.</p>
+              <StripeCheckoutButton label="Pay $1.99 for Full Roast" mode="payment" />
+            </div>
+          )}
 
           {/* Roast Result */}
           {roastResult && (

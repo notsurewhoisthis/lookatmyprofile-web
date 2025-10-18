@@ -40,22 +40,31 @@ export function buildMessages({
 Style: ${s.description}
 Example tone: ${s.example}
 Safety: be funny but not offensive; avoid slurs and protected-class attacks; no PII beyond provided data.
-Format with plain section titles:
+Audience: paying user who expects a premium, long, highly detailed roast.
+Length: target 1000–1500 words.
+Format with plain section titles (exact titles):
 Overview:
-<2-4 short lines>
+Bio Deep Dive:
+Posting Patterns:
+Audience & Engagement:
+Aesthetic & Grid Cohesion:
 Profile Picture Analysis:
-<2-4 short lines>
+Strengths (Keep These):
+Red Flags (Roast Them):
+Recommendations:
 Summary:
-<1-2 lines>
-${style === 'poetic' ? 'All content must be in rhyming stanzas.' : ''}`
+${style === 'poetic' ? 'All content must be in witty, rhyming stanzas with clear section headers.' : ''}`
 
-  const userText = `Roast this Instagram profile:\n` +
+  const userText = `Roast this Instagram profile (use every fact).\n` +
   `Username: @${profile.username}\n` +
+  `Full name: ${profile.fullName || 'Unknown'}\n` +
   `Bio: ${profile.biography || 'No bio'}\n` +
   `Followers: ${profile.followersCount}\n` +
   `Following: ${profile.followsCount || 0}\n` +
   `Posts: ${profile.postsCount}\n` +
-  `Verified: ${profile.isVerified ? 'Yes' : 'No'}`
+  `Verified: ${profile.isVerified ? 'Yes' : 'No'}\n` +
+  `${profile.externalUrl ? `External link: ${profile.externalUrl}\n` : ''}` +
+  `${profile.isBusinessAccount ? 'Business account: Yes\n' : ''}`
 
   const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
     { role: 'system', content: system },
@@ -79,8 +88,15 @@ export function parseSections(text: string) {
   const sections: { title: string; content: string; icon: string }[] = []
   const map: Record<string, string> = {
     'overview': '🧠',
+    'bio deep dive': '📝',
+    'posting patterns': '📅',
+    'audience & engagement': '📊',
+    'aesthetic & grid cohesion': '🎨',
     'profile picture analysis': '🖼️',
-    'summary': '✅'
+    'strengths (keep these)': '✅',
+    'red flags (roast them)': '🚩',
+    'recommendations': '🔧',
+    'summary': '🏁'
   }
   const parts = text.split(/\n(?=[A-Za-z ]+:)/).map(s => s.trim())
   for (const part of parts) {
@@ -97,4 +113,3 @@ export function parseSections(text: string) {
   }
   return sections
 }
-

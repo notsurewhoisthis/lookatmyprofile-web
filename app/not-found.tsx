@@ -93,7 +93,7 @@ export default async function NotFound() {
           <p>Popular pages:</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
-            <Link href="/download" className="hover:text-purple-400 transition-colors">Download App</Link>
+            <Link href="/pricing" className="hover:text-purple-400 transition-colors">Get a Full Roast</Link>
             <Link href="/how-to-roast-someone-on-instagram" className="hover:text-purple-400 transition-colors">How to Roast</Link>
             <Link href="/roast-glossary" className="hover:text-purple-400 transition-colors">Roast Glossary</Link>
             <Link href="/instagram-roasting-report-2025" className="hover:text-purple-400 transition-colors">2025 Report</Link>
