@@ -1,11 +1,12 @@
 import { ApifyClient } from 'apify-client'
+import axios from 'axios'
 
 export async function fetchInstagramProfile(username: string) {
   const token = process.env.APIFY_API_TOKEN
   if (!token) throw new Error('APIFY_API_TOKEN not configured')
   const client = new ApifyClient({ token })
-
-  const run = await client.actor('apify/instagram-profile-scraper').call({
+  const actor = process.env.APIFY_ACTOR_ID || 'apify/instagram-profile-scraper'
+  const run = await client.actor(actor).call({
     usernames: [username],
     resultsLimit: 1,
     proxyConfiguration: { useApifyProxy: true },
@@ -24,17 +25,16 @@ export async function fetchInstagramProfile(username: string) {
     profilePicUrl: item.profilePicUrl || item.profilePicUrlHD,
     isPrivate: !!item.isPrivate,
     isVerified: !!item.isVerified,
+    externalUrl: item.externalUrl,
+    isBusinessAccount: !!item.isBusinessAccount,
   }
 }
 
 export async function downloadAsBase64(url: string): Promise<string | null> {
   try {
-    const res = await fetch(url)
-    if (!res.ok) return null
-    const buf = Buffer.from(await res.arrayBuffer())
-    return buf.toString('base64')
+    const res = await axios.get(url, { responseType: 'arraybuffer' })
+    return Buffer.from(res.data, 'binary').toString('base64')
   } catch {
     return null
   }
 }
-
