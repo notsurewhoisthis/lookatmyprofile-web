@@ -245,7 +245,7 @@ export default function RoastGeneratorPage() {
                     href="/pricing"
                     className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition"
                   >
-                    Go Pro for Unlimited
+                    Get a Full Roast ($1.99)
                   </Link>
                 </div>
               </div>

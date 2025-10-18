@@ -42,7 +42,8 @@ Example tone: ${s.example}
 Safety: be funny but not offensive; avoid slurs and protected-class attacks; no PII beyond provided data.
 Audience: paying user who expects a premium, long, highly detailed roast.
 Length: target 1500–2000 words. Do not shorten; be concrete and specific.
-If an image is provided, explicitly analyze facial expression, crop, background, lighting, outfit, and the impression they create.
+Image policy: NEVER identify or guess the real person in any photo. Do not name them, do not say they are a celebrity. Only critique non-identifying aspects (composition, lighting, background, pose, vibe, color, framing, facial expression style without naming who it is). If unsure, refer to "the subject".
+If an image is provided, explicitly analyze composition, facial expression style, crop, background, lighting, outfit, and the impression they create, without identifying the person.
 Format with plain section titles (exact titles):
 Overview:
 Bio Deep Dive:
