@@ -1,9 +1,11 @@
 "use client"
 import Link from 'next/link'
 import { useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
-export default function BillingSuccessPage({ searchParams }: { searchParams: { session_id?: string } }) {
-  const sessionId = searchParams?.session_id
+export default function BillingSuccessPage() {
+  const sp = useSearchParams()
+  const sessionId = sp.get('session_id') || undefined
   useEffect(() => {
     if (sessionId) {
       document.cookie = `stripe_session=${sessionId}; Path=/; Max-Age=${60*60*24*365}; SameSite=Lax`;
