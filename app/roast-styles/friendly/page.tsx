@@ -201,7 +201,7 @@ export default function FriendlyRoastPage() {
             Try Friendly Fire 😊
           </Link>
           <Link href="/download" className="border border-green-400 px-12 py-5 rounded-full text-xl font-semibold hover:bg-green-400/10 transition inline-block">
-            Get the App
+            Get a Full Roast
           </Link>
         </div>
       </section>

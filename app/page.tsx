@@ -123,8 +123,8 @@ export default function Home() {
             <Link href="/roast-generator" className="cta-primary bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition">
               Roast My Profile Now →
             </Link>
-            <Link href="/download" className="border border-purple-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-400/10 transition">
-              Get the App
+            <Link href="/pricing" className="border border-purple-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-400/10 transition">
+              Get a Full Roast
             </Link>
           </div>
           <p className="text-sm text-gray-400">

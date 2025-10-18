@@ -29,7 +29,7 @@ export default function InstagramRoastingReport2025() {
           </Link>
           <div className="flex gap-6 items-center">
             <Link href="/blog" className="hover:text-purple-400 transition">Blog</Link>
-            <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Get App</Link>
+            <Link href="/pricing" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Get a Full Roast</Link>
           </div>
         </div>
       </nav>
@@ -207,7 +207,7 @@ export default function InstagramRoastingReport2025() {
             href="/download"
             className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 px-12 py-4 rounded-full text-xl font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition"
           >
-            Download Report + Get App
+            Download Report + Get a Full Roast
           </Link>
           <p className="text-sm text-gray-400 mt-4">Free • No Email Required</p>
         </div>

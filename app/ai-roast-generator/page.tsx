@@ -414,7 +414,7 @@ export default function AIRoastGeneratorPage() {
             <Link href="/what-is-instagram-roasting" className="px-4 py-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-sm">What is Roasting?</Link>
             <Link href="/roast-examples" className="px-4 py-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-sm">See Examples</Link>
             <Link href="/blog" className="px-4 py-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-sm">Read Blog</Link>
-            <Link href="/download" className="px-4 py-2 bg-purple-600/50 rounded-lg hover:bg-purple-600/70 transition text-sm">Get the App</Link>
+            <Link href="/pricing" className="px-4 py-2 bg-purple-600/50 rounded-lg hover:bg-purple-600/70 transition text-sm">Get a Full Roast</Link>
           </div>
         </div>
       </section>

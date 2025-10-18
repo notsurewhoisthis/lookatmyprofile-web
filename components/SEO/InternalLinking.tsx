@@ -188,7 +188,7 @@ export const InlineRoastCTA: React.FC<{
             href="/download"
             className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800"
           >
-            Get the App
+            Get a Full Roast
             <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
         </div>
