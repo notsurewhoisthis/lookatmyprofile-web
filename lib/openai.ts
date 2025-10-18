@@ -36,40 +36,29 @@ export function buildMessages({
 
   const s = styleMap[style] || styleMap.savage
 
-  const system = `You are a professional Instagram roaster. Write in ${language}.
-Style: ${s.description}
-Example tone: ${s.example}
-Safety: be funny but not offensive; avoid slurs and protected-class attacks; no PII beyond provided data.
-Audience: paying user who expects a premium, long, highly detailed roast.
-Length: target 1500–2000 words. Do not shorten; be concrete and specific.
-Image policy: NEVER identify or guess the real person in any photo. Do not name them, do not say they are a celebrity. Only critique non-identifying aspects (composition, lighting, background, pose, vibe, color, framing, facial expression style without naming who it is). If unsure, refer to "the subject".
-If an image is provided, explicitly analyze composition, facial expression style, crop, background, lighting, outfit, and the impression they create, without identifying the person.
-Format with plain section titles (exact titles):
-Overview:
-Bio Deep Dive:
-Posting Patterns:
-Audience & Engagement:
-Aesthetic & Grid Cohesion:
-Profile Picture Analysis:
-Strengths (Keep These):
-Red Flags (Roast Them):
-Recommendations:
-Summary:
-${style === 'poetic' ? 'All content must be in witty, rhyming stanzas with clear section headers.' : ''}`
+  // Use the same analyzer-style prompts across all roast types
+  const systemMsg = `You are a sarcastic social media expert that makes funny comments about people's Instagram profiles. You're an expert on roasting people's Instagram profiles. Respond in ${language}.`
 
-  const userText = `Roast this Instagram profile (use every fact).\n` +
-  `Username: @${profile.username}\n` +
-  `Full name: ${profile.fullName || 'Unknown'}\n` +
-  `Bio: ${profile.biography || 'No bio'}\n` +
-  `Followers: ${profile.followersCount}\n` +
-  `Following: ${profile.followsCount || 0}\n` +
-  `Posts: ${profile.postsCount}\n` +
-  `Verified: ${profile.isVerified ? 'Yes' : 'No'}\n` +
-  `${profile.externalUrl ? `External link: ${profile.externalUrl}\n` : ''}` +
-  `${profile.isBusinessAccount ? 'Business account: Yes\n' : ''}`
+  const userText = `You're a sarcastic social media expert that makes funny comments about people's instagram profiles. You're an expert on roasting people's instagram profiles. Make a funny, sarcastic roast about this instagram profile and do it by analysing their public information such as profile bio, followers, posts and profile pictures. The roast should be in ${language}.
+
+Analyze this Instagram profile:
+Username: ${profile.username}
+Followers: ${profile.followersCount}
+Following: ${profile.followsCount || 0}
+Posts: ${profile.postsCount}
+Bio: ${profile.biography || 'No bio'}
+
+The profile picture is attached. Make sure to roast it specifically based on what you see.
+
+Structure your roast in the following format:
+1. Overview: A general roast about their profile stats and bio.
+2. Profile Picture: Specific roast about what you see in their profile picture.
+3. Summary: A concluding burn that ties it all together.
+
+Ensure each section is a complete paragraph with no cut-off sentences. Remember to write the entire roast in ${language}.`
 
   const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
-    { role: 'system', content: system },
+    { role: 'system', content: systemMsg },
     { role: 'user', content: userText }
   ]
 
@@ -90,14 +79,7 @@ export function parseSections(text: string) {
   const sections: { title: string; content: string; icon: string }[] = []
   const map: Record<string, string> = {
     'overview': '🧠',
-    'bio deep dive': '📝',
-    'posting patterns': '📅',
-    'audience & engagement': '📊',
-    'aesthetic & grid cohesion': '🎨',
-    'profile picture analysis': '🖼️',
-    'strengths (keep these)': '✅',
-    'red flags (roast them)': '🚩',
-    'recommendations': '🔧',
+    'profile picture': '🖼️',
     'summary': '🏁'
   }
   const parts = text.split(/\n(?=[A-Za-z ]+:)/).map(s => s.trim())
