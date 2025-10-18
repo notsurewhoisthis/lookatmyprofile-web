@@ -17,6 +17,12 @@ export default function RoastGeneratorPage() {
     { id: 'gen-z', name: 'Gen Z', emoji: '💯', color: 'from-pink-600 to-purple-600' }
   ];
 
+  const getCookie = (name: string) => {
+    if (typeof document === 'undefined') return ''
+    const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'))
+    return m ? decodeURIComponent(m[2]) : ''
+  }
+
   const handleGenerateRoast = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!username.trim()) {
@@ -28,18 +34,31 @@ export default function RoastGeneratorPage() {
     setError('');
     setRoastResult('');
 
-    // Simulate API call - in production, this would call your backend
-    setTimeout(() => {
-      const sampleRoasts = {
-        savage: `Oh look, another wannabe influencer with 237 followers thinking they're the next big thing. Your aesthetic is as original as a pumpkin spice latte in October. Those filtered selfies aren't hiding your desperation for validation, bestie. 🔥`,
-        friendly: `Hey there, social media enthusiast! I see you're really committed to documenting every meal and sunset. Your dedication to the "living my best life" caption game is admirable, even if we've seen that exact beach pose 47 times before. Keep shining! 😊`,
-        shakespearean: `Hark! What vanity through yonder Instagram breaks? 'Tis the profile of one who doth post too much, methinks. Thy carefully curated feed speaketh volumes of thy need for digital applause. Forsooth, thy selfies are but shadows dancing on the wall of social approval. 🎭`,
-        'gen-z': `Not the millennial pause in your reels 💀 Your whole vibe is giving "I just discovered TikTok trends from 2021." The way you use hashtags like it's 2015... I can't. This is why we can't have nice things. Touch grass immediately bestie. 💯`
-      };
-
-      setRoastResult(sampleRoasts[selectedStyle as keyof typeof sampleRoasts]);
-      setIsLoading(false);
-    }, 2000);
+    try {
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-stripe-session': getCookie('stripe_session') || ''
+        },
+        body: JSON.stringify({ username: username.replace(/^@/, ''), language: 'en', style: selectedStyle })
+      })
+      if (res.status === 402) {
+        setError('Payment required ($1.99). Go to Pricing to pay and try again.')
+        setRoastResult('')
+      } else if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        setError(data?.error || 'Something went wrong. Please try again.')
+      } else {
+        const data = await res.json()
+        const combined = (data.sections || []).map((s: any) => `${s.title}:\n${s.content}`).join('\n\n')
+        setRoastResult(combined)
+      }
+    } catch (err) {
+      setError('Failed to reach server. Please try again.')
+    } finally {
+      setIsLoading(false)
+    }
   };
 
   const handleShare = () => {
@@ -70,7 +89,7 @@ export default function RoastGeneratorPage() {
           <div className="flex gap-6">
             <Link href="/roast-styles" className="hover:text-purple-400 transition">Roast Styles</Link>
             <Link href="/blog" className="hover:text-purple-400 transition">Blog</Link>
-            <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Download App</Link>
+            <Link href="/pricing" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Buy Roast</Link>
           </div>
         </div>
       </nav>
@@ -212,10 +231,10 @@ export default function RoastGeneratorPage() {
                     Try Different Style
                   </button>
                   <Link
-                    href="/download"
+                    href="/pricing"
                     className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition"
                   >
-                    Get the App for More
+                    Go Pro for Unlimited
                   </Link>
                 </div>
               </div>

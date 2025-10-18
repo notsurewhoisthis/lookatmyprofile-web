@@ -104,7 +104,7 @@ export default function Home() {
             <Link href="/my-insta-personality" className="hover:text-purple-400 transition text-sm md:text-base">Personality</Link>
             <Link href="/instagram-engagement-calculator" className="hover:text-purple-400 transition text-sm md:text-base">Calculator</Link>
             <Link href="/blog" className="hover:text-purple-400 transition text-sm md:text-base">Blog</Link>
-            <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition text-sm md:text-base">Get App</Link>
+            <Link href="/pricing" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition text-sm md:text-base">Buy Roast</Link>
           </div>
         </div>
       </nav>
