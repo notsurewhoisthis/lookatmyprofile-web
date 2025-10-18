@@ -77,6 +77,7 @@ export async function POST(req: NextRequest) {
       },
       sections,
       createdAt: new Date().toISOString(),
+      consumed: !!sessionId,
     })
     if (!allowDev && sessionId) {
       markSessionUsed(sessionId)

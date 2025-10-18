@@ -12,6 +12,7 @@ export default function RoastGeneratorPage() {
   const [error, setError] = useState('');
   const [paymentRequired, setPaymentRequired] = useState(false);
   const [hasCredit, setHasCredit] = useState(false);
+  const [toast, setToast] = useState('');
 
   const roastStyles = [
     { id: 'savage', name: 'Savage Mode', emoji: '🔥', color: 'from-red-600 to-orange-600' },
@@ -62,6 +63,11 @@ export default function RoastGeneratorPage() {
         const data = await res.json()
         const combined = (data.sections || []).map((s: any) => `${s.title}:\n${s.content}`).join('\n\n')
         setRoastResult(combined)
+        if (data.consumed) {
+          setHasCredit(false)
+          setToast('Full roast consumed')
+          setTimeout(() => setToast(''), 4000)
+        }
       }
     } catch (err) {
       setError('Failed to reach server. Please try again.')
@@ -95,7 +101,10 @@ export default function RoastGeneratorPage() {
           <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             Roast a Profile
           </Link>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
+            {hasCredit && (
+              <span className="px-3 py-1 rounded-full text-xs bg-green-500/15 border border-green-500/30 text-green-300">Paid Full Roast</span>
+            )}
             <Link href="/roast-styles" className="hover:text-purple-400 transition">Roast Styles</Link>
             <Link href="/blog" className="hover:text-purple-400 transition">Blog</Link>
             <Link href="/pricing" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Get a Full Roast</Link>
@@ -204,6 +213,11 @@ export default function RoastGeneratorPage() {
               <p className="mb-4 text-gray-300">Unlock a detailed, full roast with profile photo analysis.</p>
               <StripeCheckoutButton label="Pay $1.99 for Full Roast" mode="payment" />
             </div>
+          )}
+
+          {/* Small toast */}
+          {!!toast && (
+            <div className="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 bg-gray-900/90 border border-gray-700 rounded-full text-sm text-gray-100 shadow-lg">{toast}</div>
           )}
 
           {/* Roast Result */}
