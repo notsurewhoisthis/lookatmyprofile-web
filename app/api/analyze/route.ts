@@ -50,11 +50,7 @@ export async function POST(req: NextRequest) {
     const sections = parseSections(content)
 
     // Mark session as used only after successful generation
-    if (!allowDev && sessionId) {
-      markSessionUsed(sessionId)
-    }
-
-    return NextResponse.json({
+    const res = NextResponse.json({
       profile: {
         username: profile.username,
         followersCount: profile.followersCount,
@@ -66,6 +62,11 @@ export async function POST(req: NextRequest) {
       sections,
       createdAt: new Date().toISOString(),
     })
+    if (!allowDev && sessionId) {
+      markSessionUsed(sessionId)
+      try { res.cookies.set('stripe_session','', { maxAge: 0, path: '/' }) } catch {}
+    }
+    return res
   } catch (err: any) {
     console.error('Analyze error', err)
     return NextResponse.json({ error: 'internal_error', details: err?.message }, { status: 500 })
