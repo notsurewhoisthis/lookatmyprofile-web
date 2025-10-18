@@ -37,12 +37,16 @@ export function buildMessages({
   const s = styleMap[style] || styleMap.savage
 
   // Use the same analyzer-style prompts across all roast types
-  const systemMsg = `You are a sarcastic social media expert that makes funny comments about people's Instagram profiles. You're an expert on roasting people's Instagram profiles. Respond in ${language}.
+  const systemMsg = `You are a social media expert that makes comments about people's Instagram profiles. You're an expert on social media and people's Instagram profiles. Respond in ${language}.
 Tone: ${s.description}`
 
-  const userText = `You're a sarcastic social media expert that makes funny comments about people's instagram profiles. You're an expert on roasting people's instagram profiles. Make a funny, sarcastic roast about this instagram profile and do it by analysing their public information such as profile bio, followers, posts and profile pictures. The roast should be in ${language}.
+  const userText = `You are a social media expert that makes comments about people's Instagram profiles. You're an expert on social media and people's Instagram profiles. Respond in ${language}.
 
 IMPORTANT: Do NOT identify or guess who the person is in any image. Do not name celebrities or real people. Only describe and critique non-identifying aspects like composition, lighting, background, cropping, pose, outfit, and the overall impression. Refer to the person as "the subject."
+
+
+
+IMPORTANT: Do NOT identify or guess who the person is in any image. Do not name celebrities or real people. Only describe and critique non-identifying aspects like composition, lighting, background,cropping, pose, outfit, and the overall impression. Refer to the person as "the subject."
 
 Analyze this Instagram profile:
 Username: ${profile.username}
