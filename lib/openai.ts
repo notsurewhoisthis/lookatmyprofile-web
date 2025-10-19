@@ -42,10 +42,6 @@ Tone: ${s.description}`
 
   const userText = `You are a social media expert that makes comments about people's Instagram profiles. You're an expert on social media and people's Instagram profiles. Respond in ${language}.
 
-IMPORTANT: Do NOT identify or guess who the person is in any image. Do not name celebrities or real people. Only describe and critique non-identifying aspects like composition, lighting, background, cropping, pose, outfit, and the overall impression. Refer to the person as "the subject."
-
-
-
 IMPORTANT: Do NOT identify or guess who the person is in any image. Do not name celebrities or real people. Only describe and critique non-identifying aspects like composition, lighting, background,cropping, pose, outfit, and the overall impression. Refer to the person as "the subject."
 
 Analyze this Instagram profile:

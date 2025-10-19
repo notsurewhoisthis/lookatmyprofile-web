@@ -59,6 +59,29 @@ export async function POST(req: NextRequest) {
         continue
       }
     }
+    const refusalRe = /(can'?t\s+help|can'?t\s+identify|cannot\s+identify|can'?t\s+analy[sz]e\s+the\s+person|i\s+can'?t\s+assist\s+with\s+that)/i
+    if (!content || refusalRe.test(content)) {
+      // Retry once without image and with explicit instruction to skip identification
+      const messagesNoImg = buildMessages({ language, style, profile, base64Image: undefined })
+      try {
+        const completion2 = await openai.chat.completions.create({
+          model: preferred,
+          messages: messagesNoImg,
+          temperature: 0.9,
+          max_tokens: 1600,
+        })
+        content = completion2.choices?.[0]?.message?.content || ''
+      } catch (e) {
+        // try fallbacks
+        for (const mdl of ['gpt-4o','gpt-4o-mini']) {
+          try {
+            const c3 = await openai.chat.completions.create({ model: mdl, messages: messagesNoImg, temperature: 0.9, max_tokens: 1600 })
+            content = c3.choices?.[0]?.message?.content || ''
+            if (content) break
+          } catch {}
+        }
+      }
+    }
     if (!content) {
       console.error('OpenAI generation failed:', lastErr?.message || lastErr)
       return NextResponse.json({ error: 'internal_error', details: 'openai_failed' }, { status: 500 })
