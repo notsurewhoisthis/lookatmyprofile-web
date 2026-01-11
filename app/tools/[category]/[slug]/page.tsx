@@ -124,7 +124,7 @@ export default async function ToolPage({
           <div className="flex gap-4">
             <Link href="/tools" className="hover:text-purple-400 transition">All Tools</Link>
             <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">
-              Get App
+              Get a Full Roast
             </Link>
           </div>
         </div>
@@ -260,7 +260,7 @@ export default async function ToolPage({
                 Try Generator →
               </Link>
               <Link href="/download" className="border border-purple-400 px-8 py-3 rounded-full hover:bg-purple-400/10 transition">
-                Get the App
+                Get a Full Roast
               </Link>
             </div>
           </section>

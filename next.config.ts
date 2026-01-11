@@ -52,7 +52,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com *.googletagmanager.com https://www.google-analytics.com *.google-analytics.com *.analytics.google.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com *.google-analytics.com *.analytics.google.com *.googletagmanager.com https://api.openai.com https://api.anthropic.com;"
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com *.googletagmanager.com https://www.google-analytics.com *.google-analytics.com *.analytics.google.com https://unpkg.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com *.google-analytics.com *.analytics.google.com *.googletagmanager.com https://api.openai.com https://api.anthropic.com https://api.stripe.com https://checkout.stripe.com; frame-src https://js.stripe.com https://hooks.stripe.com https://checkout.stripe.com;"
           },
           {
             key: 'Permissions-Policy',
@@ -91,6 +91,12 @@ const nextConfig: NextConfig = {
           },
         ],
         destination: 'https://www.lookatmyprofile.org/:path*',
+        permanent: true,
+      },
+      // Redirect legacy download page to pricing
+      {
+        source: '/download',
+        destination: '/pricing',
         permanent: true,
       },
       // Legacy tool paths

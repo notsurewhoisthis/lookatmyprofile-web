@@ -88,7 +88,7 @@ export default function WhatIsInstagramRoasting() {
             <div className="flex gap-6">
               <Link href="/roast-generator" className="hover:text-purple-400 transition">Try It</Link>
               <Link href="/blog" className="hover:text-purple-400 transition">Blog</Link>
-              <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Get App</Link>
+              <Link href="/pricing" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">Get a Full Roast</Link>
             </div>
           </div>
         </nav>

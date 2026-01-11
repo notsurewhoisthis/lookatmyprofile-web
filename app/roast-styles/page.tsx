@@ -220,7 +220,7 @@ export default function RoastStylesPage() {
             Start Roasting Now →
           </Link>
           <Link href="/download" className="border border-purple-400 px-12 py-5 rounded-full text-xl font-semibold hover:bg-purple-400/10 transition inline-block">
-            Get the App
+            Get a Full Roast
           </Link>
         </div>
       </section>

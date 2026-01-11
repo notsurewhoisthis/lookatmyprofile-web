@@ -177,7 +177,7 @@ export default function GenZRoastPage() {
             Slay Me (Respectfully) 💯
           </Link>
           <Link href="/download" className="border border-pink-400 px-12 py-5 rounded-full text-xl font-semibold hover:bg-pink-400/10 transition inline-block">
-            Get the App Bestie
+            Get a Full Roast Bestie
           </Link>
         </div>
       </section>

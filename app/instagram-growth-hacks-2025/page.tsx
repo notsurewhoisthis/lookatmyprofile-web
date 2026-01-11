@@ -207,7 +207,7 @@ export default function InstagramGrowthHacks2025() {
               Roast My Profile
             </Link>
             <Link href="/download" className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 rounded-full hover:opacity-90 transition">
-              Get the App
+              Get a Full Roast
             </Link>
           </div>
         </nav>

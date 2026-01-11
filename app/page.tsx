@@ -104,7 +104,7 @@ export default function Home() {
             <Link href="/my-insta-personality" className="hover:text-purple-400 transition text-sm md:text-base">Personality</Link>
             <Link href="/instagram-engagement-calculator" className="hover:text-purple-400 transition text-sm md:text-base">Calculator</Link>
             <Link href="/blog" className="hover:text-purple-400 transition text-sm md:text-base">Blog</Link>
-            <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition text-sm md:text-base">Get App</Link>
+            <Link href="/pricing" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition text-sm md:text-base">Get a Full Roast</Link>
           </div>
         </div>
       </nav>
@@ -123,8 +123,8 @@ export default function Home() {
             <Link href="/roast-generator" className="cta-primary bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition">
               Roast My Profile Now →
             </Link>
-            <Link href="/download" className="border border-purple-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-400/10 transition">
-              Get the App
+            <Link href="/pricing" className="border border-purple-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-400/10 transition">
+              Get a Full Roast
             </Link>
           </div>
           <p className="text-sm text-gray-400">

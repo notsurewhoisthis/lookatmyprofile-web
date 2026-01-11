@@ -92,7 +92,7 @@ export default async function ToolsIndexPage() {
           <div className="flex gap-4">
             <Link href="/roast-generator" className="hover:text-purple-400 transition">Roast</Link>
             <Link href="/download" className="bg-purple-600 px-4 py-2 rounded-full hover:bg-purple-700 transition">
-              Get App
+              Get a Full Roast
             </Link>
           </div>
         </div>

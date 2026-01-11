@@ -86,7 +86,7 @@ export default function RootLayout({
         
         {/* Prefetch likely navigations */}
         <link rel="prefetch" href="/roast-generator" />
-        <link rel="prefetch" href="/download" />
+        <link rel="prefetch" href="/pricing" />
         <link rel="prefetch" href="/instagram-roaster" />
         
         {/* PWA and Mobile */}

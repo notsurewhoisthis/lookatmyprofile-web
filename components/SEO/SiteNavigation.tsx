@@ -277,7 +277,7 @@ export function FooterNavigation({ currentPath }: FooterNavigationProps) {
             </p>
             <div className="flex gap-4">
               <Link href="/download" className="text-purple-400 hover:text-purple-300 text-sm">
-                Get the App
+                Get a Full Roast
               </Link>
               <Link href="/roast-generator" className="text-purple-400 hover:text-purple-300 text-sm">
                 Try Free
