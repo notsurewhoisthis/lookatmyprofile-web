@@ -302,7 +302,7 @@ export default function MyInstaPersonality() {
               <h3 className="text-xl font-bold mb-2">📊 Engagement Calculator</h3>
               <p className="text-gray-300 text-sm">Check your influence level</p>
             </Link>
-            <Link href="/rate-my-instagram-profile" className="bg-gradient-to-br from-green-900/50 to-blue-900/50 p-6 rounded-lg hover:from-green-900/70 hover:to-blue-900/70 transition">
+            <Link href="/instagram-profile-analyzer" className="bg-gradient-to-br from-green-900/50 to-blue-900/50 p-6 rounded-lg hover:from-green-900/70 hover:to-blue-900/70 transition">
               <h3 className="text-xl font-bold mb-2">⭐ Rate My Profile</h3>
               <p className="text-gray-300 text-sm">Get your profile scored</p>
             </Link>

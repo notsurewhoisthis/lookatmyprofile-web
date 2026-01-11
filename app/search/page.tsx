@@ -6,7 +6,11 @@ import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 export const metadata: Metadata = {
   title: 'Search - LookAtMyProfile',
   description: 'Search LookAtMyProfile blog posts and guides.',
-  alternates: { canonical: 'https://www.lookatmyprofile.org/search' }
+  alternates: { canonical: 'https://www.lookatmyprofile.org/search' },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
@@ -93,4 +97,3 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
     </div>
   );
 }
-

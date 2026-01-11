@@ -247,10 +247,10 @@ export default async function UsernamePage({ params }: { params: Promise<{ style
             <h2 className="text-3xl font-bold mb-4">Ready to Create Your Perfect Profile?</h2>
             <p className="text-xl mb-6">Now that you have your username, complete your profile with our other tools!</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/bio-templates" className="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+              <Link href="/tools/bio-generator" className="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
                 Bio Generator
               </Link>
-              <Link href="/caption-generator" className="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+              <Link href="/tools/caption-generator" className="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
                 Caption Ideas
               </Link>
               <Link href="/roast-generator" className="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">

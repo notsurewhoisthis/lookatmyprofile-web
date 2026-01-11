@@ -104,8 +104,8 @@ export default function UsernameGeneratorIndex() {
             </Link>
             <div className="flex gap-4 items-center">
               <Link href="/roast-generator" className="hover:text-purple-400 transition">Roast</Link>
-              <Link href="/bio-templates" className="hover:text-purple-400 transition">Bios</Link>
-              <Link href="/caption-generator" className="hover:text-purple-400 transition">Captions</Link>
+              <Link href="/tools/bio-generator" className="hover:text-purple-400 transition">Bios</Link>
+              <Link href="/tools/caption-generator" className="hover:text-purple-400 transition">Captions</Link>
               <Link href="/blog" className="hover:text-purple-400 transition">Blog</Link>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function UsernameGeneratorIndex() {
               <Link href="/username-generator/aesthetic" className="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
                 Start Generating
               </Link>
-              <Link href="/bio-templates" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">
+              <Link href="/tools/bio-generator" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">
                 Create Your Bio
               </Link>
             </div>

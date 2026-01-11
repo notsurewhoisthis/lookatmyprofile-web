@@ -440,7 +440,7 @@ export default function VsCleveAIPage() {
               <h4 className="font-semibold text-orange-400 mb-1">vs Olly Social</h4>
               <p className="text-xs text-gray-400">Intensity controls comparison</p>
             </Link>
-            <Link href="/vs-roast-master" className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition">
+            <Link href="/comparisons" className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition">
               <h4 className="font-semibold text-yellow-400 mb-1">vs Roast Master</h4>
               <p className="text-xs text-gray-400">Classic roaster battle</p>
             </Link>

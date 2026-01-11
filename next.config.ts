@@ -93,6 +93,93 @@ const nextConfig: NextConfig = {
         destination: 'https://www.lookatmyprofile.org/:path*',
         permanent: true,
       },
+      // Legacy tool paths
+      {
+        source: '/bio-templates/:path*',
+        destination: '/tools/bio-generator',
+        permanent: true,
+      },
+      {
+        source: '/caption-generator/:path*',
+        destination: '/tools/caption-generator',
+        permanent: true,
+      },
+      {
+        source: '/rate-my-instagram-profile',
+        destination: '/instagram-profile-analyzer',
+        permanent: true,
+      },
+      {
+        source: '/vs-roast-master',
+        destination: '/comparisons',
+        permanent: true,
+      },
+      {
+        source: '/instagram-hashtag-generator',
+        destination: '/tools/hashtag-generator',
+        permanent: true,
+      },
+      {
+        source: '/instagram-roast-generator',
+        destination: '/roast-generator',
+        permanent: true,
+      },
+      {
+        source: '/instagram-personality-generator',
+        destination: '/my-insta-personality',
+        permanent: true,
+      },
+      // Related page fallbacks
+      {
+        source: '/caption-ideas-:slug*',
+        destination: '/tools/caption-generator',
+        permanent: true,
+      },
+      {
+        source: '/best-caption-:slug*',
+        destination: '/tools/caption-generator',
+        permanent: true,
+      },
+      {
+        source: '/bio-ideas-:slug*',
+        destination: '/tools/bio-generator',
+        permanent: true,
+      },
+      {
+        source: '/best-bio-:slug*',
+        destination: '/tools/bio-generator',
+        permanent: true,
+      },
+      {
+        source: '/hashtag-ideas-:slug*',
+        destination: '/tools/hashtag-generator',
+        permanent: true,
+      },
+      {
+        source: '/best-hashtag-:slug*',
+        destination: '/tools/hashtag-generator',
+        permanent: true,
+      },
+      {
+        source: '/roast-ideas-:slug*',
+        destination: '/roast-generator',
+        permanent: true,
+      },
+      {
+        source: '/best-roast-:slug*',
+        destination: '/roast-generator',
+        permanent: true,
+      },
+      {
+        source: '/personality-ideas-:slug*',
+        destination: '/my-insta-personality',
+        permanent: true,
+      },
+      {
+        source: '/best-personality-:slug*',
+        destination: '/my-insta-personality',
+        permanent: true,
+      },
     ]
   },
 

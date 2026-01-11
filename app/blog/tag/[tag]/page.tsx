@@ -3,10 +3,20 @@ import type { Metadata } from 'next';
 import { getAllBlogPosts } from '@/lib/blogPosts';
 import { BreadcrumbSchema } from '@/components/SEO/BreadcrumbSchema';
 
-export const metadata: Metadata = {
-  title: 'Tag - LookAtMyProfile Blog',
-  description: 'Explore blog posts by tag on LookAtMyProfile.',
-};
+function toDisplayTag(slug: string) {
+  return decodeURIComponent(slug).replace(/-/g, ' ');
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ tag: string }> }): Promise<Metadata> {
+  const { tag } = await params;
+  const displayTag = toDisplayTag(tag);
+
+  return {
+    title: `#${displayTag} - LookAtMyProfile Blog`,
+    description: `Explore LookAtMyProfile posts tagged ${displayTag}.`,
+    alternates: { canonical: `https://www.lookatmyprofile.org/blog/tag/${tag}` },
+  };
+}
 
 function slugifyTag(tag: string) {
   return tag
@@ -101,4 +111,3 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
     </div>
   );
 }
-
